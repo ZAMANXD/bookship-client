@@ -4,7 +4,7 @@ const TestComponent = () => {
   return (
     <div>
       <h3 className="text-4xl">
-        This component has made for only testing purpose
+        This component has made for only testing purpose only
       </h3>
     </div>
   );
