@@ -4,14 +4,14 @@ import { AiOutlineStar } from 'react-icons/ai'
 const Book = ({ ...book }) => {
     return (
         <div className='bg-white rounded-lg shadow-lg hover:shadow-2xl  transition duration-150 ease-in-out p-5 mx-2 my-3'>
-            <img className='w-full rounded-lg' src={book.image} alt="" />
+            <img className='w-full h-80 rounded-lg' src={book.image} alt="" />
             <div className='my-3'>
                 <div className='flex items-center gap-x-2 my-2'>
                     <img className='w-8 h-8 rounded-full border' src={book.image} alt="" />
                     <h4 className='text-md'>{book.authorName}</h4>
                 </div>
                 <div className='flex justify-between items-center'>
-                    <h2 className='text-2xl font-semibold text-[#34315D]'>{book.bookTitle}</h2>
+                    <h2 className='text-xl font-semibold text-[#34315D]'>{book.bookTitle}</h2>
                     <div className='flex justify-between items-center'>
                         {
                             [...Array(5)].map(star => <AiOutlineStar className='text-xl text-yellow-500' />)
