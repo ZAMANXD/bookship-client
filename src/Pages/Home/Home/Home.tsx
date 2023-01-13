@@ -1,6 +1,7 @@
 import React from 'react';
 import GetInTouch from '../GetInTouch/GetInTouch';
 import NewReleases from '../NewReleases/NewReleases';
+// import TopBanner from '../TopBanner/TopBanner';
 import TopBanner from '../TopBanner/TopBanner';
 import TopBooks from '../TopBooks/TopBooks';
 import WhyBookShip from '../WhyBookShip/WhyBookShip';
