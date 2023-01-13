@@ -3,11 +3,11 @@ import React from 'react';
 import './App.css';
 import {RouterProvider} from 'react-router-dom'
 import { router } from './Routes/routes';
-import { Toaster } from 'react-hot-toast';
+import { Toaster} from 'react-hot-toast';
 
 function App() {
   return (
-    <div className="">
+    <div className="max-w-screen-xl mx-auto">
       <RouterProvider router={router} />
       <Toaster/>
     </div>
