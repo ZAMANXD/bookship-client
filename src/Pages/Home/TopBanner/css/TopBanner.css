@@ -1,0 +1,12 @@
+.carousel-img{
+    /* object-fit: cover; */
+    max-width: 100%;
+    overflow: hidden;
+}
+.slider-btn {
+    outline: none;
+    border: none;
+}
+.discount-text{
+    font-size: 0.65rem;
+}
