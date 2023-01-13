@@ -59,8 +59,8 @@ const NavBar = () => {
     <div className="bg-gray-50 ">
       <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
-          <a
-            href="/"
+          <Link
+            to="/"
             aria-label="Company"
             title="Company"
             className="inline-flex items-center"
@@ -68,7 +68,7 @@ const NavBar = () => {
             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
               BookShip
             </span>
-          </a>
+          </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
            {
             navItem
@@ -101,8 +101,8 @@ const NavBar = () => {
                 <div className="p-5 bg-gray-50 border rounded shadow-2xl">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <a
-                        href="/"
+                      <Link
+                        to="/"
                         aria-label="Company"
                         title="Company"
                         className="inline-flex items-center"
@@ -111,7 +111,7 @@ const NavBar = () => {
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           BookShip
                         </span>
-                      </a>
+                      </Link>
                     </div>
                     <div>
                       <button
