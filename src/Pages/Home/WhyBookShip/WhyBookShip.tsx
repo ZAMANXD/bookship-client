@@ -25,7 +25,7 @@ const WhyBookShip = () => {
 
   return (
     <div className="max-w-7xl mx-auto w-50 px-5 py-10">
-      <h2 className="my-5 text-5xl font-bold text-[#34315D] text-center">Why BookShip</h2>
+      <h2 className="mb-10 text-5xl font-bold text-[#34315D] text-center">Why BookShip</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <img
@@ -36,7 +36,7 @@ const WhyBookShip = () => {
         </div>
         <div>
           {services.map((service) => (
-            <div className="bg-white rounded-md shadow-md p-5 lg:p-10 my-5">
+            <div className="bg-white rounded-md shadow-md p-5 lg:p-5 my-5">
               <div className="flex gap-x-5 justify-start items-center">
                 <div className="rounded-md border p-2 border-gray-600">
                   <svg
