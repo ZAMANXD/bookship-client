@@ -3,7 +3,7 @@ import React from 'react';
 const GetInTouch = () => {
     return (
         <div className='bg-gradient-to-bl from-violet-600 to-indigo-500'>
-            {/* get in touch 2 */}
+            {/* get in touch 2a */}
             <h1 className='text-3xl md:text-4xl lg:text-6xl font-bold text-white text-center pt-20'>Get in Touch</h1>
             <div className='flex justify-center p-20'>
                 <input className=' bg-slate-300 p-3 -mr-6 rounded-l-full shadow-xl focus:outline-0' placeholder='Email' type="text" />
