@@ -1,141 +1,122 @@
 [
     {
-        "title": "The Future of Long-term Care",
-        "description": "Saving Money by Serving Seniors : Hearing Before the Special Committee on Aging, United States Senate, One Hundred Twelfth Congress, Second Session, Washington, DC, April 18, 2012",
-        "authors": [
-            "United States. Congress. Senate. Special Committee on Aging"
-        ],
-        "rating": 4.5,
-        "original-Price": 800,
-        "ddiscounted-price": 700,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=iZoCHNPKysoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=iZoCHNPKysoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+        "_id": "1",
+        "bookTitle": "Spare",
+        "authorName": "Prince Harry",
+        "rating": "4",
+        "originalPrice": "36",
+        "discountedPrice": "25",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593593806_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Oswaal CBSE MCQs Chapterwise For Term I & II, Class 10 (Set of 4 Books) Mathematics (Basic), Science, Social Science, Sanskrit (With the largest MCQ Question Pool for 2021-22 Exam)",
-        "authors": [
-            "Oswaal Editorial Board"
-        ],
-        "description": "Oswaal CBSE MCQs Class 10 for Term 1 & 2 Board Exams 2021-22 are strictly as per the new term-wise CBSE syllabus Class 10 for Term 1 & 2 Board Examinations to be held in the academic session 2021-22. Chapter-wise Topic-wise Presentation Multiple Choice Questions (CBSE MCQs Class 10 For Term 1 & 2 Board Exams 2021-22) based on new typologies introduced by the board- Stand- Alone MCQs, MCQs based on Assertion-Reason Case-based MCQs. Answer key with Explanations & also Unit-wise Periodic Test For Practice Largest MCQs Question Pool For CBSE Class 10 Term 1 & 2 Board Exams 2021-22 Oswaal CBSE MCQs Class 10 for Term 1 & 2 Board Exams 2021-22 Include Questions from CBSE official Question Bank released in April 2021",
-        "Rating": 4.3,
-        "original-Price": 900,
-        "ddiscounted-price": 800,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=PI1DEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=PI1DEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+        "_id": "2",
+        "bookTitle": "Throne of the Fallen",
+        "authorName": "Kerri Maniscalco",
+        "rating": "5",
+        "originalPrice": "29",
+        "discountedPrice": "25",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316568920_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Areawide Planning of Facilities for Long-term Treatment and Care",
-        "authors": [
-            "Joint Committee of the American Hospital Association and Public Health Service"
-        ],
-        "Rating": 4.5,
-        "original-Price": 1000,
-        "ddiscounted-price": 500,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=GTHZpjeD9iAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=GTHZpjeD9iAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+        "_id": "3",
+        "bookTitle": "The Sun and Its Shade",
+        "authorName": "Piper CJ",
+        "rating": "5",
+        "originalPrice": "19",
+        "discountedPrice": "17",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781728281414_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Announcements for the Spring and Summer Terms",
-        "authors": [
-            "Indiana University"
-        ],
-        "Rating": 5.0,
-        "original-Price": 300,
-        "ddiscounted-price": 250,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=BBNHAQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=BBNHAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        }
+        "_id": "4",
+        "bookTitle": "Hell Bent",
+        "authorName": "Leigh Bardugo",
+        "rating": "3",
+        "originalPrice": "30",
+        "discountedPrice": "27",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250889256_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "26th Annual International Computer Software and Applications Conference",
-        "authors": [
-            "IEEE Computer Society"
-        ],
-        "description": "Collects the 172 papers presented during the August 2002 conference with the theme of Prolonging software life: development and redevelopment. The main subjects of the 38 sessions are component based software development, software process, quality control, testing, software evolution, web based sy",
-        "Rating": 5.0,
-        "original-Price": 1200,
-        "ddiscounted-price": 1000,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=HVYkAQAAMAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=HVYkAQAAMAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        }
+        "_id": "5",
+        "bookTitle": "The Stolen Heir: A Novel of Elfhame",
+        "authorName": "Holly Black",
+        "rating": "5",
+        "originalPrice": "21",
+        "discountedPrice": "17",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316519045_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Contrastive Analysis of English and Polish Surveying Terminology",
-        "authors": [
-            "Ewelina Kwiatek"
-        ],
-        "Rating": 4.5,
-        "original-Price": 1000,
-        "ddiscounted-price": 500,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=9DkyBwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=9DkyBwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "description": "This book, with a focus on English and Polish, is a study of surveying terminology, which may be considered as an under-researched area when compared to legal, medical or business terminologies. It examines differences between terms and concepts in the two languages. The purpose of the book is three-fold: firstly, to investigate how surveying terms are created and how they are named in English and Polish; secondly, to analyse concept systems of the two languages with respect to surveying terminology; and thirdly, to indicate the areas of surveying in which terminological and conceptual differences occur, the factors that trigger them and translation strategies which are used to solve them. The book offers a systematic, corpus-based approach to terminology. Data for analyses come from the English and Polish surveying corpora compiled specifically for this project. The author of the book attempts to provide a wide picture of surveying terminology by looking at problems that diversified groups of users may identify. The book is directed towards terminologists and lexicographers, for whom it provides a set of guidelines on how to enrich the content of surveying dictionaries, translators and technical writers, who may find information on how to deal with conceptual mismatches, and to specialists in the surveying field, who are interested in finding equivalents for problematic terms."
+        "_id": "6",
+        "bookTitle": "A Curse for True Love",
+        "authorName": "Stephanie Garber",
+        "rating": "1",
+        "originalPrice": "21",
+        "discountedPrice": "20",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250908452_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Dictionary of Sports and Games Terminology",
-        "authors": [
-            "Adrian Room"
-        ],
-        "Rating": 4.5,
-        "original-Price": 1000,
-        "ddiscounted-price": 500,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=eJUZDgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=eJUZDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "description": "The specialized jargon of some sports can be quite esoteric. Non-Americans, for example, are likely puzzled by baseball terms such as bunt, cut-off man, and safety squeeze, while the non-British may pause over cricket's Chinaman, doosra, golden duck, off-break, popping crease, and yorker. This new dictionary gives the definitions of more than 8,000 terms used in sports and games from around the world, including mainstream sports like basketball and billiards alongside the more obscure netball and snooker. Entries cover sports equipment, strategies, venues, qualifying categories, awards, and administrative bodies, while a comprehensive system of cross-references offers assistance and clarification when needed. An appendix lists standard abbreviations of sports ruling bodies and administrative organizations."
+        "_id": "7",
+        "bookTitle": "Lessons in Chemistry",
+        "authorName": "Bonnie Garmus",
+        "rating": "4.5",
+        "originalPrice": "29",
+        "discountedPrice": "24",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780385549400_p0_v12%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "A Partial Glossary of Elk Management Terms",
-        "authors": [
-            "L. Jack Lyon"
-        ],
-        "Rating": 4.5,
-        "original-Price": 1000,
-        "ddiscounted-price": 500,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=yhOC3Oq8JlEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=yhOC3Oq8JlEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+        "_id": "8",
+        "bookTitle": "The Light We Carry: Overcoming in Uncertain Times",
+        "authorName": "Michelle Obama",
+        "rating": "4",
+        "originalPrice": "33",
+        "discountedPrice": "26",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593237465_p0_v6%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "“The” British Almanac ... Containing the Calendar of Remarkable Days and Terms ... Remarks on the Weather ... Astronomical Facts and Phenomena ...",
-        "Rating": 4.5,
-        "original-Price": 1000,
-        "ddiscounted-price": 500,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=5PfTz83PJ48C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=5PfTz83PJ48C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+        "_id": "9",
+        "bookTitle": "The House of Wolves",
+        "authorName": "James Patterson, Mike Lupica",
+        "rating": "5",
+        "originalPrice": "30",
+        "discountedPrice": "20",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316404297_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Special Study on Terminology",
-        "Rating": 4.5,
-        "original-Price": 1500,
-        "ddiscounted-price": 1400,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=QaV0ZYfWDiUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=QaV0ZYfWDiUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        }
+        "_id": "10",
+        "bookTitle": "The Last Thing He Told Me",
+        "authorName": "Laura Dave",
+        "rating": "4",
+        "originalPrice": "27",
+        "discountedPrice": "13",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781501171345_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     },
     {
-        "title": "Pacific Shipper",
-        "Rating": 4.0,
-        "original-Price": 400,
-        "ddiscounted-price": 300,
-        "imageLinks": {
-            "smallThumbnail": "http://books.google.com/books/content?id=LAogAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
-            "thumbnail": "http://books.google.com/books/content?id=LAogAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-        }
+        "_id": "11",
+        "bookTitle": "It ends with us",
+        "authorName": "Colleen Hoover",
+        "rating": "5",
+        "originalPrice": "16",
+        "discountedPrice": "12",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781501110368_p0_v11%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "12",
+        "bookTitle": "The Night and Its Moon",
+        "authorName": "Piper CJ",
+        "rating": "5",
+        "originalPrice": "19",
+        "discountedPrice": "17",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781728270708_p0_v6%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
     }
 ]
