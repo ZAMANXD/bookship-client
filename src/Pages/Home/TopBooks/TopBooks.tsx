@@ -1,10 +1,24 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+// import bookData from '../../../../public/books.json';
 import Book from './Book';
+import { useState, useEffect } from 'react'
 
 
 const TopBooks = () => {
+    const [items, setItems] = useState<any[]>([])
+
+    useEffect(() => {
+        fetch('books.json')
+            .then((res) => res.json())
+            .then(data => {
+                setItems(data)
+            })
+    }, [])
+
+    console.log(items);
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -30,7 +44,7 @@ const TopBooks = () => {
             <div className='my-5'>
                 <Carousel responsive={responsive}>
                     {
-                        [...Array(6)].map((book, i) => <Book key={i}></Book>)
+                        items.map((book) => <Book key={book._id} {...book}></Book>)
                     }
                 </Carousel>
             </div>

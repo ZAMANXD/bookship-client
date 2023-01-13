@@ -2,8 +2,18 @@ import React from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Book from '../TopBooks/Book';
+import { useState, useEffect } from 'react'
 
 const NewReleases = () => {
+    const [items, setItems] = useState<any[]>([])
+
+    useEffect(() => {
+        fetch('books.json')
+            .then((res) => res.json())
+            .then(data => {
+                setItems(data)
+            })
+    }, [])
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -29,7 +39,7 @@ const NewReleases = () => {
             <div className=''>
                 <Carousel responsive={responsive}>
                     {
-                        [...Array(6)].map((book, i) => <Book key={i}></Book>)
+                        items.map((book) => <Book key={book._id} {...book}></Book>)
                     }
                 </Carousel>
 
