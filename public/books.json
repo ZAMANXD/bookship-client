@@ -1,0 +1,122 @@
+[
+    {
+        "_id": "1",
+        "bookTitle": "Spare",
+        "authorName": "Prince Harry",
+        "rating": "4",
+        "originalPrice": "36",
+        "discountedPrice": "25",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593593806_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "2",
+        "bookTitle": "Throne of the Fallen",
+        "authorName": "Kerri Maniscalco",
+        "rating": "5",
+        "originalPrice": "29",
+        "discountedPrice": "25",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316568920_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "3",
+        "bookTitle": "The Sun and Its Shade",
+        "authorName": "Piper CJ",
+        "rating": "5",
+        "originalPrice": "19",
+        "discountedPrice": "17",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781728281414_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "4",
+        "bookTitle": "Hell Bent",
+        "authorName": "Leigh Bardugo",
+        "rating": "3",
+        "originalPrice": "30",
+        "discountedPrice": "27",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250889256_p0_v3%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "5",
+        "bookTitle": "The Stolen Heir: A Novel of Elfhame",
+        "authorName": "Holly Black",
+        "rating": "5",
+        "originalPrice": "21",
+        "discountedPrice": "17",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316519045_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "6",
+        "bookTitle": "A Curse for True Love",
+        "authorName": "Stephanie Garber",
+        "rating": "1",
+        "originalPrice": "21",
+        "discountedPrice": "20",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781250908452_p0_v1%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "7",
+        "bookTitle": "Lessons in Chemistry",
+        "authorName": "Bonnie Garmus",
+        "rating": "4.5",
+        "originalPrice": "29",
+        "discountedPrice": "24",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780385549400_p0_v12%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "8",
+        "bookTitle": "The Light We Carry: Overcoming in Uncertain Times",
+        "authorName": "Michelle Obama",
+        "rating": "4",
+        "originalPrice": "33",
+        "discountedPrice": "26",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780593237465_p0_v6%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "9",
+        "bookTitle": "The House of Wolves",
+        "authorName": "James Patterson, Mike Lupica",
+        "rating": "5",
+        "originalPrice": "30",
+        "discountedPrice": "20",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9780316404297_p0_v2%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "10",
+        "bookTitle": "The Last Thing He Told Me",
+        "authorName": "Laura Dave",
+        "rating": "4",
+        "originalPrice": "27",
+        "discountedPrice": "13",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781501171345_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "11",
+        "bookTitle": "It ends with us",
+        "authorName": "Colleen Hoover",
+        "rating": "5",
+        "originalPrice": "16",
+        "discountedPrice": "12",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781501110368_p0_v11%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    },
+    {
+        "_id": "12",
+        "bookTitle": "The Night and Its Moon",
+        "authorName": "Piper CJ",
+        "rating": "5",
+        "originalPrice": "19",
+        "discountedPrice": "17",
+        "image": "https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&set=key%5Bresolve.format%5D,value%5Bwebp%5D&product=path%5B/pimages/9781728270708_p0_v6%5D&call=url%5Bfile:common/decodeProduct.chain%5D",
+        "description": "Also available as Large print, audio CD"
+    }
+]
