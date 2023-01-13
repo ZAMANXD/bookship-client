@@ -24,19 +24,19 @@ const WhyBookShip = () => {
 
 
   return (
-    <div className="max-w-7xl mx-auto w-50 px-5 py-10 border">
-      <h2 className="my-5 text-5xl font-bold text-[#34315D]">Why BookShip</h2>
+    <div className="max-w-7xl mx-auto w-50 px-5 py-10">
+      <h2 className="my-5 text-5xl font-bold text-[#34315D] text-center">Why BookShip</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <img
             className="w-full h-full"
-            src="https://cdn.dribbble.com/users/504740/screenshots/11874243/media/2eb36cc429c6a8dc5c596ed3319538bd.jpg?compress=1&resize=400x300"
+            src="https://cdn.pixabay.com/photo/2016/09/08/22/43/books-1655783_960_720.jpg"
             alt=""
           />
         </div>
         <div>
           {services.map((service) => (
-            <div className="bg-white rounded-md shadow-md p-10 my-5">
+            <div className="bg-white rounded-md shadow-md p-5 lg:p-10 my-5">
               <div className="flex gap-x-5 justify-start items-center">
                 <div className="rounded-md border p-2 border-gray-600">
                   <svg
