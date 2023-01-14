@@ -1,4 +1,5 @@
 import React from "react";
+import whyBookShip from './img/why-bookship.jpg';
 
 const WhyBookShip = () => {
   const services = [
@@ -30,7 +31,7 @@ const WhyBookShip = () => {
         <div>
           <img
             className="w-full h-full"
-            src="https://cdn.pixabay.com/photo/2016/09/08/22/43/books-1655783_960_720.jpg"
+            src={whyBookShip}
             alt=""
           />
         </div>
