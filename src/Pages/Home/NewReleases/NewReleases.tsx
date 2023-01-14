@@ -1,19 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Book from '../TopBooks/Book';
-import { useState, useEffect } from 'react'
 
 const NewReleases = () => {
-    const [items, setItems] = useState<any[]>([])
-
-    useEffect(() => {
-        fetch('books.json')
-            .then((res) => res.json())
-            .then(data => {
-                setItems(data)
-            })
-    }, [])
+    const [bookData,setBookData]=useState<any[]>([])
+    useEffect(()=>{
+        fetch("books.json")
+        .then((res) => res.json())
+      .then((data) => setBookData(data));
+    },[])
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -34,12 +30,12 @@ const NewReleases = () => {
         }
     };
     return (
-        <div className='max-w-7xl mx-auto px-5 py-5'>
-            <h2 className="my-5 ml-5 text-2xl md:text-3xl lg:text-5xl font-bold text-[#34315D] ">New Releases</h2>
+        <div className='max-w-7xl mx-auto px-5 py-5 mt-20'>
+            <h2 className="mb-12 ml-5 text-2xl md:text-3xl lg:text-5xl font-bold text-[#34315D] ">New Releases</h2>
             <div className=''>
-                <Carousel responsive={responsive}>
+                <Carousel responsive={responsive} className={'py-10'}>
                     {
-                        items.map((book) => <Book key={book._id} {...book}></Book>)
+                        bookData.map((book) => <Book key={book._id} {...book}></Book>)
                     }
                 </Carousel>
 

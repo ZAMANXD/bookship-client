@@ -25,13 +25,13 @@ const WhyBookShip = () => {
 
 
   return (
-    <div className="max-w-7xl mx-auto w-50 px-5 py-10">
-      <h2 className="mb-10 text-5xl font-bold text-[#34315D] text-center">Why BookShip</h2>
+    <div className="max-w-7xl mx-auto w-50 px-5 py-10 mt-20">
+      <h2 className="mb-12 text-5xl font-bold text-[#34315D] text-center">Why BookShip</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <div>
           <img
-            className="w-full h-full"
-            src={whyBookShip}
+            className="w-full h-full rounded-md"
+            src="https://cdn.pixabay.com/photo/2016/09/08/22/43/books-1655783_960_720.jpg"
             alt=""
           />
         </div>
