@@ -1,10 +1,18 @@
-import React from 'react';
+import { type } from '@testing-library/user-event/dist/type';
+import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Book from './Book';
 
 
 const TopBooks = () => {
+    const [bookData,setBookData]=useState<any[]>([])
+    useEffect(()=>{
+        fetch("books.json")
+        .then((res) => res.json())
+      .then((data) => setBookData(data));
+    },[])
+    
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -32,7 +40,7 @@ const TopBooks = () => {
             <div>
                 <Carousel responsive={responsive} className={'py-10'}>
                     {
-                        [...Array(6)].map((book, i) => <Book key={i}></Book>)
+                        bookData.map((book) => <Book key={book._id} {...book} ></Book>)
                     }
                 </Carousel>
             </div>
