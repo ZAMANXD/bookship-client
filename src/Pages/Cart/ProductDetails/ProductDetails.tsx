@@ -13,7 +13,7 @@ const ProductDetails = () => {
                     <button className='border rounded-r-full hover:border-red-600  hover:text-red-600 md:text-2xl font-bold'><HiMinusSm /></button>
                 </div>
                 <h4 className='text-gray-700 md:font-semibold'>$Price</h4>
-                <button className='text-2xl md:mr-5  hover:text-red-600 rounded-full'><HiOutlineXCircle /></button>
+                <button className='text-2xl md:mr-5 hover:text-red-600 rounded-full'><HiOutlineXCircle /></button>
             </div>
         </section>
     );
