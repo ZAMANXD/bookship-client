@@ -4,6 +4,7 @@ import AboutUs from "../Pages/AboutUs/AboutUs";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import AuthorDashboard from "../Pages/Dashboard/AuthorDashboard/AuthorDashboard";
+import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
             {
                 path:'/dashboard/admin',
                 element:<AdminDashboard/>
+            },
+            {
+                path:'/dashboard/seller',
+                element:<SellerDashboard/>
             }
         ]
     }
