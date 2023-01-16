@@ -3,6 +3,7 @@ import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import BookDetails from "../Pages/BookDetails/BookDetails";
+import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -46,6 +47,10 @@ export const router = createBrowserRouter([
                 path: '/books',
                 element: <AllBooks />,
             },
+            {
+                path: '/addtocart',
+                element: <AddToCart />
+            }
         ]
     }
 ])
