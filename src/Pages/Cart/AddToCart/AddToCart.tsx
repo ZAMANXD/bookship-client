@@ -3,12 +3,12 @@ import ProductDetails from '../ProductDetails/ProductDetails';
 
 const AddToCart = () => {
     return (
-        <section className='grid grid-cols-8'>
+        <section className='lg:grid lg:grid-cols-8 flex md:flex-col flex-col-reverse'>
             <div className='col-span-6'>
-                <h1 className='text-2xl text-gray-700 font-semibold text-center py-4'>Your Items <span>(0)</span></h1>
+                <h1 className='text-2xl text-gray-700 font-semibold text-center md:py-4 py-10'>Your Items <span>(0)</span></h1>
                 <ProductDetails></ProductDetails>
             </div>
-            <aside className='col-span-2 mt-4 bg-gray-50 shadow-md hover:shadow-2xl'>
+            <aside className='col-span-2 lg:w-full w-5/6 lg:mx-0 mx-auto mt-4 bg-gray-50 shadow-md hover:shadow-2xl'>
                 <div className='bg-gray-100 py-5'>
                     <h1 className='text-xl font-semibold text-gray-700 text-center'>Summary</h1>
                 </div>
