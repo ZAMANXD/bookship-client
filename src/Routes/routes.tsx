@@ -9,6 +9,7 @@ import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/aboutus',
-                element: <AboutUs />
+                element: <PrivateRoute><AboutUs/></PrivateRoute>
             },
             {
                 path: '/contactus',

@@ -1,58 +1,62 @@
-import React, { useState } from "react";
+import React, {  useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { AuthContext } from "../../../context/AuthProvider";
 
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const {user,logOut}= useContext(AuthContext)
 
   const navItem = <>
-
-    <li>
-
-      <div className="flex border rounded-full">
-        <input type="text" className="px-6 py-2 rounded-l-full" placeholder="Search a book..." />
-        <button className="flex items-center justify-center px-4 border-l">
-          <svg className="h-4 w-4 text-grey-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" /></svg>
-        </button>
-      </div>
-
-    </li>
-    <li>
-      <Link
-        to="/"
-        aria-label="Our product"
-        title="Our product"
-        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-      >
-        Features
-      </Link>
-    </li>
-
-    <li>
-      <Link
-        to="/"
-        aria-label="About us"
-        title="About us"
-        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-      >
-        About us
-      </Link>
-    </li>
-    <li>
-      <Link to='/addtocart'><FaShoppingCart /></Link>
-    </li>
-    <li>
-      <Link
-        to="/"
-        className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white"
-        aria-label="Sign up"
-        title="Sign up"
-      >
-        Log In
-      </Link>
-    </li>
+  
+  <li>
+           
+           <div className="flex border rounded-full">
+           <input type="text" className="px-6 py-2 rounded-l-full" placeholder="Search a book..."/>
+               <button className="flex items-center justify-center px-4 border-l">
+                 <svg className="h-4 w-4 text-grey-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/></svg>
+               </button>
+           </div>
+            
+                       </li>
+                       <li>
+                         <Link
+                           to="/"
+                           aria-label="Our product"
+                           title="Our product"
+                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                         >
+                           Features
+                         </Link>
+                       </li>
+                    
+                       <li>
+                         <Link
+                           to='/aboutus'
+                           aria-label="About us"
+                           title="About us"
+                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                         >
+                           About us
+                         </Link>
+                       </li>
+<li>
+<FaShoppingCart/>
+</li>
+                       {user?
+                        <button onClick={()=>logOut()} className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white">Log out</button>:
+                        <li>
+                         <Link
+                           to="/login"
+                           className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white" 
+                           aria-label="Sign up"
+                           title="Sign up"
+                         >
+                          Log In
+                         </Link>
+                       </li>
+                        } 
   </>
 
   return (
@@ -70,9 +74,9 @@ const NavBar = () => {
             </span>
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
-            {
-              navItem
-            }
+           {
+            navItem
+           }
           </ul>
           <div className="lg:hidden">
             <button
@@ -107,7 +111,7 @@ const NavBar = () => {
                         title="Company"
                         className="inline-flex items-center"
                       >
-
+                       
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                           BookShip
                         </span>
@@ -131,9 +135,9 @@ const NavBar = () => {
                   </div>
                   <nav>
                     <ul className="space-y-4">
-                      {
-                        navItem
-                      }
+                   {
+                    navItem
+                   }
                     </ul>
                   </nav>
                 </div>
