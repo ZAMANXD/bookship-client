@@ -1,4 +1,3 @@
-import React from 'react';
 import { AiOutlineStar } from 'react-icons/ai'
 
 const Book = ({...book}) => {
@@ -24,7 +23,7 @@ description
                     <h2 className='text-lg font-bold text-[#34315D]'>{bookTitle}</h2>
                     <div className='flex justify-between items-center'>
                         {
-                            [...Array(parseInt(rating))].map(star =><AiOutlineStar className='text-lg text-yellow-500' />)
+                            [...Array(parseInt(rating))].map((star,i )=><AiOutlineStar key={i} className='text-lg text-yellow-500' />)
                         }
                     </div>
                 </div>
