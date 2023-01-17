@@ -12,7 +12,7 @@ const SingleBook = () => {
                     <h4 className='text-md'>{"authorName"}</h4>
                 </div>
                 <div className='flex justify-between items-center'>
-                    <Link to={`book/${"_id"}`}><h2 className='text-lg font-bold text-[#34315D] uppercase'>{"bookTitle"}</h2></Link>
+                    <Link to={`/book/${"_id"}`}><h2 className='text-lg font-bold text-[#34315D] uppercase'>{"bookTitle"}</h2></Link>
                     <div className='flex justify-between items-center'>
                         {
                             [...Array(5)].map(star => <AiOutlineStar className='text-lg text-yellow-500' />)

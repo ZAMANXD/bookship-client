@@ -12,6 +12,7 @@ import Login from "../Pages/Login/Login";
 import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/aboutus',
-                element: <AboutUs />
+                element: <PrivateRoute><AboutUs/></PrivateRoute>
             },
             {
                 path: '/contactus',
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
                 path: '/books',
                 element: <AllBooks />,
                 children: [
+                    {
+                        path: '/books',
+                        element: <AuthorBooks />
+                    },
                     {
                         path: '/books/authorbooks',
                         element: <AuthorBooks />
@@ -79,10 +84,5 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    // {
-    //     path: '/books/',
-    //     element: <AllBooks />,
-
-    // }
 ])
 

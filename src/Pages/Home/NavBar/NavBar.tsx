@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+import { AuthContext } from "../../../context/AuthProvider";
 
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const { user, logOut } = useContext(AuthContext)
 
   const navItem = <>
 
@@ -56,7 +57,7 @@ const NavBar = () => {
     </li>
     <li>
       <Link
-        to="/"
+        to="/login"
         className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white"
         aria-label="Sign up"
         title="Sign up"
