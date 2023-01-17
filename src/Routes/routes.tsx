@@ -66,6 +66,10 @@ export const router = createBrowserRouter([
                 ]
             },
             {
+                path: '/books/authorbooks',
+                element: <AuthorBooks />
+            },
+            {
                 path: '/addtocart',
                 element: <AddToCart />
             },
