@@ -21,6 +21,16 @@ const NavBar = () => {
     </li>
     <li>
       <Link
+        to="/books"
+        aria-label="Books"
+        title="Books"
+        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+      >
+        Books
+      </Link>
+    </li>
+    <li>
+      <Link
         to="/"
         aria-label="Our product"
         title="Our product"
@@ -32,7 +42,7 @@ const NavBar = () => {
 
     <li>
       <Link
-        to="/"
+        to="/aboutus"
         aria-label="About us"
         title="About us"
         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -40,6 +50,7 @@ const NavBar = () => {
         About us
       </Link>
     </li>
+
     <li>
       <Link to='/addtocart'><FaShoppingCart /></Link>
     </li>
