@@ -37,7 +37,7 @@ console.log(image)
             detailes,
             bookImage: image,
         }
-        // console.log(bookDetailes)
+
         // bookDetailes upload mongodb server
 
             console.log(bookDetailes)
