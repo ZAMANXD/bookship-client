@@ -25,7 +25,7 @@ const Book = ({ ...book }) => {
                     <Link to={`book/${_id}`}><h2 className='text-lg font-bold text-[#34315D] uppercase'>{bookTitle}</h2></Link>
                     <div className='flex justify-between items-center'>
                         {
-                            [...Array(parseInt(rating))].map(star => <AiOutlineStar className='text-lg text-yellow-500' />)
+                            [...Array(parseInt(rating))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
                         }
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const Book = ({ ...book }) => {
                             <p className='text-2xl font-bold text-[#342D65]'>$ {discountedPrice}</p>
                         </div>
 
-                        <button className='px-3 py-2 bg-[#3DB188] rounded-md text-white'>Buy Now</button>
+                        <button className='px-2 py-2 bg-[#3DB188] rounded-md text-white'>Buy Now</button>
                     </div>
                 </div>
 

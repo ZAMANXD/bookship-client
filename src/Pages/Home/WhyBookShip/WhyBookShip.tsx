@@ -1,5 +1,5 @@
 import React from "react";
-import whyBookShip from './img/why-bookship.jpg';
+// import whyBookShip from './img/why-bookship.jpg';
 
 const WhyBookShip = () => {
   const services = [

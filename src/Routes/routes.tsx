@@ -7,6 +7,7 @@ import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
             {
                 path: '/myaccount',
                 element: <MyAccount />
+            },
+            {
+                path:'/dashboard/seller',
+                element: <SellerDashboard/>
             }
         ]
     },

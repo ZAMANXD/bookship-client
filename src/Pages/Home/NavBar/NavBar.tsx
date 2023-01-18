@@ -22,16 +22,6 @@ const NavBar = () => {
     </li>
     <li>
       <Link
-        to="/books"
-        aria-label="Books"
-        title="Books"
-        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-      >
-        Books
-      </Link>
-    </li>
-    <li>
-      <Link
         to="/"
         aria-label="Our product"
         title="Our product"
@@ -43,7 +33,7 @@ const NavBar = () => {
 
     <li>
       <Link
-        to="/aboutus"
+        to='/aboutus'
         aria-label="About us"
         title="About us"
         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -51,20 +41,22 @@ const NavBar = () => {
         About us
       </Link>
     </li>
-
     <li>
-      <Link to='/addtocart'><FaShoppingCart /></Link>
+      <FaShoppingCart />
     </li>
-    <li>
-      <Link
-        to="/login"
-        className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white"
-        aria-label="Sign up"
-        title="Sign up"
-      >
-        Log In
-      </Link>
-    </li>
+    {user ?
+      <button onClick={() => logOut()} className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white">Log out</button> :
+      <li>
+        <Link
+          to="/login"
+          className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white"
+          aria-label="Sign up"
+          title="Sign up"
+        >
+          Log In
+        </Link>
+      </li>
+    }
   </>
 
   return (

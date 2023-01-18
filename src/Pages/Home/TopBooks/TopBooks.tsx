@@ -1,4 +1,4 @@
-import { type } from '@testing-library/user-event/dist/type';
+// import { type } from '@testing-library/user-event/dist/type';
 import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -32,6 +32,7 @@ const TopBooks = () => {
             items: 1
         }
     };
+   
     return (
         <div className='max-w-7xl mx-auto px-5 py-5 mt-20'>
             <h2 className="mb-12 text-2xl md:text-3xl lg:text-5xl font-bold text-[#34315D] ml-5">Our Top Books</h2>
