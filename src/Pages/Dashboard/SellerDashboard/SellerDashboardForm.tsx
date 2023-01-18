@@ -40,15 +40,11 @@ console.log(image)
         // console.log(bookDetailes)
         // bookDetailes upload mongodb server
 
-
-
-
-        
             console.log(bookDetailes)
             fetch(`https://bookship-server-zamanxd.vercel.app/book`, {
                 method: 'POST',
                 headers: {
-                    'content-type': 'app;ication/json'
+                    'content-type': 'application/json'
                 },
                 body: JSON.stringify(bookDetailes)
             })
