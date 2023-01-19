@@ -44,6 +44,7 @@ const Book = ({ ...book }) => {
                         </div>
 
                         <button className='px-2 py-2 bg-[#3DB188] rounded-md text-white' onClick={() => increaseCartQuantity(_id)} >Buy Now</button>
+                        <Link to={'/addtocart'} className='px-2 py-2 bg-[#3DB188] rounded-md text-white'>Buy Now</Link>
                     </div>
                 </div>
 
