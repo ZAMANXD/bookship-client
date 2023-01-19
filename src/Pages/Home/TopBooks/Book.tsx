@@ -43,8 +43,7 @@ const Book = ({ ...book }) => {
                             <p className='text-2xl font-bold text-[#342D65]'>$ {discountedPrice}</p>
                         </div>
 
-                        <button className='px-2 py-2 bg-[#3DB188] rounded-md text-white' onClick={() => increaseCartQuantity(_id)} >Buy Now</button>
-                        <Link to={'/addtocart'} className='px-2 py-2 bg-[#3DB188] rounded-md text-white'>Buy Now</Link>
+                        <button className='px-2 py-2 bg-[#3DB188] rounded-md text-white' onClick={() => increaseCartQuantity(_id)} >Add to cart</button>
                     </div>
                 </div>
 
