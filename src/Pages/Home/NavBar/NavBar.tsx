@@ -42,7 +42,7 @@ const NavBar = () => {
       </Link>
     </li>
     <li>
-      <FaShoppingCart />
+      <Link to='/addtocart'><FaShoppingCart /></Link>
     </li>
     {user ?
       <button onClick={() => logOut()} className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white">Log out</button> :
