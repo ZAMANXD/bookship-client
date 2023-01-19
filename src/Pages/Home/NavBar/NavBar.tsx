@@ -22,12 +22,12 @@ const NavBar = () => {
     </li>
     <li>
       <Link
-        to="/"
-        aria-label="Our product"
-        title="Our product"
+        to="/books"
+        aria-label="Our Books"
+        title="Our Books"
         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
       >
-        Features
+        Books
       </Link>
     </li>
 

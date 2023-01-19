@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { HiOutlineX } from "react-icons/hi";
+import { AuthContext } from "../../../context/AuthProvider";
+import SellerDashboardTable from "./SellerDashboardTable";
 
-const SellerDashboardForm = () => {
+const SellerDashboardForm = ({ refetch }: any) => {
+    const { user } = useContext(AuthContext)
+    console.log(user)
     const [previewImage, setPreviewImage] = useState<any>()
     const [image, setImage] = useState<any>()
     const [loading, setLoading] = useState(false)
-console.log(image)
+    console.log(image)
     const handleSellerBookImage = (e: any) => {
         const image = e.target.files[0]
         setPreviewImage(image)
@@ -36,25 +40,30 @@ console.log(image)
             discountPrice,
             detailes,
             bookImage: image,
+            sellerName: user.displayName,
+            sellerEmail: user.email,
+            sellerPhoto: user.photoURL
         }
 
         // bookDetailes upload mongodb server
 
-            console.log(bookDetailes)
-            fetch(`https://bookship-server-zamanxd.vercel.app/book`, {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(bookDetailes)
+        console.log(bookDetailes)
+        fetch(`https://bookship-server-zamanxd.vercel.app/book`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookDetailes)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setLoading(false)
+                refetch()
+                e.target.reset()
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    setLoading(false)
-                })
-                .catch(err => setLoading(false))
-        
+            .catch(err => setLoading(false))
+
 
     }
 
@@ -63,43 +72,51 @@ console.log(image)
     };
 
     return (
-        <form className='md:max-w-[500px] w-auto border px-4 py-7 shadow-lg' onSubmit={handleSellerBookForm}>
-            <h1 className='text-3xl font-bold mb-4'>Add A Book</h1>
-            <div className='sm:flex justify-between gap-5'>
-                <input type="text" name="title" placeholder='Title' className='border-b border-b-gray-700 h-10 px-2  w-full' />
-                <input type="number" name="price" placeholder='Price' className='border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5' />
-            </div>
-            <div className='sm:flex justify-between gap-5  mt-5'>
-                <input type="text" name="category" placeholder='Category' className='border-b border-b-gray-700 h-10 px-2  w-full' />
-                <input type="number" name="discountPrice" placeholder='Discount Price' className='border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5' />
-            </div>
-            <textarea name="detailes" placeholder='Detailes' className='border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2'></textarea>
-            <div className="grid grid-cols-1 space-y-2  mt-5 ">
-                <div className="flex items-center justify-center w-full h-full relative">
-                    <div onClick={removeSelectedImage} className="absolute top-2 cursor-pointer  left-3 bg-gray-300 w-10 h-10 rounded-full flex justify-center items-center">
-                        <HiOutlineX className="text-2xl font-bold" />
+        <>
+            <div className="w-full">
+                <form className=' md:max-w-[500px] w-auto border px-4 py-7 shadow-lg' onSubmit={handleSellerBookForm}>
+                    <h1 className='text-3xl font-bold mb-4'>Add A Book</h1>
+                    <div className='sm:flex justify-between gap-5'>
+                        <input type="text" name="title" placeholder='Title' className='border-b border-b-gray-700 h-10 px-2  w-full' />
+                        <input type="number" name="price" placeholder='Price' className='border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5' />
                     </div>
-                    <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60  group text-center">
-                        {previewImage ? <div className="w-full h-[230px] flex justify-center items-center"> <img className="object-contain h-full overflow-hidden" src={URL.createObjectURL(previewImage)} alt="" />
-                        </div> :
-                            <div className='flex justify-center items-center h-full w-full '>
-                                <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-blue-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                    </svg>
-                                    <p className="pointer-none text-gray-500 ">select a file from your computer</p>
-                                </div>
-                                <input type="file" name='image' accept="image/*" className="hidden" multiple onChange={handleSellerBookImage} />
+                    <div className='sm:flex justify-between gap-5  mt-5'>
+                        <input type="text" name="category" placeholder='Category' className='border-b border-b-gray-700 h-10 px-2  w-full' />
+                        <input type="number" name="discountPrice" placeholder='Discount Price' className='border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5' />
+                    </div>
+                    <textarea name="detailes" placeholder='Detailes' className='border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2'></textarea>
+                    <div className="grid grid-cols-1 space-y-2  mt-5 ">
+                        <div className="flex items-center justify-center w-full h-full relative">
+                            <div onClick={removeSelectedImage} className="absolute top-2 cursor-pointer  left-3 bg-gray-300 w-10 h-10 rounded-full flex justify-center items-center">
+                                <HiOutlineX className="text-2xl font-bold" />
                             </div>
-                        }
-                    </label>
-                </div>
+                            <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60  group text-center">
+                                {previewImage ? <div className="w-full h-[230px] flex justify-center items-center"> <img className="object-contain h-full overflow-hidden" src={URL.createObjectURL(previewImage)} alt="" />
+                                </div> :
+                                    <div className='flex justify-center items-center h-full w-full '>
+                                        <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-blue-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                            </svg>
+                                            <p className="pointer-none text-gray-500 ">select a file from your computer</p>
+                                        </div>
+                                        <input type="file" name='image' accept="image/*" className="hidden" multiple onChange={handleSellerBookImage} />
+                                    </div>
+                                }
+                            </label>
+                        </div>
+                    </div>
+                    <p className="text-sm text-gray-300">
+                        <span>File type: doc,pdf,types of images</span>
+                    </p>
+                    <button disabled={!image} type='submit' className={`btn ${image ? 'bg-green-500' : 'bg-gray-50 text-gray-400'}  text-white py-2 px-5 mt-6`}>{loading ? 'loding...' : 'Add Book'}</button>
+                </form>
+
             </div>
-            <p className="text-sm text-gray-300">
-                <span>File type: doc,pdf,types of images</span>
-            </p>
-            <button type='submit' className='btn bg-green-500 text-white py-2 px-5 mt-6'>{loading ? 'loding...' : 'Add Book'}</button>
-        </form>
+            <div className="w-full">
+                {/* <SellerDashboardTable></SellerDashboardTable> */}
+            </div>
+        </>
     )
 }
 
