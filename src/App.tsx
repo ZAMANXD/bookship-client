@@ -8,7 +8,7 @@ import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
-    <div className="max-w-screen-xl mx-auto">
+    <div >
       <CartProvider>
         <RouterProvider router={router} />
         <Toaster />
