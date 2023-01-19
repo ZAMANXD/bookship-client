@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../context/AuthProvider";
+import icon from "./fav.png";
 
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logOut } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
   const navItem = <>
 
@@ -69,8 +70,11 @@ const NavBar = () => {
             title="Company"
             className="inline-flex items-center"
           >
-            <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-              BookShip
+            <span className="w-6 lg:w-10">
+              <img src={icon} alt="" />
+            </span>
+            <span className="ml-2 text-xl lg:text-4xl font-bold tracking-wide text-gray-800 uppercase">
+            Book<span className="text-[#4ADE80]">Ship</span>
             </span>
           </Link>
           <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -111,9 +115,11 @@ const NavBar = () => {
                         title="Company"
                         className="inline-flex items-center"
                       >
-
+                        <span className="w-6">
+                          <img src={icon} alt="" />
+                        </span>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          BookShip
+                          Book<span className="text-[#4ADE80]">Ship</span>
                         </span>
                       </Link>
                     </div>

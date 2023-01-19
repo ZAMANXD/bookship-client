@@ -1,3 +1,4 @@
+import icon from "./fav.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -154,11 +155,16 @@ const Footer = () => {
                     <div className="mt-16 sm:flex sm:items-center sm:justify-between">
                         <h1 className="flex justify-center text-[#46760A] sm:justify-start font-bold text-2xl">
 
-                            Book <span className="text-black">Ship</span>
+                        <span className="w-6 lg:w-10">
+                            <img src={icon} alt="" />
+                            </span>
+                            <span className="ml-2 text-xl lg:text-4xl font-bold tracking-wide text-gray-800 uppercase">
+                            Book<span className="text-[#4ADE80]">Ship</span>
+                        </span>
                         </h1>
 
                         <p className="mt-4 text-center text-sm text-gray-500 sm:mt-0 sm:text-right">
-                            Copyright &copy; 2022. All rights reserved.
+                            Copyright &copy; 2023. All rights reserved.
                         </p>
                     </div>
                 </div>
