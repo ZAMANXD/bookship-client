@@ -20,7 +20,7 @@ const SingleBook = ({ ...book }) => {
                         }
                     </div>
                 </div>
-                <p className='text-sm text-justify'>{detailes}</p>
+                <p className='text-sm text-justify'>{detailes.slice(0, 100)}...</p>
                 <div className=''>
                     <div className='flex justify-between items-end'>
                         <div>
