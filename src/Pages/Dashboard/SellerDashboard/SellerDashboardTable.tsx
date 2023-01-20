@@ -21,31 +21,31 @@ const SellerDashboardTable = ({ books }: any) => {
                         </div>
                         <div>
                             {books?.map((book: any) => {
-                                const { title, price, discountPrice, detailes, bookImage, } = book
+                                const { bookTitle, originalPrice, discountedPrice, description, bookCover, } = book
                                 return (
                                     <div className="grid lg:grid-cols-[15%_20%_15%_15%_25%_10%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900">
                                         <div className="px-3 py-2">
-                                            <img src={bookImage} alt="" className="w-16" />
+                                            <img src={bookCover} alt="" className="w-16" />
                                         </div>
                                         <div className="px-3 py-2">
                                             <p className='lg:hidden font-semibold text-base'>Book Title: </p>
-                                            <p>{title}</p>
+                                            <p>{bookTitle}</p>
                                         </div>
                                         <div className="px-3 py-2">
                                             <p className='lg:hidden font-semibold text-base'>Price: </p>
-                                            <p>{price}</p>
+                                            <p>{originalPrice}</p>
                                         </div>
                                         <div className="px-3 py-2">
                                             <p className='lg:hidden font-semibold text-base'>Discount Price: </p>
-                                            <p>{discountPrice}</p>
+                                            <p>{discountedPrice}</p>
                                         </div>
                                         <div className="px-3 py-2">
                                             <p className='lg:hidden font-semibold text-base'>Details: </p>
-                                            <p>{detailes}</p>
+                                            <p>{description}</p>
                                         </div>
                                         <div className="px-3 py-2 ">
                                             <p className='lg:hidden font-semibold text-base'>Action: </p>
-                                            <button className="btn bg-green-600">Delet</button>
+                                            <button className="btn bg-green-600 px-5 py-2 text-white">Delete</button>
                                         </div>
                                     </div>
                                 )

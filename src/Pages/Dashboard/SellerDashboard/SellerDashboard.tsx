@@ -16,7 +16,7 @@ const SellerDashboard = () => {
     });
     console.log(books)
     return (
-        <div>
+        <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
             <div className="md:flex flex-row items-baseline gap-5">
                 <div className="">
                     <SellerDashboardForm  refetch ={refetch}/>
