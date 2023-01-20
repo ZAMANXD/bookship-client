@@ -33,17 +33,21 @@ const SellerDashboardForm = ({ refetch }: any) => {
         const price = e.target.price.value
         const discountPrice = e.target.discountPrice.value
         const detailes = e.target.detailes.value
+        const publication = e.target.publication.value
         const bookDetailes = {
-            title,
+            bookTitle: title,
+            bookCover: image,
+            bookRating: 4.5,
+            originalPrice: price,
+            discountedPrice: discountPrice,
+            description: detailes,
+            authorName: user.displayName,
+            authorEmail: user.email,
+            authorImg: "https://userimg.png" || user.photoURL,
+            authorRating: 4,
             category,
-            price,
-            discountPrice,
-            detailes,
-            bookImage: image,
-            sellerName: user.displayName,
-            sellerEmail: user.email,
-            sellerPhoto: user.photoURL
-        }
+            publication
+        } 
 
         // bookDetailes upload mongodb server
 
@@ -84,6 +88,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
                         <input type="text" name="category" placeholder='Category' className='border-b border-b-gray-700 h-10 px-2  w-full' />
                         <input type="number" name="discountPrice" placeholder='Discount Price' className='border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5' />
                     </div>
+                    <input type="text" name="publication" placeholder='Publication' className='border-b border-b-gray-700 h-10 px-2  w-full mt-5' />
                     <textarea name="detailes" placeholder='Detailes' className='border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2'></textarea>
                     <div className="grid grid-cols-1 space-y-2  mt-5 ">
                         <div className="flex items-center justify-center w-full h-full relative">
