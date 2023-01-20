@@ -10,8 +10,11 @@ const Book = ({ ...book }) => {
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     const { increaseCartQuantity } = useCart()
     return (
-        <div className='bg-white rounded-lg hover:shadow-2xl hover:shadow-gray-500 shadow-lg shadow-gray-300  transition duration-150 ease-in-out p-5 mx-2'>
-            <img className='h-96 w-full mx-auto rounded-lg hover:shadow-lg hover:shadow-gray-500' src={bookCover} alt="" />
+        <div className='bg-white rounded-lg hover:shadow-2xl hover:shadow-gray-500 shadow-lg shadow-gray-300 ease-in-out duration-200 p-5 mx-2'>
+            <div className='relative'>
+                <img className={`cont h-80 w-auto mx-auto rounded-lg hover:shadow-lg hover:shadow-gray-500 ease-in-out duration-200`} src={bookCover} alt="" />
+                <div className='hoverMe h-5 hover:h-14 w-7 bg-yellow-500 absolute top-0 right-24 ease-in-out duration-300'></div>
+            </div>
             <div className='mt-10 h-52 relative'>
                 <div className='flex items-center gap-x-2 my-2'>
                     <img className='w-8 h-8 rounded-full border' src={authorImg} alt="" />
@@ -25,7 +28,7 @@ const Book = ({ ...book }) => {
                         }
                     </div>
                 </div>
-                <p className='text-sm'>{description}...</p>
+                <p className='text-sm'>{description}</p>
                 <div className='absolute bottom-0 my-3 w-full'>
                     <div className='flex justify-between'>
                         <div>
