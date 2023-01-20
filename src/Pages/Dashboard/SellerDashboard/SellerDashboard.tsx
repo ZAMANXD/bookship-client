@@ -1,12 +1,25 @@
 import SellerDashboardForm from "./SellerDashboardForm"
 import SellerDashboardTable from "./SellerDashboardTable"
+import {
+    useQuery,
+} from "@tanstack/react-query";
 
 const SellerDashboard = () => {
+    const { isLoading, error, data: books, refetch } = useQuery({
+        queryKey: ["book"],
+        queryFn: async () => {
+            const res = await fetch(`https://bookship-server-zamanxd.vercel.app/books`)
+            const data = await res.json()
+            return data
+        },
+
+    });
+    console.log(books)
     return (
         <div>
             <div className="md:flex flex-row items-baseline gap-5">
                 <div className="">
-                    <SellerDashboardForm />
+                    <SellerDashboardForm  refetch ={refetch}/>
                 </div>
                 <div className="flex-1 grid grid-cols-3 flex-wrap">
                     <div className="shadow-lg px-5 py-3 text-center">
@@ -23,7 +36,7 @@ const SellerDashboard = () => {
                     </div>
                 </div>
             </div>
-            <SellerDashboardTable />
+            <SellerDashboardTable books={books} />
         </div>
 
     )
