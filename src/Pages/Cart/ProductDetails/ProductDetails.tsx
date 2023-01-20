@@ -29,9 +29,9 @@ const ProductDetails = ({ ...item }) => {
             <div className='col-span-3 grid grid-cols-3 space-x-2 place-items-center'>
                 <h4 className='md:text-lg text-center font-semibold text-gray-700'>{book?.bookTitle}</h4>
                 <div className='flex items-center'>
-                    <button className='border rounded-l-full hover:border-green-600 hover:text-green-600 md:text-2xl font-bold' onClick={() => increaseCartQuantity(id)} ><HiPlusSm /></button>
+                    <button className='border rounded-l-full hover:border-red-600  hover:text-red-600 md:text-2xl font-bold' onClick={() => decreaseCartQuantity(id)}><HiMinusSm /></button>
                     <input className='md:h-7 h-5 w-10 border hover:border-gray-500 md:text-lg font-semibold text-center' type="text" value={quantityOfBook} defaultValue={0} readOnly />
-                    <button className='border rounded-r-full hover:border-red-600  hover:text-red-600 md:text-2xl font-bold' onClick={() => decreaseCartQuantity(id)}><HiMinusSm /></button>
+                    <button className='border rounded-r-full  hover:border-green-600 hover:text-green-600 md:text-2xl font-bold' onClick={() => increaseCartQuantity(id)} ><HiPlusSm /></button>
                 </div>
                 <h4 className='text-gray-700 md:font-semibold'>${book?.discountedPrice * quantityOfBook}</h4>
 

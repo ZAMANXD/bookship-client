@@ -64,10 +64,15 @@ const NavBar = () => {
       </li>
       <li>
         <Link to="/addtocart">
-          <div className="flex justify-start md:justify-center items-center relative ">
+          <div className="flex justify-start md:justify-center text-lg items-center relative ">
           <FaShoppingCart />
            
-             <span className="bg-yellow-300 rounded-full font-bold p-2 text-sm -mt-6 ">{cartQuantity}</span> 
+             { cartQuantity === 0 ?
+             <></>
+             :
+
+<span className="bg-yellow-300 grow-0 rounded-full text-center font-semibold px-2 py-px text-xs -mt-6 ">{cartQuantity}</span>
+             } 
           
           </div>
         </Link>
@@ -111,7 +116,7 @@ const NavBar = () => {
               Book<span className="text-[#4ADE80]">Ship</span>
             </span>
           </Link>
-          <ul className="flex items-center hidden space-x-8 lg:flex">
+          <ul className="items-center hidden space-x-8 lg:flex">
             {navItem}
           </ul>
           <div className="lg:hidden">
