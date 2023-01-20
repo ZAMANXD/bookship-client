@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../context/AuthProvider";
 import icon from "./fav.png";
+import { useCart } from "../../../context/CartContext";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  const {cartQuantity} = useCart()
 
   const navItem = (
     <>
@@ -64,7 +66,9 @@ const NavBar = () => {
         <Link to="/addtocart">
           <div className="flex justify-start md:justify-center items-center relative ">
           <FaShoppingCart />
-            <span className="bg-yellow-300 rounded-full font-bold p-2 text-sm -mt-6">4</span>
+           
+             <span className="bg-yellow-300 rounded-full font-bold p-2 text-sm -mt-6 ">{cartQuantity}</span> 
+          
           </div>
         </Link>
       </li>
