@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AiOutlineStar } from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
+import "./Book.css"
 
 
 
@@ -10,10 +11,10 @@ const Book = ({ ...book }) => {
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     const { increaseCartQuantity } = useCart()
     return (
-        <div className='bg-white rounded-lg hover:shadow-2xl hover:shadow-gray-500 shadow-lg shadow-gray-300 ease-in-out duration-200 p-5 mx-2'>
+        <div className='bookCont bg-white rounded-lg hover:shadow-2xl hover:shadow-gray-500 shadow-lg shadow-gray-300 ease-in-out duration-200 p-5 mx-2'>
             <div className='relative'>
-                <img className={`cont h-80 w-auto mx-auto rounded-lg hover:shadow-lg hover:shadow-gray-500 ease-in-out duration-200`} src={bookCover} alt="" />
-                <div className='hoverMe h-5 hover:h-14 w-7 bg-yellow-500 absolute top-0 right-24 ease-in-out duration-300'></div>
+                <img className={`h-80 w-auto mx-auto rounded-lg hover:shadow-lg hover:shadow-gray-500 ease-in-out duration-200`} src={bookCover} alt="" />
+                <div className='tagCont rounded-sm h-5 hover:h-14 w-7 bg-red-500 shadow-sm absolute top-0 right-24 ease-in-out duration-300'></div>
             </div>
             <div className='mt-10 h-52 relative'>
                 <div className='flex items-center gap-x-2 my-2'>
