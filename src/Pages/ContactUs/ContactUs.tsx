@@ -5,7 +5,7 @@ const ContactUs = () => {
         <div>
             <div className='mt-10'>
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 ">Contact Us</h2>
-      <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
+      <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl sm:max-w-sm md:max-w-lg lg:max-w-screen-lg mx-8 lg:mx-auto">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
             </div>
            <section className="bg-gray-100 m-10 rounded-md shadow-lg border sm:max-w-sm md:max-w-lg lg:max-w-screen-lg mx-8 lg:mx-auto">
   <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
