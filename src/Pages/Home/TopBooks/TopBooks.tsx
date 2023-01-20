@@ -24,7 +24,7 @@ const TopBooks = () => {
     if (loading) {
         return <Spinner />
     }
-    
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
