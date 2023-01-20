@@ -22,12 +22,14 @@ const SingleBook = ({ ...book }) => {
                 </div>
                 <p className='text-sm text-justify'>{detailes.slice(0, 100)}...</p>
                 <div className=''>
-                    <div className='flex justify-between items-end'>
+                    <div className='flex justify-between items-end '>
                         <div>
                             <p className='text-sm font-semibold text-gray-500 '>$ <span className='line-through'>{price}</span></p>
                             <p className='text-2xl font-bold text-[#342D65]'>$ {discountPrice}</p>
                         </div>
-                        <Link to={'/addtocart'} className='px-2 h-8 bg-[#3DB188] rounded-md text-white text-sm'>Buy Now</Link>
+                        <div>
+                            <Link to={'/addtocart'} className='px-2 py-1 bg-[#3DB188] rounded-md text-white text-sm'>Add to Cart</Link>
+                        </div>
                     </div>
                 </div>
 

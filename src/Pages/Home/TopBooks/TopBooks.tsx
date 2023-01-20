@@ -8,7 +8,7 @@ import Book from './Book';
 const TopBooks = () => {
     const [bookData,setBookData]=useState<any[]>([])
     useEffect(()=>{
-        fetch("books.json")
+        fetch("https://bookship-server-zamanxd.vercel.app/books")
         .then((res) => res.json())
       .then((data) => setBookData(data));
     },[])
