@@ -1,16 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
+import Spinner from '../../Shared/Spinner/Spinner';
 
 const CategoryBook = ({ ...category }) => {
+    const [loading, setLoading] = useState(false)
+
     const [books, setBooks] = useState<any[]>([])
     useEffect(() => {
+        setLoading(true)
         fetch('https://bookship-server-zamanxd.vercel.app/books')
             .then(res => res.json())
             .then(data => {
                 setBooks(data)
+                setLoading(false)
             })
     }, [])
+
+    if (loading) {
+        return <Spinner />
+    }
 
     return (
         <div className='my-5 border p-3'>
