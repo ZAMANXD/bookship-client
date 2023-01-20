@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             {
                 path: '/book/:id',
                 loader: async ({ params }) => {
-                    return fetch(`/book/${params.id}`)
+                    return fetch(`https://bookship-server-zamanxd.vercel.app/book/${params.id}`)
                 },
                 element: <BookDetails />
             },

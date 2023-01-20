@@ -6,7 +6,7 @@ const AuthorBook = ({ ...author }) => {
 
     const [books, setBooks] = useState<any[]>([])
     useEffect(() => {
-        fetch('books.json')
+        fetch('https://bookship-server-zamanxd.vercel.app/books')
             .then(res => res.json())
             .then(data => {
                 setBooks(data)
