@@ -1,14 +1,17 @@
 import React from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 const BookDetails = () => {
+    const { increaseCartQuantity } = useCart()
+
     let book: any = useLoaderData()
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
 
     console.log(book.title);
     return (
-        <div className='p-10 bg-gray-100'>
+        <div className='max-w-7xl mx-auto p-10 bg-gray-100'>
             <h2 className='text-5xl font-semibold text-[#34315D]'>Book Details</h2>
             <div className='grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 py-5'>
                 <div>
@@ -36,7 +39,7 @@ const BookDetails = () => {
                             <p className='text-4xl font-bold text-[#342D65]'>$ {discountedPrice}</p>
                         </div>
 
-                        <button className='px-3 h-10 bg-[#3DB188] rounded-md text-white'>Add to Cart</button>
+                        <button onClick={() => increaseCartQuantity(_id)} className='px-3 h-10 bg-[#3DB188] rounded-md text-white'>Add to Cart</button>
                     </div>
                     <div className='mt-40'>
                         <h5 className='tex-2xl font-semibold my-3'>Please, Share your opinion for this Book.</h5>

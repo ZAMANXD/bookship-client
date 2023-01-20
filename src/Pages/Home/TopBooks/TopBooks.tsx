@@ -2,29 +2,41 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Spinner from '../../../Shared/Spinner/Spinner';
 import Book from './Book';
 
 
 const TopBooks = () => {
-    const [bookData,setBookData]=useState<any[]>([])
-    useEffect(()=>{
+    const [loading, setLoading] = useState(false)
+
+    const [bookData, setBookData] = useState<any[]>([])
+
+    useEffect(() => {
+        setLoading(true)
         fetch("https://bookship-server-zamanxd.vercel.app/books")
-        .then((res) => res.json())
-      .then((data) => setBookData(data));
-    },[])
+            .then((res) => res.json())
+            .then((data) => {
+                setBookData(data)
+                setLoading(false)
+            });
+    }, [])
+
+    if (loading) {
+        return <Spinner />
+    }
     
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
-            items: 5
+            items: 4
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 3
         },
         tablet: {
-            breakpoint: { max: 1024, min: 464 },
+            breakpoint: { max: 1024, min: 768 },
             items: 2
         },
         mobile: {
@@ -32,11 +44,11 @@ const TopBooks = () => {
             items: 1
         }
     };
-   
+
     return (
         <div className='max-w-7xl mx-auto px-5 py-5 mt-20'>
             <h2 className="mb-12 text-2xl md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">Our Top Books</h2>
-            
+
             <div>
                 <Carousel responsive={responsive} className={'py-10'}>
                     {

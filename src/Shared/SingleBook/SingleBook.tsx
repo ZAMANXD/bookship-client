@@ -2,8 +2,11 @@ import React from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs'
+import { useCart } from '../../context/CartContext';
 
 const SingleBook = ({ ...book }) => {
+    const { increaseCartQuantity } = useCart()
+
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     return (
         <div className='bg-white rounded-md hover:shadow-2xl hover:shadow-gray-300 shadow-sm shadow-gray-300  transition duration-150 ease-in-out p-2'>
@@ -30,7 +33,7 @@ const SingleBook = ({ ...book }) => {
                             <p className='text-2xl font-bold text-[#342D65]'>$ {discountedPrice}</p>
                         </div>
                         <div>
-                            <Link to={'/addtocart'} className='px-2 py-1 bg-[#3DB188] rounded-md text-white text-sm'>Add to Cart</Link>
+                            <button onClick={() => increaseCartQuantity(_id)} className='px-2 py-1 bg-[#3DB188] rounded-md text-white text-sm'>Add to Cart</button>
                         </div>
                     </div>
                 </div>
