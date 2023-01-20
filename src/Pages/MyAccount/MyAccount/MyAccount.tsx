@@ -1,11 +1,18 @@
 import React from 'react';
+import { HiPlusSm } from 'react-icons/hi';
 
 const MyAccount = () => {
     return (
         <div className='md:w-1/2 mx-auto bg-gray-50 md:p-20 p-10 md:my-8 shadow-md hover:shadow-2xl'>
             <h1 className='text-xl font-semibold mb-4'>Edit Profile</h1>
             <div className='flex flex-col justify-center space-y-6'>
-                <img className='h-20 mx-auto rounded-full hover:shadow-lg' src="https://images.ctfassets.net/lh3zuq09vnm2/yBDals8aU8RWtb0xLnPkI/19b391bda8f43e16e64d40b55561e5cd/How_tracking_user_behavior_on_your_website_can_improve_customer_experience.png" alt="" />
+                <div >
+                <label htmlFor="upload-button" className='relative ' >
+                <img className='h-20 mx-auto border-[#3DB188] border-4 rounded-full hover:shadow-lg' src="https://images.ctfassets.net/lh3zuq09vnm2/yBDals8aU8RWtb0xLnPkI/19b391bda8f43e16e64d40b55561e5cd/How_tracking_user_behavior_on_your_website_can_improve_customer_experience.png" alt="" />
+                <div className='absolute bottom-0 ml-10 left-60 text-3xl text-white font-bold bg-[#3DB188] rounded-full hover:shadow-lg'><HiPlusSm /></div>
+                </label>
+                </div>
+                <input type="file" name="" className='hidden' id="upload-button" />
                 <div className='flex lg:flex-row flex-col lg:space-y-0 space-y-6 justify-between'>
                     <div className='flex flex-col'>
                         <label className='font-semibold pb-4'>First Name</label>
