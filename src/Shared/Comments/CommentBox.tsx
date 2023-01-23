@@ -16,9 +16,10 @@ const CommentBox = (props: any) => {
             userImg: user?.photoURL || "https://www.pngmart.com/files/21/Account-User-PNG-Clipart.png",
             comment,
             rating: 4,
+            commentDate: new Date(1, 2, 3)
         }
-
-        fetch(`http://localhost:5000/postcomment`, {
+        console.log(commentData);
+        fetch(`http://localhost:5000/post-commen`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

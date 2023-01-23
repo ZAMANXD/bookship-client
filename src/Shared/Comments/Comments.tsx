@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Comment from './Comment';
 
 const Comments = () => {
+    const [comments, setComments] = useState<[] | any>([])
+    useEffect(() => {
+        fetch(`http://localhost:5000/comments`)
+            .then(res => res.json())
+            .then(data => {
+                setComments(data)
+            })
+    }, [])
     return (
         <div>
-            <h2 className='text-2xl font-semibold my-5'>Comments: {3}</h2>
+            <h2 className='text-2xl font-semibold my-5'>Comments: {comments.length}</h2>
             {
-                [...Array(5)].map((comment, i) => <Comment key={i} />)
+                comments.map((comment: any, i: number) => <Comment key={i} {...comment} />)
             }
         </div>
     );
