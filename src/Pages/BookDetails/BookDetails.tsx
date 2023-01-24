@@ -47,7 +47,7 @@ const BookDetails = () => {
                         <button onClick={() => increaseCartQuantity(_id)} className='px-3 h-10 bg-[#3DB188] rounded-md text-white'>Add to Cart</button>
                     </div>
                     <CommentBox {...book} />
-                    <Comments />
+                    <Comments {...book}/>
                 </div>
             </div>
         </div>

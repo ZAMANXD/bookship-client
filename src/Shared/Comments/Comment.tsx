@@ -1,9 +1,25 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { AiOutlineStar } from 'react-icons/ai';
 
 const Comment = (commentData: any) => {
-    console.log(commentData);
-    const { comment, userName, userImg, commentDate, rating } = commentData;
+    const { _id, comment, userName, userImg, commentDate, rating } = commentData;
+    console.log(_id);
+
+    const handleDelete = (id: any) => {
+        fetch(`https://bookship-server-zamanxd.vercel.app/delete/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Review Deleted.')
+            })
+            .catch((err) => {
+                console.log(err.code || err.message);
+            })
+    }
+
     return (
         <div className='border rounded-lg p-5 my-2'>
             <div className='flex justify-between flex-wrap my-2'>
@@ -20,9 +36,9 @@ const Comment = (commentData: any) => {
                     }
                 </div>
                 <div className='flex gap-x-2 items-center'>
-                    <button className='font-semibold'>Edit</button>
+                    <button className='font-semibold' onClick={handleDelete}>Edit</button>
                     <span>|</span>
-                    <button className='font-semibold'>Delete</button>
+                    <button className='font-semibold' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
             </div>
             <p className='lg:ml-11 text-justify'>{comment}</p>
