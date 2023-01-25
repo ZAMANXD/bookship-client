@@ -13,15 +13,11 @@ const Comments = (book: any) => {
             })
     }, [book?._id])
 
-    const handleEditComment = (id: any) => {
-        console.log('clicked', id);
-    }
-
     return (
         <div>
             <h2 className='text-2xl font-semibold my-5'>Comments: {comments.length}</h2>
             {!comments.length ? <p className='text-2xl'>No reviews</p> :
-                comments.map((comment: any, i: number) => <Comment key={i} {...comment} handleEditComment={handleEditComment} />)
+                comments.map((comment: any, i: number) => <Comment key={i} {...comment} />)
             }
             <CommentEditModal {...book} />
         </div>
