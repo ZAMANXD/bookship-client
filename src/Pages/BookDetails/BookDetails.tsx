@@ -9,9 +9,8 @@ const BookDetails = () => {
     const { increaseCartQuantity } = useCart()
 
     let book: any = useLoaderData()
-    const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
+    const { _id, bookTitle, authorName, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
 
-    console.log(book.title);
     return (
         <div className='max-w-7xl mx-auto p-5 lg:p-10 bg-gray-100'>
             <h2 className='text-3xl lg:text-5xl font-semibold text-[#34315D]'>Book Details</h2>
@@ -47,7 +46,7 @@ const BookDetails = () => {
                         <button onClick={() => increaseCartQuantity(_id)} className='px-3 h-10 bg-[#3DB188] rounded-md text-white'>Add to Cart</button>
                     </div>
                     <CommentBox {...book} />
-                    <Comments {...book}/>
+                    <Comments {...book} />
                 </div>
             </div>
         </div>

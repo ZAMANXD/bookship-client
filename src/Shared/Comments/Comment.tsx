@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-hot-toast';
 import { AiOutlineStar } from 'react-icons/ai';
 
-const Comment = (commentData: any) => {
+const Comment = (commentData: any, handleEditComment: any) => {
     const { _id, comment, userName, userImg, commentDate, rating } = commentData;
     console.log(_id);
 
@@ -36,7 +36,10 @@ const Comment = (commentData: any) => {
                     }
                 </div>
                 <div className='flex gap-x-2 items-center'>
-                    <button className='font-semibold' onClick={handleDelete}>Edit</button>
+                    {/* <button className='font-semibold' ></button> */}
+                    <button onClick={() => handleEditComment(_id)}>
+                        <label htmlFor="comment-modal" className="font-semibold cursor-pointer">Edit</label>
+                    </button>
                     <span>|</span>
                     <button className='font-semibold' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
