@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 const CommentEditModal = (props: any) => {
@@ -16,7 +17,7 @@ const CommentEditModal = (props: any) => {
         }
 
         if (comment) {
-            fetch(`http://localhost:5000/reviews/edit/${commentId}`, {
+            fetch(`https://bookship-server-zamanxd.vercel.app/reviews/edit/${commentId}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -28,7 +29,13 @@ const CommentEditModal = (props: any) => {
                     if (data.acknowledged && data.matchedCount > 0) {
                         form.reset()
                         refetch()
+                        toast.success('Successfully update your Review')
                     }
+                })
+                .then((err) => {
+                    // toast.error('Sorry, an error occur.')
+                    form.reset()
+                    refetch()
                 })
         }
     }
