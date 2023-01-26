@@ -1,54 +1,140 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import { Resolver, SubmitHandler, useForm } from "react-hook-form";
+
+type FormValues = {
+	name: string;
+	email: string;
+	password: string;
+	role: string;
+};
 
 const SignUp = () => {
 	const navigate = useNavigate();
 	const { user, signUp, nameUpdate, googlLogin } = useContext(AuthContext)
-	const SignupHandle = (e: any) => {
-		e.preventDefault()
-		const from = e.target
-		const userName = from.userName.value
-		const email = from.email.value
-		const password = from.password.value
-		console.log(userName, email, password);
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm<FormValues>();
+
+	const SignupHandle: SubmitHandler<FormValues> = (data) => {
+		const name = data.name;
+		const email = data.email;
+		const password = data.password;
+		const role = data.role;
+		// console.log(name, email, password, role);
 		signUp(email, password)
 			.then((data: any) => {
-				if (data?.user) {
-					nameUpdate(userName)
+				if (data?.user.uid) {
+					nameUpdate(name)
 						.then(() => { })
-					console.log(data.user);
-					navigate("/");
+					saveUser(email, name, role)
 				}
-			}).catch((e: any) => console.log(e.message))
-		from.reset()
+			}).catch((e: any) => toast.error(e.message))
+		reset()
 	}
 
 	// Signup with google
 	const GoogleHandle = () => {
 		googlLogin()
 			.then((data: any) => {
-				console.log(data.user);
+				if (data.user.uid) {
+					saveUser(data.user.email, data.user.displayName);
+				}
+			}).catch((e: any) => toast.error(e.message))
+	}
+
+	// Save user data in database
+	const saveUser = (email: string, name: string, role: string = 'buyer', isVerified: Boolean = false) => {
+		const user = { email, name, role, isVerified };
+		// console.log(user);
+		fetch('http://localhost:5000/saveuser', {
+			method: "POST",
+			headers: {
+				"content-type": "application/json"
+			},
+			body: JSON.stringify(user)
+		})
+			.then(res => res.json())
+			.then(data => {
+				// console.log(data);
+				toast.success('Thank you for Login')
 				navigate("/");
 			})
-	}
+	};
 	return (
 		<div className="w-full max-w-md mx-auto my-20 p-8 shadow-lg shadow-gray-400 space-y-3 rounded-xl bg-white text-gray-600">
 			<h1 className="text-2xl font-bold text-center">Sign Up</h1>
-			<form onSubmit={SignupHandle} className="space-y-6 ng-untouched ng-pristine ng-valid">
+			<form onSubmit={handleSubmit(SignupHandle)} className="space-y-6 ng-untouched ng-pristine ng-valid">
 				<div className="space-y-1 text-sm">
 					<label htmlFor="userName" className="block text-gray-500">Usre Name</label>
-					<input required type="name" name="userName" id="userName" placeholder="Usre Name" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					<input
+						{...register("name", { required: "Name is required" })}
+						type="name"
+						id="name"
+						placeholder="Name" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					{errors.name && (
+						<p className="text-sm text-red-500">{errors.name?.message}</p>
+					)}
 				</div>
 				<div className="space-y-1 text-sm">
 					<label htmlFor="email" className="block text-gray-500">Usre Email</label>
-					<input required type="email" name="email" id="email" placeholder="Usre Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					<input
+						{...register("email", { required: "Email is required" })}
+						type="email"
+						id="email"
+						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					{errors.email && (
+						<p className="text-sm text-red-500">{errors.email?.message}</p>
+					)}
 				</div>
 				<div className="space-y-1 text-sm">
-					<label htmlFor="password" className="block text-gray-500">Password</label>
-					<input required type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					<label htmlFor="password" className="block text-gray-500">Create Password</label>
+					<input
+						{...register("password", {
+							required: "Password is required",
+							minLength: {
+								value: 6,
+								message: "Password must be 6 characters or longer",
+							},
+							pattern: {
+								value: /(?=.*[a-z])(?=.*[0-9])/,
+								message:
+									"Password must use one small letter and one number",
+							},
+						})}
+						type="password"
+						id="password"
+						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					{errors.password && (
+						<p className="text-sm text-red-500">{errors.password?.message}</p>
+					)}
 				</div>
-				<button className="block w-full p-3 text-center rounded-lg bg-[#3DB188] text-white">Log in</button>
+
+				<div>
+					<label htmlFor="role" className="block text-gray-500">
+						Select user role
+					</label>
+					<select
+						id="role"
+						{...register("role", { required: "Selact user role must" })}
+						className="w-full px-3 py-[11px] rounded-md border-gray-700 bg-gray-300 text-gray-500"
+						defaultValue="Select user role"
+					>
+						<option>buyer</option>
+						<option>seller</option>
+					</select>
+					{errors.role && (
+						<p className="text-sm text-red-500">{errors.role?.message}</p>
+					)}
+				</div>
+
+				<button type='submit' className="w-full p-3 text-center rounded-lg bg-[#3DB188] text-white">Sign in</button>
 			</form>
 			<div className="flex items-center pt-4 space-x-1">
 				<div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
