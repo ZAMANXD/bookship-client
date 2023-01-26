@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast';
 import { AiOutlineStar } from 'react-icons/ai';
 
 const Comment = (props: any) => {
-    const { _id, comment, userName, userImg, commentDate, rating, setCommentId } = props;
+    const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch } = props;
 
     const handleDelete = (id: any) => {
         fetch(`https://bookship-server-zamanxd.vercel.app/delete/${id}`, {
@@ -13,9 +13,11 @@ const Comment = (props: any) => {
             .then(data => {
                 console.log(data);
                 toast.success('Review Deleted.')
+                refetch()
             })
             .catch((err) => {
                 console.log(err.code || err.message);
+                refetch()
             })
     }
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 const CommentEditModal = (props: any) => {
-    const { bookTitle, commentId } = props;
+    const { bookTitle, commentId, refetch } = props;
 
     const handleEdit = (event: any) => {
         event.preventDefault()
@@ -25,8 +25,10 @@ const CommentEditModal = (props: any) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    form.reset()
+                    if (data.acknowledged && data.matchedCount > 0) {
+                        form.reset()
+                        refetch()
+                    }
                 })
         }
     }
