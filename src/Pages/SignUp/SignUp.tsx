@@ -62,7 +62,7 @@ const SignUp = () => {
 		})
 			.then(res => res.json())
 			.then(data => {
-				// console.log(data);
+				console.log(data);
 				toast.success('Thank you for Login')
 				navigate("/");
 			})

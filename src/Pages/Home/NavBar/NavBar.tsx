@@ -5,12 +5,25 @@ import { AuthContext } from "../../../context/AuthProvider";
 import icon from "./fav.png";
 import { useCart } from "../../../context/CartContext";
 import { toast } from "react-hot-toast";
+import SearchBar from "../../../SearchBar/SearchBar";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = useContext(AuthContext);
-  const { cartQuantity } = useCart()
+  const { cartQuantity } = useCart();
+  const [searchInput, SetSearhInput] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
+
+  const handleGetSeachInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    SetSearhInput(e.target.value.toLowerCase());
+  };
+
+  const handleInputSubmit = () => {
+    setInputValue(searchInput);
+    setIsOpen(true);
+  };
   const navItem = (
     <>
       <li>
@@ -19,8 +32,12 @@ const NavBar = () => {
             type="text"
             className="px-6 py-2 rounded-l-full"
             placeholder="Search a book..."
+            onChange={handleGetSeachInput}
           />
-          <button className="flex items-center justify-center px-4 border-l">
+          <button
+            className="flex items-center justify-center px-4 border-l"
+            onClick={handleInputSubmit}
+          >
             <svg
               className="h-4 w-4 text-grey-dark"
               fill="currentColor"
@@ -65,16 +82,16 @@ const NavBar = () => {
       </li>
       <li>
         <Link to="/addtocart">
-          <div className="flex justify-start md:justify-center text-2xl items-center relative ">
+          <div className="flex justify-start md:justify-center text-lg items-center relative ">
             <FaShoppingCart />
 
-            {cartQuantity === 0 ?
+            {cartQuantity === 0 ? (
               <></>
-              :
-
-              <span className="bg-yellow-300 grow-0 rounded-full text-center font-semibold px-2 py-px text-xs -mt-6 ">{cartQuantity}</span>
-            }
-
+            ) : (
+              <span className="bg-yellow-300 grow-0 rounded-full text-center font-semibold px-2 py-px text-xs -mt-6 ">
+                {cartQuantity}
+              </span>
+            )}
           </div>
         </Link>
       </li>
@@ -107,6 +124,11 @@ const NavBar = () => {
 
         </Link>
       )}
+      <SearchBar
+        inputValue={inputValue}
+        modalIsOpen={modalIsOpen}
+        setIsOpen={setIsOpen}
+      ></SearchBar>
     </>
   );
 
@@ -127,9 +149,7 @@ const NavBar = () => {
               Book<span className="text-[#4ADE80]">Ship</span>
             </span>
           </Link>
-          <ul className="items-center hidden space-x-8 lg:flex">
-            {navItem}
-          </ul>
+          <ul className="items-center hidden space-x-8 lg:flex">{navItem}</ul>
           <div className="lg:hidden">
             <button
               aria-label="Open Menu"
