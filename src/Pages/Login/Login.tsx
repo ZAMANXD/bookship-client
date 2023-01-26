@@ -48,7 +48,7 @@ const Login = () => {
 	const saveUser = (email: string, name: string, role: string = 'buyer', isVerified: Boolean = false) => {
 		const user = { email, name, role, isVerified };
 		console.log(user);
-		fetch('http://localhost:5000/saveuser', {
+		fetch('https://bookship-server-zamanxd.vercel.app/saveuser', {
 			method: "POST",
 			headers: {
 				"content-type": "application/json"
