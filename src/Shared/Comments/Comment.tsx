@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast';
 import { AiOutlineStar } from 'react-icons/ai';
 
 const Comment = (props: any) => {
-    const { _id, comment, userName, userImg, commentDate, rating, counter, setCounter } = props;
+    const { _id, comment, userName, userImg, commentDate, rating, setCommentId } = props;
 
     const handleDelete = (id: any) => {
         fetch(`https://bookship-server-zamanxd.vercel.app/delete/${id}`, {
@@ -30,12 +30,12 @@ const Comment = (props: any) => {
                     </div>
                 </div>
                 <div className='flex gap-x-2 items-center'>
-                    <span className='font-semibold hidden lg:block'>{counter}Ratings:</span> {
+                    <span className='font-semibold hidden lg:block'>Ratings:</span> {
                         [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
                     }
                 </div>
                 <div className='flex gap-x-2 items-center'>
-                    <button onClick={() => setCounter(counter + 1)}>
+                    <button onClick={() => setCommentId(_id)}>
                         <label htmlFor="comment-modal" className="font-semibold cursor-pointer">Edit</label>
                     </button>
                     <span>|</span>
