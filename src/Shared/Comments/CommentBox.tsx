@@ -4,6 +4,7 @@ import { AuthContext } from '../../../src/context/AuthProvider'
 import format from 'date-fns/format'
 
 const CommentBox = (props: any) => {
+    const { refetch } = props;
     const { user } = React.useContext(AuthContext)
     const [processing, setProcessing] = useState(false)
 
@@ -22,9 +23,9 @@ const CommentBox = (props: any) => {
             commentDate: format(new Date(), 'PP')
         }
 
-        setProcessing(true)
 
         if (comment) {
+            setProcessing(true)
             fetch(`https://bookship-server-zamanxd.vercel.app/addreview`, {
                 method: 'POST',
                 headers: {
@@ -34,14 +35,20 @@ const CommentBox = (props: any) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    form.reset()
                     console.log(data);
-                    toast.success('Your Review Uploaded.')
-                    setProcessing(false)
+                    if (data.acknowledged && data.deletedCount > 0) {
+                        setProcessing(false)
+                        refetch()
+                        form.reset()
+                        toast.success('Your Review Uploaded.')
+                    }
+
                 })
                 .catch((err) => {
-                    toast.error('Sorry, You have a problem.', err.code || err.message)
                     setProcessing(false)
+                    refetch()
+                    form.reset()
+                    toast.error('Sorry, You have a problem.')
                 })
         }
     }
