@@ -4,7 +4,6 @@ import CommentEditModal from './CommentEditModal';
 
 const Comments = (book: any) => {
     const [counter, setCounter] = useState<number | any>(0)
-
     const [comments, setComments] = useState<[] | any>([])
     useEffect(() => {
         fetch(`https://bookship-server-zamanxd.vercel.app/reviews/${book?._id}`)
@@ -16,9 +15,9 @@ const Comments = (book: any) => {
 
     return (
         <div>
-            <h2 className='text-2xl font-semibold my-5'>Comments: {comments.length}</h2>
+            <h2 className='text-2xl font-semibold my-5'>{counter}Comments: {comments.length}</h2>
             {!comments.length ? <p className='text-2xl'>No reviews</p> :
-                comments.map((comment: any, i: number) => <Comment key={i} />)
+                comments.map((comment: any, i: number) => <Comment key={i} {...comment} counter={counter} setCounter={setCounter} />)
             }
             <CommentEditModal {...book} />
         </div>

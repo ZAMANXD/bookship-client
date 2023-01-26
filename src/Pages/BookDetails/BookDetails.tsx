@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import CommentBox from '../../Shared/Comments/CommentBox';
 import Comments from '../../Shared/Comments/Comments';
+import CounterP from '../../Shared/counter/CounterP';
 
 const BookDetails = () => {
     const { increaseCartQuantity } = useCart()
@@ -49,6 +50,7 @@ const BookDetails = () => {
                     <Comments {...book} />
                 </div>
             </div>
+            {/* <CounterP /> */}
         </div>
     );
 };
