@@ -23,7 +23,7 @@ const Book = ({ ...book }) => {
                     <h4 className='text-xs lg:text-sm font-medium text-gray-600'>{authorName}</h4>
                 </div>
 
-                <Link to={`book/${_id}`}><h2 className='text-xs lg:text-md font-semibold text-[#34315D] uppercase'>{bookTitle.length > 15 ? bookTitle.slice(0, 15) : bookTitle}</h2></Link>
+                <Link to={`book/${_id}`}><h2 className='text-xs lg:text-md font-semibold text-[#34315D] uppercase'>{bookTitle?.length > 15 ? bookTitle.slice(0, 15) : bookTitle}</h2></Link>
 
                 <div className='absolute bottom-0 w-full'>
 
