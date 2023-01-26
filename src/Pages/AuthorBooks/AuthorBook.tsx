@@ -26,9 +26,9 @@ const AuthorBook = ({ ...author }) => {
             <Link to={'/books'} className='flex justify-between items-center mb-3'>
                 <div className='flex items-center gap-x-3'>
                     <img className='w-10 h-10 rounded-full' src={author?.img} alt="" />
-                    <h2 className='font-bold text-xl'>{author?.name}</h2>
+                    <h2 className='font-bold text-md lg:text-xl'>{author?.name}</h2>
                 </div>
-                <Link to={'/books'} className='text-blue-400'>View All</Link>
+                <Link to={'/books'} className='text-blue-400 text-sm lg:text-md'>View All</Link>
             </Link>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {

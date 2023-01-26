@@ -3,6 +3,7 @@ import { AiOutlineStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs'
 import { useCart } from '../../context/CartContext';
+import Spinner from '../../Shared/Spinner/Spinner';
 
 const SingleBook = ({ ...book }) => {
     const { increaseCartQuantity } = useCart()
