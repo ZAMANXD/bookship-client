@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AiOutlineStar } from 'react-icons/ai';
 
-const Comment = (commentData: any) => {
-    const { _id, comment, userName, userImg, commentDate, rating } = commentData;
-    console.log(_id);
+const Comment = (props: any) => {
+    const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch } = props;
 
     const handleDelete = (id: any) => {
         fetch(`https://bookship-server-zamanxd.vercel.app/delete/${id}`, {
@@ -14,9 +13,11 @@ const Comment = (commentData: any) => {
             .then(data => {
                 console.log(data);
                 toast.success('Review Deleted.')
+                refetch()
             })
             .catch((err) => {
                 console.log(err.code || err.message);
+                refetch()
             })
     }
 
@@ -36,7 +37,9 @@ const Comment = (commentData: any) => {
                     }
                 </div>
                 <div className='flex gap-x-2 items-center'>
-                    <button className='font-semibold' onClick={handleDelete}>Edit</button>
+                    <button onClick={() => setCommentId(_id)}>
+                        <label htmlFor="comment-modal" className="font-semibold cursor-pointer">Edit</label>
+                    </button>
                     <span>|</span>
                     <button className='font-semibold' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>

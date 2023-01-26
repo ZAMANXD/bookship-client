@@ -37,8 +37,8 @@ const WhyBookShip = () => {
         </div>
         <div>
           {services.map((service, i) => (
-            <div className="bg-white rounded-md shadow-md p-5 lg:p-5 my-5" key={i}>
-              <div className="flex gap-x-5 justify-start items-center">
+            <div className="bg-white rounded-md shadow-md hover:shadow-xl ease-in-out duration-150 p-5 lg:p-5 my-5" key={i}>
+              <div className="flex flex-col gap-y-5 lg:flex-row lg:gap-x-5 justify-start items-center">
                 <div className="rounded-md border p-2 border-gray-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -56,10 +56,10 @@ const WhyBookShip = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-left text-[#342D65]">
+                  <h3 className="text-xl text-center lg:text-2xl font-semibold lg:text-left text-[#342D65]">
                     {service?.title}
                   </h3>
-                  <p className="text-left">{service?.description}</p>
+                  <p className="lg:text-left text-sm lg:text-md text-center">{service?.description}</p>
                 </div>
               </div>
             </div>
