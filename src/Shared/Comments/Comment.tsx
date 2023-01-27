@@ -31,13 +31,13 @@ const Comment = (props: any) => {
                         <p className='text-xs'>{commentDate || "23th, Jan 2023"}</p>
                     </div>
                 </div>
-                <div className='flex gap-x-2 items-center'>
+                {/* <div className='flex gap-x-2 items-center'>
                     <span className='font-semibold hidden lg:block'>Ratings:</span> {
                         [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
                     }
-                </div>
+                </div> */}
                 <div className='flex gap-x-2 items-center'>
-                    <button onClick={() => setCommentId(_id)}>
+                    <button onClick={() => setCommentId(props)}>
                         <label htmlFor="comment-modal" className="font-semibold cursor-pointer">Edit</label>
                     </button>
                     <span>|</span>

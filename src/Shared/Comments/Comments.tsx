@@ -5,8 +5,8 @@ import CommentEditModal from './CommentEditModal';
 
 const Comments = (props: any) => {
     const { comments, refetch } = props;
-    const [commentId, setCommentId] = useState<string | any>('')
-
+    const [commentId, setCommentId] = useState<{} | any>({})
+    console.log(commentId);
     return (
         <div>
             <h2 className='text-2xl font-semibold my-5'>Comments: {comments?.length}</h2>
