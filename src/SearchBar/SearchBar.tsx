@@ -18,8 +18,6 @@ const SearchBar = ({ inputValue, modalIsOpen, setIsOpen }: any) => {
     _id: string | number;
   }
   const [books, setBooks] = useState<Array<book>>([]);
-  // const [searchBook, setSearchBook] = useState<any>([]);
-  console.log(books);
 
   useEffect(() => {
     fetch("https://bookship-server-zamanxd.vercel.app/books")
@@ -27,11 +25,10 @@ const SearchBar = ({ inputValue, modalIsOpen, setIsOpen }: any) => {
       .then((data) => setBooks(data));
   }, []);
 
-  const book = books?.find((book) => {
-    console.log(book.bookTitle);
-    return book.bookTitle.toLowerCase().includes(inputValue);
+  const book = books?.find((e) => {
+    return e.bookTitle.toLowerCase().includes(inputValue);
   });
-  console.log(book);
+
   return (
     <>
       <ReactModal

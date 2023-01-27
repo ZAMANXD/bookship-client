@@ -1,15 +1,13 @@
 import { useState, useContext } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import { AuthContext } from "../../../context/AuthProvider";
-import SellerDashboardTable from "./SellerDashboardTable";
 
 const SellerDashboardForm = ({ refetch }: any) => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const [previewImage, setPreviewImage] = useState<any>();
   const [image, setImage] = useState<any>();
   const [loading, setLoading] = useState(false);
-  console.log(image);
+
   const handleSellerBookImage = (e: any) => {
     const image = e.target.files[0];
     setPreviewImage(image);
@@ -68,6 +66,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
         setLoading(false);
         refetch();
         e.target.reset();
+        setPreviewImage(undefined)
       })
       .catch((err) => setLoading(false));
   };
@@ -134,7 +133,6 @@ const SellerDashboardForm = ({ refetch }: any) => {
               <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60  group text-center">
                 {previewImage ? (
                   <div className="w-full h-[230px] flex justify-center items-center">
-                    {" "}
                     <img
                       className="object-contain h-full overflow-hidden"
                       src={URL.createObjectURL(previewImage)}
@@ -182,10 +180,10 @@ const SellerDashboardForm = ({ refetch }: any) => {
             disabled={!image}
             type="submit"
             className={`btn ${
-              image ? "bg-green-500" : "bg-gray-50 text-gray-400"
+              image ? "bg-green-500" : "bg-gray-400 text-gray-100"
             }  text-white py-2 px-5 mt-6`}
           >
-            {loading ? "loding..." : "Add Book"}
+            {loading ? "Procesing..." : "Add Book"}
           </button>
         </form>
       </div>

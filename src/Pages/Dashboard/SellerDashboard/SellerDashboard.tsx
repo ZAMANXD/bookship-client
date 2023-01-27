@@ -40,7 +40,7 @@ const SellerDashboard = () => {
           </div>
         </div>
       </div>
-      <SellerDashboardTable books={books} />
+      <SellerDashboardTable books={books} refetch={refetch} />
       <SellerDashbordCard books={books} />
     </div>
   );
