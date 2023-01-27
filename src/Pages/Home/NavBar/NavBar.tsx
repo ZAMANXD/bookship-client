@@ -4,6 +4,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../context/AuthProvider";
 import icon from "./fav.png";
 import { useCart } from "../../../context/CartContext";
+import { toast } from "react-hot-toast";
 import SearchBar from "../../../SearchBar/SearchBar";
 
 const NavBar = () => {
@@ -94,35 +95,45 @@ const NavBar = () => {
           </div>
         </Link>
       </li>
+
       {user ? (
         <button
-          onClick={() => logOut()}
-          className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white"
+          onClick={() => {
+            logOut()
+            toast.error('Success fully logOut')
+          }}
+          className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700"
+          title="Log out"
         >
-          Log out
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-7 h-7">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+          </svg>
+
         </button>
       ) : (
-        <li>
-          <Link
-            to="/login"
-            className="inline-flex items-center justify-center h-12 px-6 font-semibold tracking-wide transition duration-200 rounded-full bg-[#3DB188] text-white"
-            aria-label="Sign up"
-            title="Sign up"
-          >
-            Log In
-          </Link>
-        </li>
+
+        <Link
+          to="/login"
+          className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700"
+          aria-label="Sign up"
+          title="Log in"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-7 h-7">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+          </svg>
+
+        </Link>
       )}
       <SearchBar
         inputValue={inputValue}
         modalIsOpen={modalIsOpen}
-        setIsOpen = {setIsOpen}
+        setIsOpen={setIsOpen}
       ></SearchBar>
     </>
   );
 
   return (
-    <div className="sticky top-0 z-10 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
+    <div className="sticky top-0 z-[9999] backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
       <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
         <div className="relative flex items-center justify-between">
           <Link

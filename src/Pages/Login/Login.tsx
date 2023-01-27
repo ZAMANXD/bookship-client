@@ -1,46 +1,98 @@
 import React, { useContext } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+
+type FormValues = {
+	email: string;
+	password: string;
+};
 
 const Login = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname || "/";
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm<FormValues>();
 
 	const { login, googlLogin, forgatePassword } = useContext(AuthContext)
-	const LoginHandle = (e: any) => {
-		e.preventDefault()
-		const form = e.target
-		const email = form.email.value
-		const password = form.password.value
+	const LoginHandle: SubmitHandler<FormValues> = (data) => {
+		const email = data.email;
+		const password = data.password;
 		login(email, password)
 			.then((data: any) => {
-				console.log(data);
+				// console.log(data);
+				toast.success('Thank you for Login')
 				navigate(from, { replace: true });
 			})
-		form.reset()
+			.catch((e: any) => toast.error(e.message))
+		reset()
 	}
 
 	// Signup with google
 	const GoogleHandle = () => {
 		googlLogin()
 			.then((data: any) => {
-				console.log(data.user);
-				navigate(from, { replace: true });
-			})
+				if (data.user.uid) {
+					saveUser(data.user.email, data.user.displayName);
+				}
+			}).catch((e: any) => toast.error(e.message))
 	}
 
+	// Save user data in database
+	const saveUser = (email: string, name: string, role: string = 'buyer', isVerified: Boolean = false) => {
+		const user = { email, name, role, isVerified };
+		console.log(user);
+		fetch('https://bookship-server-zamanxd.vercel.app/saveuser', {
+			method: "POST",
+			headers: {
+				"content-type": "application/json"
+			},
+			body: JSON.stringify(user)
+		})
+			.then(res => res.json())
+			.then(data => {
+				console.log(data);
+				toast.success('Thank you for Login')
+				navigate(from, { replace: true });
+			})
+	};
 	return (
 		<div className="w-full max-w-md mx-auto my-20 p-8 shadow-lg shadow-gray-400 space-y-3 rounded-xl bg-white text-gray-600">
 			<h1 className="text-2xl font-bold text-center">Login</h1>
-			<form onSubmit={LoginHandle} className="space-y-6 ng-untouched ng-pristine ng-valid">
+			<form onSubmit={handleSubmit(LoginHandle)} className="space-y-6 ng-untouched ng-pristine ng-valid">
 				<div className="space-y-1 text-sm">
 					<label htmlFor="email" className="block text-gray-500">User Email</label>
-					<input type="email" name="email" id="email" placeholder="User Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-600" />
+					<input
+						{...register("email", { required: "Email is required" })}
+						type="email"
+						id="email"
+						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					{errors.email && (
+						<p className="text-sm text-red-500">{errors.email?.message}</p>
+					)}
 				</div>
 				<div className="space-y-1 text-sm">
 					<label htmlFor="password" className="block text-gray-500">Password</label>
-					<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-600" />
+					<input
+						{...register("password", {
+							required: "Password is required",
+							minLength: {
+								value: 6,
+								message: "Password must be 6 characters or longer",
+							},
+						})}
+						type="password"
+						id="password"
+						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+					{errors.password && (
+						<p className="text-sm text-red-500">{errors.password?.message}</p>
+					)}
 					<div className="flex justify-end text-xs text-red-400">
 						<a rel="noopener noreferrer" href="#">Forgot Password?</a>
 					</div>

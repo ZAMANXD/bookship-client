@@ -3,6 +3,7 @@ import { AiOutlineStar } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { BsArrowRight } from 'react-icons/bs'
 import { useCart } from '../../context/CartContext';
+import Spinner from '../../Shared/Spinner/Spinner';
 
 const SingleBook = ({ ...book }) => {
     const { increaseCartQuantity } = useCart()
@@ -10,7 +11,7 @@ const SingleBook = ({ ...book }) => {
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     return (
         <div className='bg-white rounded-md hover:shadow-2xl hover:shadow-gray-300 shadow-sm shadow-gray-300  transition duration-150 ease-in-out p-2'>
-            <img className='h-80 lg:h-48 w-full mx-auto rounded-lg' src={bookCover} alt="" />
+            <img className='h-80 lg:h-48 mx-auto rounded-lg' src={bookCover} alt="" />
             <div className='p-2'>
                 <div className='flex items-center gap-x-2 my-2'>
                     <img className='w-8 h-8 rounded-full border' src={authorImg} alt="" />
