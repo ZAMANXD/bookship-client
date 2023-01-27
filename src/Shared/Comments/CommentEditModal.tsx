@@ -17,7 +17,7 @@ const CommentEditModal = (props: any) => {
         }
 
         if (comment) {
-            fetch(`https://bookship-server-zamanxd.vercel.app/reviews/edit/${commentId}`, {
+            fetch(`https://bookship-server-zamanxd.vercel.app/reviews/edit/${commentId._id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -51,7 +51,7 @@ const CommentEditModal = (props: any) => {
                             <label htmlFor="comment-modal" className=""><AiFillCloseCircle className='text-2xl cursor-pointer' /></label>
                         </div>
                         <form onSubmit={handleEdit}>
-                            <textarea className='w-full border rounded-md h-24 p-2' name="comment" id="" placeholder='Comment Here...'></textarea>
+                            <textarea className='w-full border rounded-md h-24 p-2' name="comment" defaultValue={commentId.comment} id="" placeholder='Comment Here...'></textarea>
                             <button type='submit'>
                                 <div className="modal-action mt-0">
                                     <label htmlFor="comment-modal" className="uppercase px-2 py-2 rounded-md bg-[#3DB188] text-white cursor-pointer">Update Review</label>
