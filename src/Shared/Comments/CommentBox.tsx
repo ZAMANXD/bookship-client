@@ -56,11 +56,11 @@ const CommentBox = (props: any) => {
     return (
         <div className='mt-40'>
             {
-                !user && <><p className='text-2xl mb-5 text-yellow-200'>Please Login or Register BookShip. Then, Share your Opinion the Book.</p></>
+                !user && <><p className='text-2xl mb-5 text-yellow-500'>Login to add a Comment.</p></>
             }
             <h5 className='tex-2xl font-semibold my-3'>Please, Share your opinion for this Book.</h5>
             <form onSubmit={handleSubmit}>
-                <textarea name="comment" id="" className='w-full lg:w-1/2 h-24 py-3 px-5 rounded-md block mb-3' placeholder='Write Your Comment' disabled={!user}></textarea>
+                <textarea name="comment" id="" className='w-full lg:w-1/2 h-24 py-3 px-5 rounded-md block mb-3 border' placeholder='Write Your Comment' disabled={!user}></textarea>
                 <button type='submit' className={`bg-[#3DB188] p-2 text-white rounded-sm lg:mt-0 block ${processing && 'bg-[#6ab99e]'}`} disabled={processing}>Comment</button>
             </form>
 
