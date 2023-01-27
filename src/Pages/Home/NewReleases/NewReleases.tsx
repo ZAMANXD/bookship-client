@@ -46,7 +46,7 @@ const NewReleases = () => {
         <div className='max-w-7xl mx-auto px-5 py-5 mt-20'>
             <h2 className="ml-5 text-2xl md:text-3xl lg:text-4xl font-bold text-[#34315D] ">New Releases</h2>
             <div className=''>
-                <Carousel responsive={responsive} className={'py-10'}>
+                <Carousel responsive={responsive} className={'py-10'} >
                     {
                         bookData.map((book) => <Book key={book._id} {...book}></Book>)
                     }
