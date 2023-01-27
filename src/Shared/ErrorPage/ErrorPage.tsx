@@ -8,6 +8,7 @@ const ErrorPage = () => {
   // const error = useRouteError()
   return (
     <div>
+      
       <section className="bg-white">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center">
@@ -30,6 +31,7 @@ const ErrorPage = () => {
               Back to Homepage
                </button>
             </Link>
+         {/* readme file added  */}
           </div>
         </div>
       </section>

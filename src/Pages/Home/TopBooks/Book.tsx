@@ -12,7 +12,7 @@ const Book = ({ ...book }) => {
     const { increaseCartQuantity } = useCart()
     return (
         <div className='bookCont bg-[#ffffff49] rounded-lg hover:shadow-2xl hover:shadow-gray-400 shadow-lg shadow-gray-300 ease-in-out duration-200 p-5 mx-2'    data-aos="zoom-out"       data-aos-delay="10" >
-            <div className='relative'    data-aos="flip-up"       data-aos-delay="100">
+            <div className='relative'    data-aos="flip-left"       data-aos-delay="100">
                 <Link to={`book/${_id}`}><img className={`h-42 lg:h-52 w-auto mx-auto rounded-lg hover:shadow-lg hover:shadow-gray-500 ease-in-out duration-200`} src={bookCover} alt="" />
                 </Link>
                 <div className='tagCont rounded-sm h-5 hover:h-10 lg:hover:h-14 w-5 lg:w-7 bg-red-500 shadow-sm absolute top-0 right-3 lg:right-10 ease-in-out duration-[400ms]'></div>
