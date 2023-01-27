@@ -4,12 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import SellerDashbordCard from "./SellerDashbordCard";
 
 const SellerDashboard = () => {
-  const {
-    isLoading,
-    error,
-    data: books,
-    refetch,
-  } = useQuery({
+  const { data: books, refetch } = useQuery({
     queryKey: ["book"],
     queryFn: async () => {
       const res = await fetch(
@@ -27,21 +22,21 @@ const SellerDashboard = () => {
         </div>
         <div className="flex-1 flex flex-wrap justify-center mt-10 md:mt-0">
           <div className="shadow-lg px-5 py-10 text-center w-52">
-            <h1 className="text-2xl font-semibold">20</h1>
+            <h1 className="text-2xl font-semibold">{books?.length}</h1>
             <p>Total Book</p>
           </div>
           <div className="shadow-lg px-5 py-10 text-center w-52">
-            <h1 className="text-2xl font-semibold">15</h1>
+            <h1 className="text-2xl font-semibold">00</h1>
             <p>Total Sell</p>
           </div>
           <div className="shadow-lg px-5 py-10 text-center w-52">
-            <h1 className="text-2xl font-semibold">3</h1>
+            <h1 className="text-2xl font-semibold">00</h1>
             <p>Today Sell</p>
           </div>
         </div>
       </div>
       <SellerDashboardTable books={books} refetch={refetch} />
-      <SellerDashbordCard books={books} />
+      <SellerDashbordCard books={books} refetch={refetch} />
     </div>
   );
 };

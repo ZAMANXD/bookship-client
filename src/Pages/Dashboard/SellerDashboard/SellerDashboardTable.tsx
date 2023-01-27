@@ -15,7 +15,6 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
         if (data.deletedCount > 0) {
           refetch();
         }
-        console.log(data);
       });
     setId(_id);
   };
@@ -34,10 +33,10 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
               <div className="bg-gray-300 hidden  lg:grid grid-cols-[15%_20%_15%_15%_25%_10%]">
                 <div className="p-3">Image</div>
                 <div className="p-3">Book Title</div>
-                <div className="p-3">Price</div>
+                <div className="p-3">Original Price</div>
                 <div className="p-3">Discount Price</div>
-                <div className="p-3">Detailes</div>
-                <div className="p-3">Acction</div>
+                <div className="p-3">Details</div>
+                <div className="p-3">Delete</div>
               </div>
             </div>
             <div>
@@ -57,33 +56,18 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                         <img src={bookCover} alt="" className="w-16" />
                       </div>
                       <div className="px-3 py-2">
-                        <p className="lg:hidden font-semibold text-base">
-                          Book Title:{" "}
-                        </p>
                         <p>{bookTitle}</p>
                       </div>
                       <div className="px-3 py-2">
-                        <p className="lg:hidden font-semibold text-base">
-                          Price:{" "}
-                        </p>
                         <p>{originalPrice}</p>
                       </div>
                       <div className="px-3 py-2">
-                        <p className="lg:hidden font-semibold text-base">
-                          Discount Price:{" "}
-                        </p>
                         <p>{discountedPrice}</p>
                       </div>
                       <div className="px-3 py-2">
-                        <p className="lg:hidden font-semibold text-base">
-                          Details:{" "}
-                        </p>
                         <p>{description}</p>
                       </div>
                       <div className="px-3 py-2 ">
-                        <p className="lg:hidden font-semibold text-base">
-                          Action:{" "}
-                        </p>
                         <button
                           onClick={() => handleBookDelete(_id)}
                           className="btn bg-green-600 px-5 py-2 text-white"

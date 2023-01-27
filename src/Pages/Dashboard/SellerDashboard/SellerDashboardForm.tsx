@@ -119,7 +119,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
           />
           <textarea
             name="detailes"
-            placeholder="Detailes"
+            placeholder="Details"
             className="border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2"
           ></textarea>
           <div className="grid grid-cols-1 space-y-2  mt-5 ">

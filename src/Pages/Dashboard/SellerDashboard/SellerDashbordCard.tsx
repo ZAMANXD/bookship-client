@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SellerDashbordCard = ({ books }: any) => {
+const SellerDashbordCard = ({ books, refetch }: any) => {
   const [id, setId] = useState("");
   const handleBookDelete = (_id: any) => {
     fetch(`https://bookship-server-zamanxd.vercel.app/books/${_id}`, {
@@ -10,7 +10,11 @@ const SellerDashbordCard = ({ books }: any) => {
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          refetch();
+        }
+      });
     setId(_id);
   };
   const newBooks = books?.filter((book: { _id: string }) => {
