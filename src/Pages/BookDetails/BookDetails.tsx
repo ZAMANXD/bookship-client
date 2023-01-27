@@ -21,7 +21,7 @@ const BookDetails = () => {
     })
 
     return (
-        <div className='max-w-7xl mx-auto p-5 lg:p-10 bg-gray-100'>
+        <div className='max-w-7xl mx-auto p-5 lg:p-10'>
             <h2 className='text-3xl lg:text-5xl font-semibold text-[#34315D]'>Book Details</h2>
             <div className='grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 py-5'>
                 <div>

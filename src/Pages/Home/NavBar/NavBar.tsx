@@ -61,23 +61,23 @@ const NavBar = () => {
       </li>
       <li>
         <Link
-          to="/contactUs"
+          to="/dashboard/seller"
           aria-label="Our Books"
           title="Our Books"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
-          Contact Us
+          Dashboard
         </Link>
       </li>
 
       <li>
         <Link
-          to="/aboutus"
+          to="/myaccount"
           aria-label="About us"
           title="About us"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
-          About us
+          My Account
         </Link>
       </li>
       <li>
