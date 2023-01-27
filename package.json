@@ -52,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "@locator/babel-jsx": "^0.2.2",
     "@types/react-modal": "^3.13.1",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
