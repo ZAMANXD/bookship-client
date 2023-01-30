@@ -11,14 +11,17 @@ const SingleBook = ({ ...book }) => {
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     return (
         <div className='bg-white rounded-md hover:shadow-2xl hover:shadow-gray-300 shadow-sm shadow-gray-300  transition duration-150 ease-in-out p-2'>
-            <img className='h-80 lg:h-48 mx-auto rounded-lg' src={bookCover} alt="" />
+            <Link to={`/book/${_id}`} className='flex justify-between items-center'>
+                <img className='h-80 lg:h-48 mx-auto rounded-lg' src={bookCover} alt="" />
+            </Link>
+
             <div className='p-2'>
                 <div className='flex items-center gap-x-2 my-2'>
                     <img className='w-8 h-8 rounded-full border' src={authorImg} alt="" />
-                    <h4 className='text-md'>{authorName}</h4>
+                    <h4 className='text-sm'>{authorName}</h4>
                 </div>
                 <Link to={`/book/${_id}`} className='flex justify-between items-center'>
-                    <h2 className='text-lg font-bold text-[#34315D] uppercase'>{bookTitle}</h2>
+                    <h2 className='text-lg font-bold text-[#34315D] uppercase'>{bookTitle.slice(0, 20)}...</h2>
                     <BsArrowRight className='text-2xl' />
                 </Link>
                 <div className='flex gap-x-2 items-center my-2'>
