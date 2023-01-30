@@ -16,7 +16,7 @@ const AuthorBook = ({ ...author }) => {
                 setLoading(false)
             })
     }, [])
-    console.log(books);
+    // console.log(books);
 
     if (loading) {
         return <Spinner />
@@ -25,8 +25,8 @@ const AuthorBook = ({ ...author }) => {
         <div className='my-5 border p-3'>
             <Link to={'/books'} className='flex justify-between items-center mb-3'>
                 <div className='flex items-center gap-x-3'>
-                    <img className='w-10 h-10 rounded-full' src={author?.img} alt="" />
-                    <h2 className='font-bold text-md lg:text-xl'>{author?.name}</h2>
+                    <img className='w-10 h-10 rounded-full' src={author?.img ? author?.img : 'https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png'} alt="" />
+                    <h2 className='font-bold text-md lg:text-xl uppercase'>{author?.name}</h2>
                 </div>
                 <Link to={'/books'} className='text-blue-400 text-sm lg:text-md'>View All</Link>
             </Link>
