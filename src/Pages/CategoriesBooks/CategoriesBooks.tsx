@@ -8,7 +8,7 @@ const CategoriesBooks = () => {
     ]
     // const [categories, setCategories] = useState<any[]>([])
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/specific-categories`)
+    //     fetch(`https://bookship-server-zamanxd.vercel.app/specific-categories`)
     //         .then(res => res.json())
     //         .then(data => {
     //             setCategories(data)

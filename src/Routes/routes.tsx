@@ -3,6 +3,7 @@ import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
+import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
@@ -76,6 +77,11 @@ export const router = createBrowserRouter([
                 element: <AuthorBooks />
             },
             {
+                path: '/author/:name',
+                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/author/${params.name}`),
+                element: <BooksByAuthor />
+            },
+            {
                 path: '/addtocart',
                 element: <AddToCart />
             },
@@ -84,8 +90,8 @@ export const router = createBrowserRouter([
                 element: <MyAccount />
             },
             {
-                path:'/dashboard/seller',
-                element: <SellerDashboard/>
+                path: '/dashboard/seller',
+                element: <SellerDashboard />
             }
         ]
     },
