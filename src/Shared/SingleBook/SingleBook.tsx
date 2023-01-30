@@ -21,7 +21,7 @@ const SingleBook = ({ ...book }) => {
                     <h4 className='text-sm'>{authorName}</h4>
                 </div>
                 <Link to={`/book/${_id}`} className='flex justify-between items-center'>
-                    <h2 className='text-lg font-bold text-[#34315D] uppercase'>{bookTitle}</h2>
+                    <h2 className='text-lg font-bold text-[#34315D] uppercase'>{bookTitle.slice(0, 20)}...</h2>
                     <BsArrowRight className='text-2xl' />
                 </Link>
                 <div className='flex gap-x-2 items-center my-2'>
