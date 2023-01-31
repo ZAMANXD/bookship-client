@@ -13,6 +13,7 @@ import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard"
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
+import BooksByPublication from "../Pages/PublicationBooks/BooksByPublication";
 import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -86,6 +87,11 @@ export const router = createBrowserRouter([
                 path: '/category/:name',
                 loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.name}`),
                 element: <BooksByCategory />
+            },
+            {
+                path: '/publication/:name',
+                loader: ({ params }) => fetch(`http://localhost:5000/publications/${params.name}`),
+                element: <BooksByPublication />
             },
             {
                 path: '/addtocart',

@@ -23,11 +23,11 @@ const PublicationBook = ({ ...publication }) => {
 
     return (
         <div className='my-5 border p-3'>
-            <Link to={'/books'} className='flex justify-between items-center mb-3'>
+            <Link to={`/publication/${publication?.name}`} className='flex justify-between items-center mb-3'>
                 <div className='flex items-center gap-x-3'>
                     <h2 className='font-bold text-xl'>{publication?.name}</h2>
                 </div>
-                <Link to={'/books'} className='text-blue-400'>View All</Link>
+                <Link to={`/publication/${publication?.name}`} className='text-blue-400'>View All</Link>
             </Link>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {
