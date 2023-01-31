@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PublicationBook from './PublicationBook';
 
 const PublicationBooks = () => {
-    const publications: any[] = [
-        { "name": "Mental Floss" },
-        { "name": "Fast Company" },
-        { "name": "Reader's Digest" },
-        { "name": "TIME and TIME For Kids" }
-    ]
+    const [publications, setPublications] = useState<any[]>([])
+    useEffect(() => {
+        fetch(`https://bookship-server-zamanxd.vercel.app/publications`)
+            .then(res => res.json())
+            .then(data => {
+                setPublications(data)
+            })
+    }, [])
+    
     return (
         <div className='p-3 bg-gray-100'>
             {

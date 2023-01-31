@@ -31,7 +31,7 @@ const PublicationBook = ({ ...publication }) => {
             </Link>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {
-                    books.slice(0, 3).map(book => <SingleBook key={book._id} {...book} />)
+                    books.filter(book => book?.publication === publication?.name).slice(0, 3).map(book => <SingleBook key={book?._id} {...book} />)
                 }
             </div>
         </div>
