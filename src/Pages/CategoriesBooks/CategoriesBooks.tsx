@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import CategoryBook from './CategoryBook';
 
 const CategoriesBooks = () => {
-    const categories: any[] = [
-        { "name": "Fantasy" },
-        { "name": "Science Fiction" }
-    ]
-    // const [categories, setCategories] = useState<any[]>([])
-    // useEffect(() => {
-    //     fetch(`https://bookship-server-zamanxd.vercel.app/specific-categories`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setCategories(data)
-    //         })
-    // }, [])
+    // const categories: any[] = [
+    //     { "name": "Fantasy" },
+    //     { "name": "Science Fiction" }
+    // ]
+
+    const [categories, setCategories] = useState<any[]>([])
+    useEffect(() => {
+        fetch(`https://bookship-server-zamanxd.vercel.app/categories`)
+            .then(res => res.json())
+            .then(data => {
+                setCategories(data)
+            })
+    }, [])
 
     return (
         <div className='p-3 bg-gray-100'>
