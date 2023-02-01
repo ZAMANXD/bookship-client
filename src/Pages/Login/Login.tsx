@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 type FormValues = {
 	email: string;
@@ -10,20 +11,29 @@ type FormValues = {
 };
 
 const Login = () => {
+
+	useTitle("-Login")
+	
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname || "/";
+
 	const {
+
 		register,
 		handleSubmit,
 		formState: { errors },
 		reset,
+
 	} = useForm<FormValues>();
 
 	const { login, googlLogin, forgatePassword } = useContext(AuthContext)
+	
 	const LoginHandle: SubmitHandler<FormValues> = (data) => {
+		
 		const email = data.email;
 		const password = data.password;
+		
 		login(email, password)
 			.then((data: any) => {
 				// console.log(data);
@@ -31,35 +41,47 @@ const Login = () => {
 				navigate(from, { replace: true });
 			})
 			.catch((e: any) => toast.error(e.message))
-		reset()
+		
+			reset()
+
 	}
 
 	// Signup with google
 	const GoogleHandle = () => {
+
 		googlLogin()
 			.then((data: any) => {
+
 				if (data.user.uid) {
+
 					saveUser(data.user.email, data.user.displayName);
+				
 				}
+
 			}).catch((e: any) => toast.error(e.message))
+
 	}
 
 	// Save user data in database
 	const saveUser = (email: string, name: string, role: string = 'buyer', isVerified: Boolean = false) => {
+		
 		const user = { email, name, role, isVerified };
-		console.log(user);
+		// console.log(user);
 		fetch('https://bookship-server-zamanxd.vercel.app/saveuser', {
 			method: "POST",
 			headers: {
 				"content-type": "application/json"
 			},
 			body: JSON.stringify(user)
+
 		})
 			.then(res => res.json())
 			.then(data => {
-				console.log(data);
+
+				// console.log(data);
 				toast.success('Thank you for Login')
 				navigate(from, { replace: true });
+				
 			})
 	};
 	return (

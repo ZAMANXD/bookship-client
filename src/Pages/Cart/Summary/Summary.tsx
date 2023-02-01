@@ -12,7 +12,7 @@ const Summary = () => {
 
     const { cartQuantity, cartItems } = useCart()
 
-    const subTotal = cartItems.reduce((total, cartItem) => {
+    const subTotal = cartItems.reduce((total: number, cartItem: { id: any; quantity: number; }) => {
         const book = bookData.find(i => i?._id === cartItem.id)
 
         return total + (book?.discountedPrice || 0) * cartItem?.quantity
@@ -40,6 +40,7 @@ const Summary = () => {
                         }
                     </p>
                 </div>
+                {/* to push */}
                 <div className='flex justify-between'>
                     <h4 className='text-lg font-semibold text-gray-700'>Shipping cost:</h4>
                     <p className='font-semibold text-gray-700'>$ {shipping.toFixed(2)}</p>

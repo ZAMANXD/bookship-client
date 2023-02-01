@@ -16,7 +16,9 @@ import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import BooksByPublication from "../Pages/PublicationBooks/BooksByPublication";
 import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
+import AdminRoute from "../PrivateRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import SellerRout from "../PrivateRoute/SellerRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
