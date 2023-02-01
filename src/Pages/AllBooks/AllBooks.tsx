@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const AllBooks = () => {
+    useTitle(`- All Books`)
     return (
         <div className='max-w-7xl mx-auto lg:py-10'>
             <div className='grid grid-cols-1 lg:grid-cols-[1fr_3fr] gap-5'>

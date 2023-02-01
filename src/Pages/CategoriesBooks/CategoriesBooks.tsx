@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../hooks/useTitle';
 import Spinner from '../../Shared/Spinner/Spinner';
 import CategoryBook from './CategoryBook';
 
 const CategoriesBooks = () => {
+    useTitle(`- Categories`)
     const [loading, setLoading] = useState(false)
     const [categories, setCategories] = useState<any[]>([])
     useEffect(() => {

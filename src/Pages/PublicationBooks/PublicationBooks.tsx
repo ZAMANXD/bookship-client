@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import useTitle from '../../hooks/useTitle';
 import Spinner from '../../Shared/Spinner/Spinner';
 import PublicationBook from './PublicationBook';
 
 const PublicationBooks = () => {
-
+    useTitle(`- Publications`)
     const [loading, setLoading] = useState(false)
     const [publications, setPublications] = useState<any[]>([])
     useEffect(() => {
