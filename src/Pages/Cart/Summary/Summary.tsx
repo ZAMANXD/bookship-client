@@ -12,7 +12,7 @@ const Summary = () => {
 
     const { cartQuantity, cartItems } = useCart()
 
-    const subTotal = cartItems.reduce((total, cartItem) => {
+    const subTotal = cartItems.reduce((total: number, cartItem: { id: any; quantity: number; }) => {
         const book = bookData.find(i => i?._id === cartItem.id)
 
         return total + (book?.discountedPrice || 0) * cartItem?.quantity
