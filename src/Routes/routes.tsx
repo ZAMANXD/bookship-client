@@ -87,12 +87,12 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category/:name',
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.name}`),
+                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/categories/${params.name}`),
                 element: <BooksByCategory />
             },
             {
                 path: '/publication/:name',
-                loader: ({ params }) => fetch(`http://localhost:5000/publications/${params.name}`),
+                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/publications/${params.name}`),
                 element: <BooksByPublication />
             },
             {

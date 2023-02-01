@@ -26,7 +26,7 @@ const CommentBox = (props: any) => {
 
         if (user && comment) {
             setProcessing(true)
-            fetch(`http://localhost:5000/addreview`, {
+            fetch(`https://bookship-server-zamanxd.vercel.app/addreview`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
