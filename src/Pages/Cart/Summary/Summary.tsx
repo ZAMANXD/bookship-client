@@ -40,6 +40,7 @@ const Summary = () => {
                         }
                     </p>
                 </div>
+                {/* to push */}
                 <div className='flex justify-between'>
                     <h4 className='text-lg font-semibold text-gray-700'>Shipping cost:</h4>
                     <p className='font-semibold text-gray-700'>$ {shipping.toFixed(2)}</p>
