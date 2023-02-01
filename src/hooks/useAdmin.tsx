@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-
+// this made for admin
 const useAdmin = (email:string)=>{
     
     const [isAdmin,setIsAdmin]= useState<boolean>(false)
