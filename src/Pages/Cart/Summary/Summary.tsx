@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../../../context/CartContext';
 
 const Summary = () => {
@@ -54,7 +55,11 @@ const Summary = () => {
                     <h4 className='text-lg font-semibold text-gray-700'>Grand total:</h4>
                     <p className='font-semibold text-gray-700'>$ {grandTotal.toFixed(2)}</p>
                 </div>
-                <button className='hover:bg-white hover:border-[#3DB188] border-2 hover:text-[#3DB188] px-3 py-2 bg-[#3DB188] font-semibold rounded-full text-white w-3/4 mx-auto'>Checkout</button>
+                <Link to='/addtocart/checkout'>
+                    <button className='hover:bg-white hover:border-[#3DB188] border-2 hover:text-[#3DB188]  px-3 py-2 bg-[#3DB188] font-semibold rounded-full text-white w-3/4 mx-auto'>
+                    Checkout
+                    </button>
+                </Link>
             </section>
         </aside>
     );

@@ -6,6 +6,7 @@ import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
+import Checkout from "../Pages/Cart/Checkout/Checkout";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard";
@@ -14,7 +15,7 @@ import Login from "../Pages/Login/Login";
 import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
-import PrivateRoute from "../PrivateRoute/PrivateRoute";
+// import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -92,7 +93,12 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/seller',
                 element: <SellerDashboard />
+            },
+            {
+                path: '/addtocart/checkout',
+                element: <Checkout></Checkout>
             }
+            
         ]
     },
 ])
