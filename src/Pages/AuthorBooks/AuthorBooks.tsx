@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../hooks/useTitle';
+import Spinner from '../../Shared/Spinner/Spinner';
 import AuthorBook from './AuthorBook';
 
 const AuthorBooks = () => {
-    // const img: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCXNh9OsJ5FQZPljU_-rLiND2_9XogYnyxQ&usqp=CAU'
-    // const authors: any[] = [
-    //     { "name": "William Shakespeare", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCXNh9OsJ5FQZPljU_-rLiND2_9XogYnyxQ&usqp=CAU" },
-    //     { "name": "Charles Dickens", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCXNh9OsJ5FQZPljU_-rLiND2_9XogYnyxQ&usqp=CAU" },
-    //     { "name": "Jane Austen", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCXNh9OsJ5FQZPljU_-rLiND2_9XogYnyxQ&usqp=CAU" },
-    //     { "name": "George Orwell", "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcCXNh9OsJ5FQZPljU_-rLiND2_9XogYnyxQ&usqp=CAU" },
-    // ]
-
+    useTitle(`- Authors`)
+    const [loading, setLoading] = useState(false)
     const [authors, setAuthors] = useState<any[]>([])
     useEffect(() => {
+        setLoading(true)
         fetch(`https://bookship-server-zamanxd.vercel.app/users`)
             .then(res => res.json())
             .then(data => {
                 setAuthors(data)
+                setLoading(false)
             })
+            .catch(err => setLoading(false))
     }, [])
     console.log(authors);
+    if (loading) {
+        return <Spinner />
+    }
     return (
         <div className='p-3 bg-gray-100'>
             {

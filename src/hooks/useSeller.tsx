@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 
-const useSeller =(email:string)=>{
+const useSeller = (email: string) => {
 
-    const [isSeller,setIsSeller]=useState<any>(false)
-    const [sellerLoading,setSellerLoading]=useState<any>(true)
+    const [isSeller, setIsSeller] = useState<any>(false)
+    const [sellerLoading, setSellerLoading] = useState<any>(true)
 
     useEffect(()=>{
 // isSeller api 
@@ -16,10 +16,10 @@ const useSeller =(email:string)=>{
                 setSellerLoading(false)
             })
         }
-    },[email])
+    }, [email])
 
-    return [isSeller,sellerLoading]
-    
+    return [isSeller, sellerLoading]
+
 }
 
 export default useSeller;
