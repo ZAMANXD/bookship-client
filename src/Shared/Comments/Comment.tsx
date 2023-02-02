@@ -35,12 +35,6 @@ const Comment = (props: any) => {
                         <p className='text-xs'>{commentDate || "23th, Jan 2023"}</p>
                     </div>
                 </div>
-                <div className='flex gap-x-2 items-center'>
-                    <span className='font-semibold hidden lg:block'>Ratings:</span> {
-                        [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
-                    }
-                </div>
-
                 {
                     user?.email === props?.userEmail &&
                     <div className='flex gap-x-2 items-center'>
@@ -51,7 +45,11 @@ const Comment = (props: any) => {
                         <button className='font-semibold text-2xl' onClick={() => handleDelete(_id)}><AiFillDelete /></button>
                     </div>
                 }
-
+                <div className='flex gap-x-2 items-center'>
+                    <span className='font-semibold hidden lg:block'>Ratings:</span> {
+                        [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
+                    }
+                </div>
             </div>
             <p className='lg:ml-11 text-justify'>{comment}</p>
         </div>

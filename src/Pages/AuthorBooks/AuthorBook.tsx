@@ -31,7 +31,7 @@ const AuthorBook = ({ ...author }) => {
                     <Link to={`/author/${author?.name}`} className='text-blue-400 text-sm lg:text-md'>View All</Link>
                 </Link>
                 {
-                    !books.length ? <p className='text-center text-2xl'>No Books Published The Author. Coming Soon...</p> :
+                    !books.length ? <p className='text-center lg:text-2xl'>No Books Published The Author. Coming Soon...</p> :
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                             {
                                 books.slice(0, 3).map((book, i) => <SingleBook key={i} {...book} />)
