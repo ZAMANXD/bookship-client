@@ -10,11 +10,11 @@ const useAdmin = (email: string) => {
 
         if (email) {
             fetch(`https://bookship-server-zamanxd.vercel.app/users/admin/${email}`)
-                .then(res => res.json())
-                .then(data => {
-                    setIsAdmin(data.isAdmin)
-                    setAdminLoading(false)
-                })
+            .then(res=>res.json())
+            .then(data=>{
+                setIsAdmin(data.isAdmin)
+                setAdminLoading(false)
+            })
         }
     }, [email])
 

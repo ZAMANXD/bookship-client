@@ -6,7 +6,7 @@ import Spinner from "../Shared/Spinner/Spinner";
 
 
 
-const SellerRout = (props:any) => {
+const SellerRoute = (props:any) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     const [isSeller, sellerLoading] = useSeller(user?.email);
@@ -19,4 +19,4 @@ const SellerRout = (props:any) => {
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>;
   };
   
-  export default SellerRout;
+  export default SellerRoute;
