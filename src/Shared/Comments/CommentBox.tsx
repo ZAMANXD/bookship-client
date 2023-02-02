@@ -36,7 +36,7 @@ const CommentBox = (props: any) => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    if (data.acknowledged && data.deletedCount > 0) {
+                    if (data.acknowledged && data.insertedId) {
                         setProcessing(false)
                         refetch()
                         form.reset()
@@ -48,7 +48,7 @@ const CommentBox = (props: any) => {
                     refetch()
                     form.reset()
                     setProcessing(false)
-                    toast.error('Your Review Uploaded.')
+                    toast.error('Sorry. An error found.')
                 })
         }
     }

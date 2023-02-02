@@ -3,6 +3,7 @@ import React from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
+import useTitle from '../../hooks/useTitle';
 import CommentBox from '../../Shared/Comments/CommentBox';
 import Comments from '../../Shared/Comments/Comments';
 
@@ -11,6 +12,7 @@ const BookDetails = () => {
 
     let book: any = useLoaderData()
     const { _id, bookTitle, authorName, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
+    useTitle(`- ${bookTitle}`)
 
     const { data: comments, refetch } = useQuery({
         queryKey: ['comments'],
