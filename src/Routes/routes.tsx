@@ -2,10 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
+// import AllBooks from "../Pages/AllBooks/AllBooks";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
+import Payment from "../Pages/Cart/Payment/Payment";
 import BooksByCategory from "../Pages/CategoriesBooks/BooksByCategory";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
 import ContactUs from "../Pages/ContactUs/ContactUs";
@@ -17,10 +19,12 @@ import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import BooksByPublication from "../Pages/PublicationBooks/BooksByPublication";
 import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
-import AdminRoute from "../PrivateRoute/AdminRoute";
+// import AdminRoute from "../PrivateRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+// import SellerRoute from "../PrivateRoute/SellerRoute";
 import SellerRoute from "../PrivateRoute/SellerRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
+
 
 export const router = createBrowserRouter([
     {
@@ -106,13 +110,22 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/seller',
-                element: <SellerDashboard />
+                element: <SellerRoute><SellerDashboard /></SellerRoute>
+                
+            },
+            {
+
+                path: '/addtocart/checkout',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             },
             {
                 path: '/dashboard/admin',
                 element: <AdminDashboard />
             }
+            
         ]
     },
 ])
+
 

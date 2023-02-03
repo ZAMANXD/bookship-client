@@ -8,7 +8,7 @@ import CommentBox from '../../Shared/Comments/CommentBox';
 import Comments from '../../Shared/Comments/Comments';
 
 const BookDetails = () => {
-    const { increaseCartQuantity } = useCart()
+    const { increaseCartQuantity } = useCart();
 
     let book: any = useLoaderData()
     const { _id, bookTitle, authorName, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book

@@ -5,7 +5,7 @@ import Lottie from "lottie-react";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 const ErrorPage = () => {
-  // const error = useRouteError()
+  // const error:any = useRouteError();
   return (
     <div>
       <section className="bg-white">

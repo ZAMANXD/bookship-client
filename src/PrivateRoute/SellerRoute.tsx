@@ -5,7 +5,6 @@ import useSeller from "../hooks/useSeller";
 import Spinner from "../Shared/Spinner/Spinner";
 
 
-
 const SellerRoute = (props:any) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
