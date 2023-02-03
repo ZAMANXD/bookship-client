@@ -106,15 +106,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/seller',
-<<<<<<< HEAD
                 element: <SellerDashboard />
             },
             {
                 path: '/dashboard/admin',
                 element: <AdminDashboard />
-=======
-                element: <SellerRoute><SellerDashboard /></SellerRoute>
->>>>>>> main
             }
         ]
     },
