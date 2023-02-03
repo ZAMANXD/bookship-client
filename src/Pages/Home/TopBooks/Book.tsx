@@ -11,7 +11,8 @@ const Book = ({ ...book }) => {
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     const { increaseCartQuantity } = useCart()
     return (
-        <div className='bookCont bg-[#ffffff49] rounded-lg hover:shadow-2xl hover:shadow-gray-400 shadow-lg shadow-gray-300 ease-in-out duration-200 p-5 mx-2'    data-aos="zoom-out"       data-aos-delay="10" >
+        // bg-[#ffffff49]
+        <div className='bookCont bg-gradient-to-r from-gray-100 to-white rounded-lg hover:shadow-2xl hover:shadow-gray-400 shadow-lg shadow-gray-300 ease-in-out duration-200 p-5 mx-2 '    data-aos="zoom-out"       data-aos-delay="10" >
             <div className='relative'    data-aos="flip-left"       data-aos-delay="100">
                 <Link to={`book/${_id}`}><img className={`h-42 lg:h-52 w-auto mx-auto rounded-lg hover:shadow-lg hover:shadow-gray-500 ease-in-out duration-200`} src={bookCover} alt="" />
                 </Link>
@@ -43,7 +44,7 @@ const Book = ({ ...book }) => {
                             <p className='text-md lg:text-lg font-bold text-[#342D65]'>$ {discountedPrice}</p>
                         </div>
 
-                        <button className='h-5 lg:h-7 w-14 lg:w-24 flex items-center justify-center bg-green-400 hover:bg-[#3DB188] hover:text-white duration-[400ms] rounded-md text-gray-700 text-[9px] lg:text-sm' onClick={() => increaseCartQuantity(_id)} >Add to cart</button>
+                        <button className='h-5 lg:h-7 w-14 lg:w-24 flex items-center justify-center  bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500  hover:text-white duration-[400ms] rounded-full text-gray-50 font-bold text-[9px] lg:text-sm px-[8px] py-4' onClick={() => increaseCartQuantity(_id)} >Add to cart</button>
                     </div>
                 </div>
 

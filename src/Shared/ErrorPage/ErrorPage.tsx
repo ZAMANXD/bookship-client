@@ -8,14 +8,13 @@ const ErrorPage = () => {
   // const error = useRouteError()
   return (
     <div>
-      
       <section className="bg-white">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center">
             <div className="-mt-14">
-            <Lottie animationData={errorlottie} loop={true} />
+              <Lottie animationData={errorlottie} loop={true} />
             </div>
-         
+
             <p className="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl dark:text-white">
               Something's missing.
             </p>
@@ -27,11 +26,10 @@ const ErrorPage = () => {
               to="/"
               className="px-3 py-3 rounded-md bg-[#3DB188] text-white"
             >
-               <button className="font-bold">
-              Back to Homepage
-               </button>
+              <button className="font-bold">Back to Homepage</button>
             </Link>
-         {/* readme file added  */}
+            {/* readme file added  */}
+            {/* Comment for modification  */}
           </div>
         </div>
       </section>

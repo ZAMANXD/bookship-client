@@ -77,7 +77,7 @@ const SignUp = () => {
 						{...register("name", { required: "Name is required" })}
 						type="name"
 						id="name"
-						placeholder="Name" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+						placeholder="Name" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
 					{errors.name && (
 						<p className="text-sm text-red-500">{errors.name?.message}</p>
 					)}
@@ -88,7 +88,7 @@ const SignUp = () => {
 						{...register("email", { required: "Email is required" })}
 						type="email"
 						id="email"
-						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
 					{errors.email && (
 						<p className="text-sm text-red-500">{errors.email?.message}</p>
 					)}
@@ -110,7 +110,7 @@ const SignUp = () => {
 						})}
 						type="password"
 						id="password"
-						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
 					{errors.password && (
 						<p className="text-sm text-red-500">{errors.password?.message}</p>
 					)}
@@ -123,7 +123,7 @@ const SignUp = () => {
 					<select
 						id="role"
 						{...register("role", { required: "Selact user role must" })}
-						className="w-full px-3 py-[11px] rounded-md border-gray-700 bg-gray-300 text-gray-500"
+						className="w-full px-3 py-[11px] rounded-md border-gray-700 bg-gray-100 text-gray-500"
 						defaultValue="Select user role"
 					>
 						<option>buyer</option>
@@ -134,7 +134,7 @@ const SignUp = () => {
 					)}
 				</div>
 
-				<button type='submit' className="w-full p-3 text-center rounded-lg bg-[#3DB188] text-white">Sign in</button>
+				<button type='submit' className="w-full p-3 text-center rounded-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500 text-white">Sign in</button>
 			</form>
 			<div className="flex items-center pt-4 space-x-1">
 				<div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
