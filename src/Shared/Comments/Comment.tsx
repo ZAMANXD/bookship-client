@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { AiFillDelete } from 'react-icons/ai';
 import { AiOutlineStar } from 'react-icons/ai';
+import { FiEdit2 } from 'react-icons/fi';
+import { AuthContext } from '../../context/AuthProvider';
 
 const Comment = (props: any) => {
+    const { user } = useContext(AuthContext)
     const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch } = props;
 
     const handleDelete = (id: any) => {
@@ -31,17 +35,20 @@ const Comment = (props: any) => {
                         <p className='text-xs'>{commentDate || "23th, Jan 2023"}</p>
                     </div>
                 </div>
-                {/* <div className='flex gap-x-2 items-center'>
+                {
+                    user?.email === props?.userEmail &&
+                    <div className='flex gap-x-2 items-center'>
+                        <button onClick={() => setCommentId(props)}>
+                            <label htmlFor="comment-modal" className="font-semibold cursor-pointer text-xl"><FiEdit2 /></label>
+                        </button>
+                        <span className='text-xl'>|</span>
+                        <button className='font-semibold text-2xl' onClick={() => handleDelete(_id)}><AiFillDelete /></button>
+                    </div>
+                }
+                <div className='flex gap-x-2 items-center'>
                     <span className='font-semibold hidden lg:block'>Ratings:</span> {
                         [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
                     }
-                </div> */}
-                <div className='flex gap-x-2 items-center'>
-                    <button onClick={() => setCommentId(props)}>
-                        <label htmlFor="comment-modal" className="font-semibold cursor-pointer">Edit</label>
-                    </button>
-                    <span>|</span>
-                    <button className='font-semibold' onClick={() => handleDelete(_id)}>Delete</button>
                 </div>
             </div>
             <p className='lg:ml-11 text-justify'>{comment}</p>

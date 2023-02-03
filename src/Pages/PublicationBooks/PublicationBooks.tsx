@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import useTitle from '../../hooks/useTitle';
+import Spinner from '../../Shared/Spinner/Spinner';
 import PublicationBook from './PublicationBook';
 
 const PublicationBooks = () => {
-    const publications: any[] = [
-        { "name": "Mental Floss" },
-        { "name": "Fast Company" },
-        { "name": "Reader's Digest" },
-        { "name": "TIME and TIME For Kids" }
-    ]
+    useTitle(`- Publications`)
+    const [loading, setLoading] = useState(false)
+    const [publications, setPublications] = useState<any[]>([])
+    useEffect(() => {
+        setLoading(true)
+        fetch(`https://bookship-server-zamanxd.vercel.app/publications`)
+            .then(res => res.json())
+            .then(data => {
+                setPublications(data)
+                setLoading(false)
+            })
+            .catch(err => setLoading(false))
+    }, [])
+
+    if (loading) {
+        return <Spinner />
+    }
+
     return (
         <div className='p-3 bg-gray-100'>
             {
