@@ -35,6 +35,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
     const discountPrice = e.target.discountPrice.value;
     const detailes = e.target.detailes.value;
     const publication = e.target.publication.value;
+    const author = e.target.author.value;
     const bookDetailes = {
       bookTitle: title,
       bookCover: image,
@@ -42,7 +43,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
       originalPrice: price,
       discountedPrice: discountPrice,
       description: detailes,
-      authorName: user.displayName,
+      authorName: author,
       authorEmail: user.email,
       authorImg: "https://userimg.png" || user.photoURL,
       authorRating: 4,
@@ -76,7 +77,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
       body: JSON.stringify({ category }),
     })
       .then((res) => res.json())
-      .then((data)=> console.log(data))
+      .then((data) => console.log(data))
       .catch((err) => console.log(err));
   };
 
@@ -120,12 +121,21 @@ const SellerDashboardForm = ({ refetch }: any) => {
               className="border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5"
             />
           </div>
-          <input
-            type="text"
-            name="publication"
-            placeholder="Publication"
-            className="border-b border-b-gray-700 h-10 px-2  w-full mt-5"
-          />
+          <div className="sm:flex justify-between gap-5  mt-5">
+            <input
+              type="text"
+              name="publication"
+              placeholder="Publication"
+              className="border-b border-b-gray-700 h-10 px-2  w-full mt-5"
+            />
+            <input
+              type="text"
+              name="author"
+              placeholder="Author"
+              className="border-b border-b-gray-700 h-10 px-2  w-full mt-5"
+            />
+          </div>
+
           <textarea
             name="detailes"
             placeholder="Details"

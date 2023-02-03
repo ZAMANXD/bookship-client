@@ -122,7 +122,6 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/admin',
                 element: <AdminDashboard />
-
             }
             
         ]
