@@ -2,7 +2,7 @@ import React from "react";
 import img1 from "./img/books-carousel.jpg";
 import "./css/TopBanner.css";
 
-import lottie3 from "../../../Lottie/lottie3.json";
+import lottie2 from "../../../Lottie/lottie2.json";
 import Lottie from "lottie-react";
 
 const TopBanner = () => {
@@ -87,7 +87,7 @@ const TopBanner = () => {
             alt=""
           /> */}
 
-          <Lottie animationData={lottie3} loop={true} />
+          <Lottie animationData={lottie2} loop={true} />
         </div>
       </div>
     </div>
