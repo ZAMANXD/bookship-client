@@ -32,7 +32,7 @@ const SellerDashbordCard = ({ books, refetch }: any) => {
           bookCover,
         } = book;
         return (
-          <div className="flex justify-center lg:hidden mt-10">
+          <div key={_id} className="flex justify-center lg:hidden mt-10">
             <div className="rounded-lg shadow-lg bg-white">
               <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
                 <img

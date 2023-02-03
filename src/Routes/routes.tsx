@@ -8,6 +8,7 @@ import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -92,6 +93,10 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/seller',
                 element: <SellerDashboard />
+            },
+            {
+                path: '/dashboard/admin',
+                element: <AdminDashboard />
             }
         ]
     },
