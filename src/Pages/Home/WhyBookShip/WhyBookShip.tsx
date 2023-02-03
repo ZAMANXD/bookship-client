@@ -26,7 +26,7 @@ const WhyBookShip = () => {
 
   return (
     <div className="max-w-7xl mx-auto w-50 px-5 py-10 mt-20">
-      <h2 className="mb-12 text-4xl font-bold text-[#34315D]">Why BookShip</h2>
+      <h2 className="mb-12 text-4xl font-bold text-[#34315D] text-center">Why BookShip</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div data-aos="flip-left">
           {/* <img

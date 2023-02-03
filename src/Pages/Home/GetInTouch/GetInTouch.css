@@ -22,11 +22,11 @@
   cursor: pointer;
 }
 
-button:active {
+.custom-button:active {
   border-bottom: var(--border);
   transform: translateY(5px);
 }
 
-button:hover {
+.custom-button:hover {
   background: #fab005;
 }
