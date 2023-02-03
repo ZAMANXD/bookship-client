@@ -51,8 +51,6 @@ const SellerDashboardForm = ({ refetch }: any) => {
     };
 
     // bookDetailes upload mongodb server
-
-    console.log(bookDetailes);
     fetch(`https://bookship-server-zamanxd.vercel.app/book`, {
       method: "POST",
       headers: {
@@ -62,13 +60,24 @@ const SellerDashboardForm = ({ refetch }: any) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setLoading(false);
         refetch();
         e.target.reset();
-        setPreviewImage(undefined)
+        setPreviewImage(undefined);
       })
       .catch((err) => setLoading(false));
+
+    // Uplode categories
+    fetch(`https://bookship-server-zamanxd.vercel.app/categories`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ category }),
+    })
+      .then((res) => res.json())
+      .then((data)=> console.log(data))
+      .catch((err) => console.log(err));
   };
 
   const removeSelectedImage = () => {
@@ -150,9 +159,9 @@ const SellerDashboardForm = ({ refetch }: any) => {
                         stroke="currentColor"
                       >
                         <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
                           d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
                         />
                       </svg>

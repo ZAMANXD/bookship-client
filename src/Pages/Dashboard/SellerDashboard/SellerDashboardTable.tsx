@@ -50,33 +50,31 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                   bookCover,
                 } = book;
                 return (
-                  <>
-                    <div className="hidden lg:grid lg:grid-cols-[15%_20%_15%_15%_25%_10%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900">
-                      <div className="px-3 py-2">
-                        <img src={bookCover} alt="" className="w-16" />
-                      </div>
-                      <div className="px-3 py-2">
-                        <p>{bookTitle}</p>
-                      </div>
-                      <div className="px-3 py-2">
-                        <p>{originalPrice}</p>
-                      </div>
-                      <div className="px-3 py-2">
-                        <p>{discountedPrice}</p>
-                      </div>
-                      <div className="px-3 py-2">
-                        <p>{description}</p>
-                      </div>
-                      <div className="px-3 py-2 ">
-                        <button
-                          onClick={() => handleBookDelete(_id)}
-                          className="btn bg-green-600 px-5 py-2 text-white"
-                        >
-                          Delete
-                        </button>
-                      </div>
+                  <div key={_id} className="hidden lg:grid lg:grid-cols-[15%_20%_15%_15%_25%_10%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900">
+                    <div className="px-3 py-2">
+                      <img src={bookCover} alt="" className="w-16" />
                     </div>
-                  </>
+                    <div className="px-3 py-2">
+                      <p>{bookTitle}</p>
+                    </div>
+                    <div className="px-3 py-2">
+                      <p>{originalPrice}</p>
+                    </div>
+                    <div className="px-3 py-2">
+                      <p>{discountedPrice}</p>
+                    </div>
+                    <div className="px-3 py-2">
+                      <p>{description}</p>
+                    </div>
+                    <div className="px-3 py-2 ">
+                      <button
+                        onClick={() => handleBookDelete(_id)}
+                        className="btn bg-green-600 px-5 py-2 text-white"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
                 );
               })}
             </div>
