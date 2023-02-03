@@ -94,7 +94,7 @@ const Login = () => {
 						{...register("email", { required: "Email is required" })}
 						type="email"
 						id="email"
-						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
 					{errors.email && (
 						<p className="text-sm text-red-500">{errors.email?.message}</p>
 					)}
@@ -111,7 +111,7 @@ const Login = () => {
 						})}
 						type="password"
 						id="password"
-						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-300 text-gray-500" />
+						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
 					{errors.password && (
 						<p className="text-sm text-red-500">{errors.password?.message}</p>
 					)}
@@ -119,7 +119,7 @@ const Login = () => {
 						<a rel="noopener noreferrer" href="#">Forgot Password?</a>
 					</div>
 				</div>
-				<button className="block w-full p-3 text-center rounded-sm bg-[#3DB188] text-white">Log in</button>
+				<button className="block w-full p-3 text-center bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500 rounded-full text-white">Log in</button>
 			</form>
 			<div className="flex items-center pt-4 space-x-1">
 				<div className="flex-1 h-px sm:w-16 bg-gray-700"></div>

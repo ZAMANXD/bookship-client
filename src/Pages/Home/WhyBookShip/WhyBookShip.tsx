@@ -1,5 +1,7 @@
 import React from "react";
 // import whyBookShip from './img/why-bookship.jpg';
+import lottie4 from "../../../Lottie/lottie4.json";
+import Lottie from "lottie-react";
 
 const WhyBookShip = () => {
   const services = [
@@ -24,19 +26,20 @@ const WhyBookShip = () => {
 
   return (
     <div className="max-w-7xl mx-auto w-50 px-5 py-10 mt-20">
-      <h2 className="mb-12 text-4xl font-bold text-[#34315D]">Why BookShip</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <h2 className="mb-12 text-4xl font-bold text-[#34315D] text-center">Why BookShip</h2>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div data-aos="flip-left">
-          <img
+          {/* <img
             className="w-full h-full rounded-md"
             src="https://cdn.pixabay.com/photo/2016/09/08/22/43/books-1655783_960_720.jpg"
             alt=""
-          />
+          /> */}
+          <Lottie animationData={lottie4} loop={true} />
         </div>
         <div>
           {services.map((service, i) => (
             <div
-              className="bg-white rounded-md shadow-md hover:shadow-xl ease-in-out duration-150 p-5 lg:p-5 my-5"
+              className="bg-gradient-to-r from-gray-100 to-white rounded-md shadow-md hover:shadow-xl ease-in-out duration-150 p-5 lg:p-5 my-5"
               key={i}
               data-aos="flip-up"
             >

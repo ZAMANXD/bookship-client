@@ -6,7 +6,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
     const [clientSecret, setClientSecret] = useState<string>('');
     const [processing, setProcessing] = useState<boolean>(false);
     const [success, setSuccess] = useState<string>('');
-    const [transectionId, settransectionId] = useState<string>('');
+    const [transactionId, setTransactionId] = useState<string>('');
     const stripe = useStripe();
     const elements = useElements(); 
     const { orders } = props;
@@ -69,14 +69,14 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
         }if(paymentIntent.status === "succeeded"){
             console.log('card info', card);
             setSuccess('The payment has been successfully completed');
-            settransectionId(paymentIntent.id);
-            //store payment info in the database
-            // const payment = {
-            //     // price: orders.map(order => order.price),
-            //     transectionId: paymentIntent.id,
-            //     // email,
-            //     // orderId: _id,
-            // }
+            setTransactionId(paymentIntent.id);
+            // store payment info in the database
+            const payment = {
+                // price: orders.map(order => order.price),
+                transactionId: paymentIntent.id,
+                // email,
+                // orderId: _id,
+            }
             // fetch('https://bookship-server.vercel.app/payments', {
             //     method: 'POST',
             //     headers:{
@@ -90,7 +90,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
             //     console.log(data);
             //     if(data.insertId){
             //         setSuccess('The payment has been successfully completed');
-            //         settransectionId(paymentIntent.id);
+            //         setTransactionId(paymentIntent.id);
             //     }
             // })
         }
@@ -128,7 +128,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 {success}
             </p>
             <p>
-                Your transection Id: <span className='font-bold'>{transectionId}</span>
+                Your transection Id: <span className='font-bold'>{transactionId}</span>
             </p>
         </div>
       }

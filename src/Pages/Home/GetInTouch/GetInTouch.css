@@ -1,0 +1,32 @@
+.custom-bg {
+  background-image: url("https://bookshelf.themerex.net/wp-content/uploads/2021/08/bg_3-1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --bg-clr: #ffd43b;
+  --text-clr: #183153;
+  --border: 3px solid var(--text-clr);
+}
+
+.custom-button {
+  background: #ffd43b;
+  color: var(--text-clr);
+  padding: 12px;
+  font-size: larger;
+  border: var(--border);
+  border-radius: 50px;
+  border-bottom: 8px solid var(--text-clr);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.custom-button:active {
+  border-bottom: var(--border);
+  transform: translateY(5px);
+}
+
+.custom-button:hover {
+  background: #fab005;
+}
