@@ -18,7 +18,7 @@ import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
 import AdminRoute from "../PrivateRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
-import SellerRout from "../PrivateRoute/SellerRoute";
+import SellerRoute from "../PrivateRoute/SellerRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
@@ -101,11 +101,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/myaccount',
-                element: <MyAccount />
+                element: <PrivateRoute><MyAccount /></PrivateRoute>
             },
             {
                 path: '/dashboard/seller',
-                element: <SellerDashboard />
+                element: <SellerRoute><SellerDashboard /></SellerRoute>
             }
         ]
     },
