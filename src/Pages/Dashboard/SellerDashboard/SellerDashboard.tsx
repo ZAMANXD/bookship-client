@@ -17,7 +17,7 @@ const SellerDashboard = () => {
       return data;
     },
   });
-  const sellerBooks = books.filter((book: any) => {
+  const sellerBooks = books?.filter((book: any) => {
     return user.email === book.authorEmail;
   });
 

@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import AdminDashboardLayout from "../layouts/Dashboard/AdminDashboardLayout";
 import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
@@ -11,7 +12,9 @@ import Payment from "../Pages/Cart/Payment/Payment";
 import BooksByCategory from "../Pages/CategoriesBooks/BooksByCategory";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import AdminBuyerList from "../Pages/Dashboard/AdminDashboard/AdminBuyerList";
 import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
+import AdminSellerList from "../Pages/Dashboard/AdminDashboard/AdminSellerList";
 import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -119,13 +122,28 @@ export const router = createBrowserRouter([
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             },
-            {
-                path: '/dashboard/admin',
-                element: <AdminDashboard />
-            }
+            
             
         ]
     },
+    {
+        path: '/dashboard/admin',
+        element: <AdminDashboardLayout/>,
+        children:[
+            {
+                path:'/dashboard/admin',
+                element:<AdminDashboard/>
+            },
+            {
+                path:'/dashboard/admin/sellerList',
+                element:<AdminSellerList/>
+            },
+            {
+                path:'/dashboard/admin/buyerList',
+                element:<AdminBuyerList/>
+            }
+        ]
+    }
 ])
 
 

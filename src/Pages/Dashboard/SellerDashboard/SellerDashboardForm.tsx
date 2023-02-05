@@ -1,16 +1,13 @@
 import { useState, useContext } from "react";
-import { HiOutlineX } from "react-icons/hi";
 import { AuthContext } from "../../../context/AuthProvider";
 
 const SellerDashboardForm = ({ refetch }: any) => {
   const { user } = useContext(AuthContext);
-  const [previewImage, setPreviewImage] = useState<any>();
   const [image, setImage] = useState<any>();
   const [loading, setLoading] = useState(false);
 
   const handleSellerBookImage = (e: any) => {
     const image = e.target.files[0];
-    setPreviewImage(image);
     // Image Upload imgbb server
     const formData = new FormData();
     formData.append("image", image);
@@ -64,7 +61,6 @@ const SellerDashboardForm = ({ refetch }: any) => {
         setLoading(false);
         refetch();
         e.target.reset();
-        setPreviewImage(undefined);
       })
       .catch((err) => setLoading(false));
 
@@ -81,10 +77,6 @@ const SellerDashboardForm = ({ refetch }: any) => {
       .catch((err) => console.log(err));
   };
 
-  const removeSelectedImage = () => {
-    setPreviewImage(undefined);
-  };
-
   return (
     <>
       <div className="w-full">
@@ -98,13 +90,13 @@ const SellerDashboardForm = ({ refetch }: any) => {
               type="text"
               name="title"
               placeholder="Title"
-              className="border-b border-b-gray-700 h-10 px-2  w-full"
+              className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
             />
             <input
               type="number"
               name="price"
               placeholder="Price"
-              className="border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5"
+              className="border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5 outline-none"
             />
           </div>
           <div className="sm:flex justify-between gap-5  mt-5">
@@ -112,13 +104,13 @@ const SellerDashboardForm = ({ refetch }: any) => {
               type="text"
               name="category"
               placeholder="Category"
-              className="border-b border-b-gray-700 h-10 px-2  w-full"
+              className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
             />
             <input
               type="number"
               name="discountPrice"
               placeholder="Discount Price"
-              className="border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5"
+              className="border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5 outline-none"
             />
           </div>
           <div className="sm:flex justify-between gap-5  mt-5">
@@ -126,75 +118,28 @@ const SellerDashboardForm = ({ refetch }: any) => {
               type="text"
               name="publication"
               placeholder="Publication"
-              className="border-b border-b-gray-700 h-10 px-2  w-full mt-5"
+              className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
             />
             <input
               type="text"
               name="author"
               placeholder="Author"
-              className="border-b border-b-gray-700 h-10 px-2  w-full mt-5"
+              className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
             />
           </div>
-
+          <label
+            htmlFor="upload-file"
+            className="border-b border-b-gray-700 h-10 px-2  w-full mt-5 block cursor-pointer text-gray-400 outline-none"
+          >
+            Upload Image
+            <input type="file" onChange={handleSellerBookImage} id="upload-file" hidden />
+          </label>
           <textarea
             name="detailes"
             placeholder="Details"
-            className="border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2"
+            className="border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2 outline-none"
           ></textarea>
-          <div className="grid grid-cols-1 space-y-2  mt-5 ">
-            <div className="flex items-center justify-center w-full h-full relative">
-              <div
-                onClick={removeSelectedImage}
-                className="absolute top-2 cursor-pointer  left-3 bg-gray-300 w-10 h-10 rounded-full flex justify-center items-center"
-              >
-                <HiOutlineX className="text-2xl font-bold" />
-              </div>
-              <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60  group text-center">
-                {previewImage ? (
-                  <div className="w-full h-[230px] flex justify-center items-center">
-                    <img
-                      className="object-contain h-full overflow-hidden"
-                      src={URL.createObjectURL(previewImage)}
-                      alt=""
-                    />
-                  </div>
-                ) : (
-                  <div className="flex justify-center items-center h-full w-full ">
-                    <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-10 h-10 text-blue-400 group-hover:text-blue-600"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                        />
-                      </svg>
-                      <p className="pointer-none text-gray-500 ">
-                        select a file from your computer
-                      </p>
-                    </div>
-                    <input
-                      type="file"
-                      name="image"
-                      accept="image/*"
-                      className="hidden"
-                      multiple
-                      onChange={handleSellerBookImage}
-                    />
-                  </div>
-                )}
-              </label>
-            </div>
-          </div>
-          <p className="text-sm text-gray-300">
-            <span>File type: doc,pdf,types of images</span>
-          </p>
+
           <button
             disabled={!image}
             type="submit"
