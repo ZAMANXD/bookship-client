@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
-import Books from "../Pages/AllBooks/Books";
+import BooksByPrice from "../Pages/AllBooks/BooksByPrice";
 // import AllBooks from "../Pages/AllBooks/AllBooks";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
@@ -70,7 +70,7 @@ export const router = createBrowserRouter([
                     },
                     {
                         path: '/books/bookprice',
-                        element: <Books />
+                        element: <BooksByPrice />
                     },
                     {
                         path: '/books/authorbooks',
