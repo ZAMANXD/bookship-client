@@ -10,7 +10,7 @@ const SellerAnalytics = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/books`)
+        fetch(`https://bookship-server-zamanxd.vercel.app/books`)
             .then((res) => res.json())
             .then((data) => {
                 const authorBooks = data.filter((book: any) => {

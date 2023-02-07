@@ -9,17 +9,17 @@ const BooksByPrice = () => {
     const [books, setBooks] = useState([])
     const [loading, setLoading] = useState(false)
 
-    useTitle(`- Low to High`)
+    useTitle(`- Price`)
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:5000/booksprice?value=${value}`)
+        fetch(`https://bookship-server-zamanxd.vercel.app/booksprice?value=${value}`)
             .then((res) => res.json())
             .then((data) => {
                 setBooks(data)
                 setLoading(false)
             });
     }, [value])
-    console.log(value);
+    
     if (loading) {
         return <Spinner />
     }
