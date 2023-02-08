@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
+import BooksByPrice from "../Pages/AllBooks/BooksByPrice";
 // import AllBooks from "../Pages/AllBooks/AllBooks";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
@@ -65,7 +66,11 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         path: '/books',
-                        element: <AuthorBooks />
+                        element: <BooksByPrice />
+                    },
+                    {
+                        path: '/books/bookprice',
+                        element: <BooksByPrice />
                     },
                     {
                         path: '/books/authorbooks',
@@ -111,7 +116,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/seller',
                 element: <SellerRoute><SellerDashboard /></SellerRoute>
-                
+
             },
             {
 
@@ -123,7 +128,7 @@ export const router = createBrowserRouter([
                 path: '/dashboard/admin',
                 element: <AdminDashboard />
             }
-            
+
         ]
     },
 ])
