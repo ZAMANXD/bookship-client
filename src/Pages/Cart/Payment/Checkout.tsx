@@ -47,7 +47,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
         }
       },
       appearance: {
-        theme: "stripe"
+        theme: "stripe",
       }
     };
    
