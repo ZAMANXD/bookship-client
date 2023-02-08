@@ -11,6 +11,46 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
     const elements = useElements(); 
     const { orders } = props;
 
+    // const appearance = {
+    //   theme: 'stripe'
+    // };
+
+    interface StripeCardElementOptions {
+      style: {
+        base: {
+          fontSize: string;
+          color: string;
+          '::placeholder': {
+            color: string;
+          };
+        };
+        invalid: {
+          color: string;
+        };
+      };
+      appearance: {
+        theme: string;
+      };
+    }
+    
+    const options: StripeCardElementOptions = {
+      style: {
+        base: {
+          fontSize: "16px",
+          color: "#32325d",
+          "::placeholder": {
+            color: "#aab7c4"
+          }
+        },
+        invalid: {
+          color: "#fa755a"
+        }
+      },
+      appearance: {
+        theme: "stripe",
+      }
+    };
+   
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         fetch("https://bookship-server.vercel.app/create-payment-intent", {
@@ -72,49 +112,36 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
             setTransactionId(paymentIntent.id);
             // store payment info in the database
             const payment = {
-                // price: orders.map(order => order.price),
+                price: orders.map(order => order.price),
                 transactionId: paymentIntent.id,
                 // email,
                 // orderId: _id,
             }
-            // fetch('https://bookship-server.vercel.app/payments', {
-            //     method: 'POST',
-            //     headers:{
-            //         'content-type':'application/json',
-            //         // authorization: `bearer ${localStorage.getItem('accessToken')}`
-            //     },
-            //     body: JSON.stringify(payment),
-            // })
-            // .then(res =>res.json())
-            // .then(data => {
-            //     console.log(data);
-            //     if(data.insertId){
-            //         setSuccess('The payment has been successfully completed');
-            //         setTransactionId(paymentIntent.id);
-            //     }
-            // })
+            fetch('https://bookship-server.vercel.app/payments', {
+                method: 'POST',
+                headers:{
+                    'content-type':'application/json',
+                    // authorization: `bearer ${localStorage.getItem('accessToken')}`
+                },
+                body: JSON.stringify(payment),
+            })
+            .then(res =>res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertId){
+                    setSuccess('The payment has been successfully completed');
+                    setTransactionId(paymentIntent.id);
+                }
+            })
         }
         setProcessing(false);
     }
     return (
         <>
         <form onSubmit={handleSubmit}>
-        <CardElement
-          options={{
-            style: {
-              base: {
-                fontSize: '16px',
-                color: '#424770',
-                '::placeholder': {
-                  color: '#aab7c4',
-                },
-              },
-              invalid: {
-                color: '#9e2146',
-              },
-            },
-          }}
-        />
+       
+        <CardElement options={options} />
+
         <button className='btn btn-sm btn-primary mt-6' type="submit" disabled={!stripe || !clientSecret || processing}>
           Pay
         </button>

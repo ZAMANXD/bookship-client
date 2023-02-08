@@ -37,8 +37,8 @@ const SellerDashboardForm = ({ refetch }: any) => {
       bookTitle: title,
       bookCover: image,
       bookRating: 4.5,
-      originalPrice: price,
-      discountedPrice: discountPrice,
+      originalPrice: parseInt(price),
+      discountedPrice: parseInt(discountPrice),
       description: detailes,
       authorName: author,
       authorEmail: user.email,
@@ -143,9 +143,8 @@ const SellerDashboardForm = ({ refetch }: any) => {
           <button
             disabled={!image}
             type="submit"
-            className={`btn ${
-              image ? "bg-green-500" : "bg-gray-400 text-gray-100"
-            }  text-white py-2 px-5 mt-6`}
+            className={`btn ${image ? "bg-green-500" : "bg-gray-400 text-gray-100"
+              }  text-white py-2 px-5 mt-6`}
           >
             {loading ? "Procesing..." : "Add Book"}
           </button>

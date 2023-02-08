@@ -6,6 +6,8 @@ import Checkout from './Checkout';
 
 const stripePromise = loadStripe('pk_test_51HLlbcEAY8E8Wcd6LzSK0c1L77l76K09uROjR1cnfH4QNjHuLmvbsWTIYZeUN6FLetNdxqoZKX2aKG79woMp7LFg00MZxlcnMD');
 
+// const appearance: { theme: string } = { theme: 'stripe' };
+
 const Payment = () => {
     let orders = useLoaderData() as { _id: string, id: string, quantity: number; price: number }[];
 
