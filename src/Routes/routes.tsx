@@ -6,6 +6,7 @@ import BooksByPrice from "../Pages/AllBooks/BooksByPrice";
 // import AllBooks from "../Pages/AllBooks/AllBooks";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
+import Blog from "../Pages/Blog/Blog/Blog";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
 import Payment from "../Pages/Cart/Payment/Payment";
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
             {
                 path: '/aboutus',
                 element: <AboutUs></AboutUs>
+            },
+            {
+                path:'/blog',
+                element:<Blog/>
             },
             {
                 path: '/contactus',
