@@ -13,21 +13,22 @@ const AuthProvider= (props:any)=>{
     const [loading, setLoading] = useState<Boolean>(true);
 
     // Create user email & password
-    const signUp = (email:"string", passwor:"string") => {
+    const signUp = (email:string, passwor:string) => {
       setLoading(true);
       return createUserWithEmailAndPassword(auth, email, passwor);
     };
   
     // login email & password
-    const login = (email:"string", passwor:"string") => {
+    const login = (email:string, passwor:string) => {
       setLoading(true);
       return signInWithEmailAndPassword(auth, email, passwor);
     };
   
     //Update Name
-    const nameUpdate = (name:"string") => {
+    const nameUpdate = (name:string,photo:string) => {
       return updateProfile(auth.currentUser, {
         displayName: name,
+        photoURL: photo,
       });
     };
   
@@ -38,7 +39,7 @@ const AuthProvider= (props:any)=>{
     };
   
     // send a email for reset password
-    const forgatePassword = (email:"string") => {
+    const forgatePassword = (email:string) => {
       setLoading(true);
       return sendPasswordResetEmail(auth, email);
     };
