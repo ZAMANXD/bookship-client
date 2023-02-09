@@ -6,7 +6,7 @@ const Summary = () => {
     const [bookData, setBookData] = useState<any[]>([])
 
     useEffect(() => {
-        fetch("books.json")
+        fetch("https://bookship-server-zamanxd.vercel.app/books")
             .then((res) => res.json())
             .then((data) => setBookData(data));
     }, [])
@@ -18,8 +18,10 @@ const Summary = () => {
 
         return total + (book?.discountedPrice || 0) * cartItem?.quantity
     }, 0);
+    
+    console.log( subTotal)
 
-    const shipping = 10 * cartQuantity
+    const shipping = 10 
 
     const tax = subTotal * 10 / 100;
 
