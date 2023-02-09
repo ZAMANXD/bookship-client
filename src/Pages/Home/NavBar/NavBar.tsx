@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../context/AuthProvider";
@@ -16,10 +16,14 @@ const NavBar = () => {
   const [inputValue, setInputValue] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-
   const handleGetSeachInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     SetSearhInput(e.target.value.toLowerCase());
   };
+
+  // ------------------------------- Nav show-hide ------------------
+ 
+
+  // ------------------------------- Nav show-hide ------------------
 
   const handleInputSubmit = () => {
     setInputValue(searchInput);
@@ -86,65 +90,97 @@ const NavBar = () => {
         </Link>
       </li>
 
-      {user ? (<>
-        <div className="dropdown dropdown-end hidden lg:block">
-          <label tabIndex={0}>
-            <img src={
-              user?.photoURL? user.photoURL:avatar
-              } alt="" className="w-6 h-6 rounded-full" />
-          </label>
-          <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li><a><Link
-          to="/myaccount"
-          aria-label="About us"
-          title="About us"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-        >
-          My Account
-        </Link></a></li>
-            <li><a>
-            <button
-          onClick={() => {
-            logOut()
-            toast.error('Success fully logOut')
-          }}
-          className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700"
-          title="Log out"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-7 h-7">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-          </svg>
+      {user ? (
+        <>
+          <div className="dropdown dropdown-end hidden lg:block">
+            <label tabIndex={0}>
+              <img
+                src={user?.photoURL ? user.photoURL : avatar}
+                alt=""
+                className="w-6 h-6 rounded-full"
+              />
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a>
+                  <Link
+                    to="/myaccount"
+                    aria-label="About us"
+                    title="About us"
+                    className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  >
+                    My Account
+                  </Link>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <button
+                    onClick={() => {
+                      logOut();
+                      toast.error("Success fully logOut");
+                    }}
+                    className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700"
+                    title="Log out"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="w-7 h-7"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                      />
+                    </svg>
+                  </button>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        </button>
-              </a></li>
-          </ul>
-        </div>
-        
-        <button
-          onClick={() => {
-            logOut()
-            toast.error('Success fully logOut')
-          }}
-          className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700 block lg:hidden"
-          title="Log out"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-7 h-7">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-          </svg>
-
-        </button>
-        <li>
-        <Link
-          to="/myaccount"
-          aria-label="About us"
-          title="About us"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 block lg:hidden"
-        >
-          My Account
-        </Link>
-      </li></>
+          <button
+            onClick={() => {
+              logOut();
+              toast.error("Success fully logOut");
+            }}
+            className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700 block lg:hidden"
+            title="Log out"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-7 h-7"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+              />
+            </svg>
+          </button>
+          <li>
+            <Link
+              to="/myaccount"
+              aria-label="About us"
+              title="About us"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 block lg:hidden"
+            >
+              My Account
+            </Link>
+          </li>
+        </>
       ) : (
-
         <Link
           to="/login"
           className="rounded-full hover:bg-green-400 hover:text-white duration-200 px-2 py-1 text-green-500 font-semibold"
@@ -163,8 +199,9 @@ const NavBar = () => {
   );
 
   return (
-    <div className="sticky top-0 z-[9999] backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
-      <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    // sticky top-0
+    <div className=" sticky top-0  z-[9999] p-2 ">
+      <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  rounded-full backdrop-filter backdrop-blur-lg bg-opacity-30 border shadow border-gray-200">
         <div className="relative flex items-center justify-between">
           <Link
             to="/"
