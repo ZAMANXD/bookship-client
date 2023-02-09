@@ -66,6 +66,16 @@ const NavBar = () => {
           title="Our Books"
           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
         >
+          Add Book
+        </Link>
+      </li>
+      <li>
+        <Link
+          to="/dashboard/admin"
+          aria-label="Our Books"
+          title="Our Books"
+          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+        >
           Dashboard
         </Link>
       </li>
