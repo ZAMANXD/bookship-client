@@ -70,7 +70,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
 
     // Uplode categories
     fetch(`https://bookship-server-zamanxd.vercel.app/categories`, {
-      method: "POST",
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
