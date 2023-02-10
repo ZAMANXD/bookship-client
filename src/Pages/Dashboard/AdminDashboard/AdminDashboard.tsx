@@ -1,44 +1,32 @@
 import { useQuery } from "@tanstack/react-query";
-import { deleteUser } from "firebase/auth";
-import { AuthContext } from "../../../context/AuthProvider";
-import { useContext } from "react";
-import AdminBuyerList from "./AdminBuyerList";
-import AdminSellerList from "./AdminSellerList";
+import { useEffect } from "react";
+import BookPostForm from "../../../Shared/Comments/BookPostForm";
 
 const AdminDashboard = () => {
-  const { user } = useContext(AuthContext);
-  const { data: users, refetch } = useQuery({
-    queryKey: ["users"],
+  const { data: ordersCollection, refetch } = useQuery({
+    queryKey: ["orders"],
     queryFn: async () => {
       const res = await fetch(
-        `https://bookship-server-zamanxd.vercel.app/users`
+        `https://bookship-server-zamanxd.vercel.app/orders`
       );
       const data = await res.json();
       return data;
     },
   });
-  const handleSellerDelete = (email: any) => {
-    fetch(`https://bookship-server-zamanxd.vercel.app/users?email=${email}`, {
-      method: "DELETE",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.deletedCount > 0) {
-          refetch();
-        }
-      });
-    deleteUser(user)
-      .then(() => {})
-      .catch(() => {});
-  };
+  const ordersBooks: any = JSON.parse(localStorage.getItem("cart") as any);
+ 
+  const initialValue = 0;
+  const totalOrderBooks = ordersBooks.reduce(
+    (accumulator:any, book:any) => accumulator + book.quantity,
+    initialValue
+  );
+  console.log(totalOrderBooks)
 
+  const url = window.location.href
+  console.log(url === "http://localhost:3000/")
   return (
-    <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl w-full md:px-24 lg:px-8 px-4 ">
-      <AdminBuyerList users={users} handleSellerDelete={handleSellerDelete} />
-      <AdminSellerList users={users} handleSellerDelete={handleSellerDelete} />
+    <div className="">
+      <BookPostForm />
     </div>
   );
 };

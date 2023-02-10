@@ -1,16 +1,16 @@
-import React from "react";
+import { HiOutlineTrash } from "react-icons/hi";
 
 const AdminDashboardTable = ({ title, newUsers, handleSellerDelete }: any) => {
   return (
-    <div className="mt-8 w-auto">
-      <h1 className="text-4xl font-bold">{title}</h1>
-      <div className=" mt-7">
+    <div className="">
+      <h1 className="text-3xl font-bold">{title}</h1>
+      <div className=" mt-3">
         <div className=" text-xs text-left ">
-          <div className="bg-gray-300 lg:grid grid-cols-[15%_20%_15%_15%]">
-            <div className="p-3">Name</div>
-            <div className="p-3">Email</div>
-            <div className="p-3">Verified</div>
-            <div className="p-3">Delete</div>
+          <div className="bg-gray-300 w-full flex items-center h-10 pl-5">
+            <div className="w-[150px]">Name</div>
+            <div className="w-[250px]">Email</div>
+            <div className="w-[120px]">Verified</div>
+            <div className="w-[80px]">Delete</div>
           </div>
           <div>
             {newUsers?.map((seller: any) => {
@@ -18,24 +18,19 @@ const AdminDashboardTable = ({ title, newUsers, handleSellerDelete }: any) => {
               return (
                 <div
                   key={_id}
-                  className=" lg:grid lg:grid-cols-[15%_20%_15%_15%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900"
+                  className="w-full flex items-center break-words my-5 pl-5"
                 >
-                  <div className="px-3 py-2">
+                  <div className="w-[150px]">
                     <p>{name}</p>
                   </div>
-                  <div className="px-3 py-2">
+                  <div className="w-[250px]">
                     <p>{email}</p>
                   </div>
-                  <div className="px-3 py-2">
+                  <div className="w-[120px]">
                     <p>{isVerified ? "Verified" : "Unverified"}</p>
                   </div>
-                  <div className="px-3 py-2 ">
-                    <button
-                      onClick={() => handleSellerDelete(email)}
-                      className="btn bg-green-600 px-5 py-2 text-white"
-                    >
-                      Delete
-                    </button>
+                  <div className=" w-[80px]">
+                    <HiOutlineTrash onClick={() => handleSellerDelete(email)} className="text-2xl font-bold cursor-pointer hover:text-red-500"/>
                   </div>
                 </div>
               );

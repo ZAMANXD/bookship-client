@@ -1,10 +1,11 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../../../context/AuthProvider";
+import { AuthContext } from "../../context/AuthProvider";
 
-const SellerDashboardForm = ({ refetch }: any) => {
+const BookPostForm = ({ refetch }: any) => {
   const { user } = useContext(AuthContext);
   const [image, setImage] = useState<any>();
   const [loading, setLoading] = useState(false);
+  const bookPostDate = new Date().getDate();
 
   const handleSellerBookImage = (e: any) => {
     const image = e.target.files[0];
@@ -40,12 +41,14 @@ const SellerDashboardForm = ({ refetch }: any) => {
       originalPrice: parseInt(price),
       discountedPrice: parseInt(discountPrice),
       description: detailes,
+      sellerName: user.displayName,
       authorName: author,
       authorEmail: user.email,
       authorImg: "https://userimg.png" || user.photoURL,
       authorRating: 4,
       category,
       publication,
+      bookPostDate,
     };
 
     // bookDetailes upload mongodb server
@@ -66,7 +69,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
 
     // Uplode categories
     fetch(`https://bookship-server-zamanxd.vercel.app/categories`, {
-      method: "PUT",
+      method: "POST",
       headers: {
         "content-type": "application/json",
       },
@@ -132,7 +135,12 @@ const SellerDashboardForm = ({ refetch }: any) => {
             className="border-b border-b-gray-700 h-10 px-2  w-full mt-5 block cursor-pointer text-gray-400 outline-none"
           >
             Upload Image
-            <input type="file" onChange={handleSellerBookImage} id="upload-file" hidden />
+            <input
+              type="file"
+              onChange={handleSellerBookImage}
+              id="upload-file"
+              hidden
+            />
           </label>
           <textarea
             name="detailes"
@@ -143,8 +151,9 @@ const SellerDashboardForm = ({ refetch }: any) => {
           <button
             disabled={!image}
             type="submit"
-            className={`btn ${image ? "bg-green-500" : "bg-gray-400 text-gray-100"
-              }  text-white py-2 px-5 mt-6`}
+            className={`btn ${
+              image ? "bg-green-500" : "bg-gray-400 text-gray-100"
+            }  text-white py-2 px-5 mt-6`}
           >
             {loading ? "Procesing..." : "Add Book"}
           </button>
@@ -154,4 +163,4 @@ const SellerDashboardForm = ({ refetch }: any) => {
   );
 };
 
-export default SellerDashboardForm;
+export default BookPostForm;
