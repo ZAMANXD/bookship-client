@@ -9,7 +9,7 @@ const Cards = () => {
  
 	return (
 		<div className="py-10 bg-[#E7FDFD]">
-			<div className="space-y-20 w-[450px] lg:w-[900px] mx-auto ">
+			<div className="space-y-20 w-[400px] lg:w-[900px] mx-auto ">
 			{cardsData.map((card, index) => (
 				<Card key={card.id} data={card} stickyTopSpace={stickyTopSpace * (index + 1)}></Card>
 			))}
