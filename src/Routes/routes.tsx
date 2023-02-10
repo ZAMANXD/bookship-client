@@ -24,6 +24,7 @@ import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import BooksByPublication from "../Pages/PublicationBooks/BooksByPublication";
 import PublicationBooks from "../Pages/PublicationBooks/PublicationBooks";
 import SignUp from "../Pages/SignUp/SignUp";
+import AdminRoute from "../PrivateRoute/AdminRoute";
 // import AdminRoute from "../PrivateRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 // import SellerRoute from "../PrivateRoute/SellerRoute";
@@ -138,7 +139,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard/admin',
-        element: <AdminDashboardLayout/>,
+        element: <AdminRoute><AdminDashboardLayout/></AdminRoute>,
         children:[
             {
                 path:'/dashboard/admin',
