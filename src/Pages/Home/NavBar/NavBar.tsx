@@ -7,6 +7,8 @@ import { useCart } from "../../../context/CartContext";
 import { toast } from "react-hot-toast";
 import SearchBar from "../../../SearchBar/SearchBar";
 import avatar from "../../../imgFile/avatar.png";
+import useSeller from "../../../hooks/useSeller";
+import useAdmin from "../../../hooks/useAdmin";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +17,8 @@ const NavBar = () => {
   const [searchInput, SetSearhInput] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [isSeller, sellerLoading] = useSeller(user?.email);
+  const [isAdmin, adminLoading] = useAdmin(user?.email);
 
   const handleGetSeachInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     SetSearhInput(e.target.value.toLowerCase());
@@ -64,6 +68,8 @@ const NavBar = () => {
           Books
         </Link>
       </li>
+      {
+      isSeller&&
       <li>
         <Link
           to="/dashboard/seller"
@@ -73,7 +79,9 @@ const NavBar = () => {
         >
           Add Book
         </Link>
-      </li>
+      </li>}
+      {
+      isAdmin&&
       <li>
         <Link
           to="/dashboard/admin"
@@ -84,6 +92,7 @@ const NavBar = () => {
           Dashboard
         </Link>
       </li>
+      }
       <li>
         <Link to="/addtocart">
           <div className="flex justify-start md:justify-center text-lg items-center relative ">

@@ -1,0 +1,99 @@
+.BlogPost {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .BlogPost-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .BlogPost-header img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+
+  .BlogPost-author {
+    font-size: 14px;
+    color: gray;
+    margin-top: 5px;
+  }
+  
+  .BlogPost-content {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .BlogPost-read-more {
+    color: gray;
+  }
+
+  .BlogPost-read-less{
+    color: gray;
+  }
+  
+  .BlogPost-title {
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .BlogPost-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .BlogPost-like-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .BlogPost-like-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .BlogPost-likes {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .BlogPost-comment-toggle {
+    font-size: 14px;
+    color: blue;
+    cursor: pointer;
+  }
+  
+  .BlogPost-comments {
+    margin-top: 20px;
+  }
+  
+  .BlogPost-comment {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .BlogPost-comment-author {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .BlogPost-comment-text {
+    font-size: 14px;
+  }
+  
