@@ -1,12 +1,25 @@
-.carousel-img{
-    /* object-fit: cover; */
-    max-width: 100%;
-    overflow: hidden;
+.carousel-img {
+  /* object-fit: cover; */
+  max-width: 100%;
+  overflow: hidden;
 }
 .slider-btn {
-    outline: none;
-    border: none;
+  outline: none;
+  border: none;
 }
-.discount-text{
-    font-size: 0.65rem;
+.discount-text {
+  font-size: 0.65rem;
+}
+.custom_Css {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 1)
+    ),
+    url("../../../../assets/bg-gradient.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
