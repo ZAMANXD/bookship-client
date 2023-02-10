@@ -5,6 +5,7 @@ import BlogPost from '../BlogPost/BlogPost';
 
 interface Props {
   posts: {
+    _id: string;
     title: string;
     author: string;
     content: string;
