@@ -6,6 +6,7 @@ import SingleBlog from '../SingleBlog/SingleBlog';
 const Blog = () => {
     const posts = [
         {
+            _id: '01',
           title: 'Blog on Lessons in Chemistry by Bonnie Garmus',
           author: 'Achintya Kumar Talukdar',
           picture: 'https://static01.nyt.com/images/2022/04/10/books/review/05GroupText-GARMUS-SUB01/05GroupText-GARMUS-SUB01-videoSixteenByNineJumbo1600-v2.jpg' ,
@@ -14,6 +15,7 @@ const Blog = () => {
           comments: [],
         },
         {
+            _id: '02',
           title: 'Blog on The Stolen Heir: A Novel of Elfhame',
           author: 'Achintya Kumar Talukdar',
           picture: 'https://m.media-amazon.com/images/I/51m1CHFKUxL.jpg' ,

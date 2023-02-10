@@ -3,6 +3,7 @@ import './BlogPost.css';
 import CommentForm from '../CommentForm/CommentForm';
 
 interface BlogPostProps {
+    _id: string;
     title: string;
     author: string;
     content: string;
@@ -11,7 +12,8 @@ interface BlogPostProps {
     comments: { name: string, text: string }[];
   }
 
-const BlogPost: React.FC<BlogPostProps> = ({ title, author, content, picture, likes }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ _id,title, author, content, picture, likes }) => {
+    const [isLiked, setIsLiked] = useState(false);
     const [likeCount, setLikeCount] = useState(likes);
     const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState<{ author: string; text: string }[]>([]);
@@ -19,7 +21,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, author, content, picture, li
   const [truncatedText, setTruncatedText] = useState(content.slice(0, 300));
 
   const handleLikeClick = () => {
-    setLikeCount(likes + 1);
+    if (isLiked) {
+        setLikeCount(likeCount - 1);
+        setIsLiked(false);
+      } else {
+        setLikeCount(likeCount + 1);
+        setIsLiked(true);
+      }
   };
 
   const handleCommentSubmit = (author: string, text: string) => {
@@ -58,7 +66,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ title, author, content, picture, li
       <div className="BlogPost-footer">
         <div className="BlogPost-like-container">
           <button className="BlogPost-like-button" onClick={handleLikeClick}>
-            Like
+          {isLiked ? 'Unlike' : 'Like'}
           </button>
           <p className="BlogPost-likes">{likeCount} likes</p>
         </div>
