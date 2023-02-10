@@ -64,7 +64,7 @@ const MyAccount = () => {
 
             // Update profile in database
 
-            fetch("http://localhost:5000/user",{
+            fetch("https://bookship-server-zamanxd.vercel.app/user",{
                 method:"PATCH",
                 headers:{
                     "content-type": "application/json"
