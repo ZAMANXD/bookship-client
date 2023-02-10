@@ -1,4 +1,5 @@
 import React from "react";
+import Cards from "../../../components/Cards/Cards";
 import useTitle from "../../../hooks/useTitle";
 import GetInTouch from "../GetInTouch/GetInTouch";
 import NewReleases from "../NewReleases/NewReleases";
@@ -17,6 +18,7 @@ const Home = () => {
       <NewReleases></NewReleases>
       <WhyBookShip></WhyBookShip>
       <Testimonials></Testimonials>
+      <Cards></Cards>
       <GetInTouch></GetInTouch>
     </div>
   );
