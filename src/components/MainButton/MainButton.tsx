@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./MainButton.css";
 
 const MainButton = () => {
   return (
     <div>
+      <Link to='/books'>
       <button className="cssbuttons-io-button">
         {" "}
         Get started
@@ -21,7 +23,7 @@ const MainButton = () => {
             ></path>
           </svg>
         </div>
-      </button>
+      </button></Link>
     </div>
   );
 };

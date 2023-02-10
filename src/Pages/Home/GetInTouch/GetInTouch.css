@@ -1,7 +1,15 @@
 .custom-bg {
-  background-image: url("https://bookshelf.themerex.net/wp-content/uploads/2021/08/bg_3-1.jpg");
-  background-position: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, .2),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, .2)
+    ),
+    url("https://bookshelf.themerex.net/wp-content/uploads/2021/08/bg_3-1.jpg");
+
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 :root {
@@ -29,4 +37,8 @@
 
 .custom-button:hover {
   background: #fab005;
+}
+
+.custom_Css {
+ 
 }
