@@ -22,7 +22,7 @@ const AuthorBooks = () => {
         return <Spinner />
     }
     return (
-        <div className='p-3 bg-gray-100'>
+        <div className='bg-gray-200 rounded-lg'>
             {
                 authors.filter(author => author.role === 'seller').map((author, i) => <AuthorBook key={i} {...author} />)
             }

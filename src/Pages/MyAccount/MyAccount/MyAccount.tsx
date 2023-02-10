@@ -19,7 +19,7 @@ const MyAccount = () => {
     let userRole:string =''
     if(isAdmin){
         userRole='admin'
-    }if(isSeller) {
+    }else if(isSeller) {
         userRole='seller'
     }else{
         userRole='buyer'
@@ -64,7 +64,7 @@ const MyAccount = () => {
 
             // Update profile in database
 
-            fetch("http://localhost:5000/user",{
+            fetch("https://bookship-server-zamanxd.vercel.app/user",{
                 method:"PATCH",
                 headers:{
                     "content-type": "application/json"
@@ -139,7 +139,7 @@ const MyAccount = () => {
                     </div>
 
                     <div>
-					    <label htmlFor="role" className="block text-gray-500">
+					    <label htmlFor="role" className="label label-text">
 						Select user role
 					    </label>
 					    <select id="role" name='role'
@@ -151,10 +151,10 @@ const MyAccount = () => {
 				</div>
 
                     <div className='flex justify-center my-5'>
-                        <input className='bg-[#3DB188] border hover:border-[#3DB188] hover:bg-white hover:text-[#3DB188] py-2 w-[50%] text-white font-semibold rounded-full' type="submit" value="Save" />
+                        <input className='bg-[#3DB188] border hover:border-[#3DB188] hover:bg-white hover:text-[#3DB188] py-2 w-[50%] text-white font-semibold rounded-full' type="submit" value="SAVE" />
                         <button
                         onClick={()=>setEditNow(false)}
-                        className='bg-[#d04343] border hover:border-[#d04343] hover:bg-white hover:text-[#d04343] py-2 w-[50%] text-white font-semibold rounded-full'>censel</button>
+                        className='bg-[#d04343] border hover:border-[#d04343] hover:bg-white hover:text-[#d04343] py-2 w-[50%] text-white font-semibold rounded-full'>EXIT</button>
                     </div>
                     </form>
                 </div>

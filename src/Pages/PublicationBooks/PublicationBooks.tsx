@@ -23,7 +23,7 @@ const PublicationBooks = () => {
     }
 
     return (
-        <div className='p-3 bg-gray-100'>
+        <div className='bg-gray-200 rounded-lg'>
             {
                 publications.map((publication, i) => <PublicationBook key={i} {...publication} />)
             }

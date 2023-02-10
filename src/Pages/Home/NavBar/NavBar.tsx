@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../context/AuthProvider";
@@ -7,6 +7,8 @@ import { useCart } from "../../../context/CartContext";
 import { toast } from "react-hot-toast";
 import SearchBar from "../../../SearchBar/SearchBar";
 import avatar from "../../../imgFile/avatar.png";
+import useSeller from "../../../hooks/useSeller";
+import useAdmin from "../../../hooks/useAdmin";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,10 +17,17 @@ const NavBar = () => {
   const [searchInput, SetSearhInput] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [isSeller, sellerLoading] = useSeller(user?.email);
+  const [isAdmin, adminLoading] = useAdmin(user?.email);
 
   const handleGetSeachInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     SetSearhInput(e.target.value.toLowerCase());
   };
+
+  // ------------------------------- Nav show-hide ------------------
+ 
+
+  // ------------------------------- Nav show-hide ------------------
 
   const handleInputSubmit = () => {
     setInputValue(searchInput);
@@ -59,6 +68,8 @@ const NavBar = () => {
           Books
         </Link>
       </li>
+      {
+      isSeller&&
       <li>
         <Link
           to="/dashboard/seller"
@@ -68,7 +79,9 @@ const NavBar = () => {
         >
           Add Book
         </Link>
-      </li>
+      </li>}
+      {
+      isAdmin&&
       <li>
         <Link
           to="/dashboard/admin"
@@ -79,6 +92,7 @@ const NavBar = () => {
           Dashboard
         </Link>
       </li>
+      }
       <li>
         <Link to="/addtocart">
           <div className="flex justify-start md:justify-center text-lg items-center relative ">
@@ -195,8 +209,9 @@ const NavBar = () => {
   );
 
   return (
-    <div className="sticky top-0 z-[9999] backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-gray-200">
-      <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+    // sticky top-0
+    <div className=" sticky top-0  z-[9999] p-2 ">
+      <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  rounded-full backdrop-filter backdrop-blur-lg bg-opacity-30 border shadow border-gray-200">
         <div className="relative flex items-center justify-between">
           <Link
             to="/"

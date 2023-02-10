@@ -97,6 +97,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 billing_details: {
                 //   name: user,
                 //   email: email,
+                //   
 
                 },
               },
@@ -154,6 +155,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
             <p className="text-green-500">
                 {success}
             </p>
+            <h3 className="text-3xl">Payment successfully completed. Your order is on the way</h3>
             <p>
                 Your transection Id: <span className='font-bold'>{transactionId}</span>
             </p>

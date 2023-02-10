@@ -1,0 +1,70 @@
+.BlogPostUpdate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+  }
+  
+  .BlogPost-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 800px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .BlogPost-input{
+    flex-grow: 1;
+    resize: none;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .BlogPost-textarea {
+    flex-grow: 1;
+    resize: none;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .BlogPost-image-upload-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .BlogPost-image-upload-input {
+    display: inline-block;
+  }
+  
+  .BlogPost-submit-button {
+    padding: 10px 20px;
+    background-color: #4267b2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .BlogPost-submit-button:hover {
+    background-color: #29487d;
+  }
+  
