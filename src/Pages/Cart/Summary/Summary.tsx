@@ -6,7 +6,7 @@ const Summary = () => {
     const [bookData, setBookData] = useState<any[]>([])
 
     useEffect(() => {
-        fetch("books.json")
+        fetch("https://bookship-server-zamanxd.vercel.app/books")
             .then((res) => res.json())
             .then((data) => setBookData(data));
     }, [])
@@ -18,8 +18,10 @@ const Summary = () => {
 
         return total + (book?.discountedPrice || 0) * cartItem?.quantity
     }, 0);
+    
+    console.log( subTotal)
 
-    const shipping = 10 * cartQuantity
+    const shipping = 10 
 
     const tax = subTotal * 10 / 100;
 
@@ -55,8 +57,8 @@ const Summary = () => {
                     <h4 className='text-lg font-semibold text-gray-700'>Grand total:</h4>
                     <p className='font-semibold text-gray-700'>$ {grandTotal.toFixed(2)}</p>
                 </div>
-                <Link to='/addtocart/checkout'>
-                    <button className='hover:bg-white hover:border-[#3DB188] border-2 hover:text-[#3DB188]  px-3 py-2 bg-[#3DB188] font-semibold rounded-full text-white w-3/4 mx-auto'>
+                <Link className='hover:bg-white text-center hover:border-[#3DB188] border-2 hover:text-[#3DB188]  px-3 py-2 bg-[#3DB188] font-semibold rounded-full text-white w-3/4 mx-auto' to='/addtocart/checkout'>
+                    <button>
                     Checkout
                     </button>
                 </Link>

@@ -33,7 +33,7 @@ const CategoryBook = ({ ...category }) => {
                 !books.length ? <p className='text-center lg:text-xl'>No Books Available in this Category. Coming Soon...</p> :
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                         {
-                            books.filter(book => book?.category === category?.name).slice(0, 3).map(book => <SingleBook key={book?._id} {...book} />)
+                            books.filter(book => book?.category === category?.category).slice(0, 3).map(book => <SingleBook key={book?._id} {...book} />)
                         }
                     </div>
             }
