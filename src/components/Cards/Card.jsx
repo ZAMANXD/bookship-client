@@ -1,12 +1,13 @@
 import React from "react";
-
+import Lottie from "lottie-react";
+import './Card.css'
 const Card = ({ data, stickyTopSpace }) => {
   const { title, body, img } = data;
   console.log(stickyTopSpace);
 
   return (
     <div
-      className={`sticky grid grid-cols-1 overflow-hidden rounded-xl bg-yellow-400 shadow-[0px_0px_30px_-10px_rgba(0,0,0,0.1)] md:grid-cols-2`}
+      className={`sticky grid grid-cols-1 overflow-hidden rounded-xl card bg-gray-50 shadow-[0px_0px_30px_-10px_rgba(0,0,0,0.1)] md:grid-cols-2`}
       style={{ top: stickyTopSpace }}
     >
       <div className="flex flex-col justify-center p-10">
@@ -22,11 +23,9 @@ const Card = ({ data, stickyTopSpace }) => {
         </div>
       </div>
       <div className="relative min-h-[200px] md:min-h-[400px]">
-        <img
-          src={img}
-          alt=""
-          className="absolute inset-0 block h-full w-full object-cover"
-        />
+        <Lottie className="w-10/12 mx-auto " animationData={img} loop={true} />
+
+        {/* object-cover */}
       </div>
     </div>
   );

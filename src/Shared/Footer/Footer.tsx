@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <div>
-            <footer aria-label="Site Footer" className="bg-white">
+        <div className="mx-2 my-5 ">
+            <footer aria-label="Site Footer" className="bg-gray-600 rounded-xl sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto">
                 <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
 
                     <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
