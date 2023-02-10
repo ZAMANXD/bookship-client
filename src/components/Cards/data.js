@@ -10,7 +10,7 @@ import lottie3 from "../../Lottie/reading-newspaper.json";
 import lottie4 from "../../Lottie/website-design.json";
 import lottie5 from "../../Lottie/lottie2.json";
 import Lottie from "lottie-react";
-
+// added
 export const cardsData = [
 	{
 		id: 1,
