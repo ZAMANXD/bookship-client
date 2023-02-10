@@ -97,6 +97,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 billing_details: {
                 //   name: user,
                 //   email: email,
+                //   
 
                 },
               },
