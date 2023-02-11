@@ -19,9 +19,9 @@ const Footer = () => {
                   <li>
                     <Link
                       className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
+                      to="/blog"
                     >
-                      Company History
+                      Blog
                     </Link>
                   </li>
 
