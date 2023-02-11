@@ -6,6 +6,7 @@ const DashboardSidebar = () => {
     <div className="w-60 min-h-screen h-full shadow-md bg-white px-1 ">
       <ul className="relative">
         <li className="relative">
+          {/* Helo */}
           <NavLink
             className={({ isActive }) =>
               isActive
