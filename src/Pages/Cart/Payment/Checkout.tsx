@@ -143,7 +143,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
        
         <CardElement options={options} />
 
-        <button className='btn btn-sm btn-primary mt-6' type="submit" disabled={!stripe || !clientSecret || processing}>
+        <button className='btn btn-sm btn-primary mt-6' type="submit" disabled={!stripe || processing}>
           Pay
         </button>
       </form>
