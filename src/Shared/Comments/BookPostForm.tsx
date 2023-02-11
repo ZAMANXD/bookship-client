@@ -130,18 +130,7 @@ const BookPostForm = ({ refetch }: any) => {
               className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
             />
           </div>
-          <label
-            htmlFor="upload-file"
-            className="border-b border-b-gray-700 h-10 px-2  w-full mt-5 block cursor-pointer text-gray-400 outline-none"
-          >
-            Upload Image
-            <input
-              type="file"
-              onChange={handleSellerBookImage}
-              id="upload-file"
-              hidden
-            />
-          </label>
+          <input type="file" name="" id="" className="w-full mt-5" />
           <textarea
             name="detailes"
             placeholder="Details"
@@ -149,10 +138,10 @@ const BookPostForm = ({ refetch }: any) => {
           ></textarea>
 
           <button
-            disabled={!image}
+            // disabled={!image}
             type="submit"
             className={`btn ${
-              image ? "bg-green-500" : "bg-gray-400 text-gray-100"
+              "bg-green-500" 
             }  text-white py-2 px-5 mt-6`}
           >
             {loading ? "Procesing..." : "Add Book"}

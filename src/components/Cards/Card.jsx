@@ -12,14 +12,9 @@ const Card = ({ data, stickyTopSpace }) => {
     >
       <div className="flex flex-col justify-center p-5">
         <div className="space-y-4">
-          <h2 className="font-serif text-2xl font-bold -mb-2">{title}</h2>
-          <p className="lg:w-3/4 text-md">{body}</p>
-          {/* <a
-            href="/"
-            className="inline-flex rounded-lg hover:bg-emerald-700 transition bg-emerald-600 px-4 py-2 font-medium text-white"
-          >
-            Read more
-          </a> */}
+          <h2 className="font-serif text-2xl -mb-2 font-bold">{title}</h2>
+          <p className="lg:w-3/4 text-lg">{body}</p>
+        
         </div>
       </div>
       <div className="relative min-h-[200px] md:min-h-[400px]">

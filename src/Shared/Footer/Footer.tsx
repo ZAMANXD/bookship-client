@@ -21,7 +21,7 @@ const Footer = () => {
                       className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
                       to="/blog"
                     >
-                      Blog
+                      Our Blog
                     </Link>
                   </li>
 

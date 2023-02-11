@@ -3,7 +3,7 @@
 // import img3 from "../../assets/3.jpg";
 // import img4 from "../../assets/4.jpg";
 // import img5 from "../../assets/5.jpg";
-
+// This commeted by arghya ghsoh
 import lottie1 from '../../Lottie/shopping-cart.json';
 import lottie2 from '../../Lottie/contact-mail.json';
 import lottie3 from '../../Lottie/reading-newspaper.json';
@@ -23,11 +23,15 @@ export const cardsData = [
     id: 2,
     title: 'Do you offer international shipping?',
     body: 'Yes, we offer international shipping to select countries. Please contact us for more information on shipping options and costs.',
+    title: 'Do you offer international shipping?',
+    body: 'Yes, we offer international shipping to select countries. Please contact us for more information on shipping options and costs.',
     img: lottie2,
     blue: 'bg-gradient-to-r from-[#dae7fc] to-[#FCCDD8]',
   },
   {
     id: 3,
+    title: 'What forms of payment do you accept?',
+    body: 'We accept all major credit  and debit cards.',
     title: 'What forms of payment do you accept?',
     body: 'We accept all major credit  and debit cards.',
     img: lottie3,
@@ -37,11 +41,15 @@ export const cardsData = [
     id: 4,
     title: 'What is your return policy?',
     body: 'We have a 30-day return policy for all books. If you are not satisfied with your purchase, you may return the book within 30 days for a full refund.',
+    title: 'What is your return policy?',
+    body: 'We have a 30-day return policy for all books. If you are not satisfied with your purchase, you may return the book within 30 days for a full refund.',
     img: lottie4,
     blue: 'bg-gradient-to-r from-[#C6FFD7] to-[#F1FFF5]',
   },
   {
     id: 5,
+    title: 'Who do I contact if I have more questions?',
+    body: 'If you have any questions or concerns, Our team is available to assist you during business hours.',
     title: 'Who do I contact if I have more questions?',
     body: 'If you have any questions or concerns, Our team is available to assist you during business hours.',
     img: lottie5,

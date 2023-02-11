@@ -5,6 +5,7 @@ import BlogPost from '../BlogPost/BlogPost';
 
 interface Props {
   posts: {
+    _id: string;
     title: string;
     author: string;
     content: string;
@@ -22,8 +23,8 @@ interface Comment {
 const BlogList: React.FC<Props> = ({ posts }) => {
   return (
     <div>
-      {posts.map((post, index) => (
-        <BlogPost key={index} {...post} />
+      {posts.map((post) => (
+        <BlogPost key={post._id} {...post} />
       ))}
     </div>
   );
