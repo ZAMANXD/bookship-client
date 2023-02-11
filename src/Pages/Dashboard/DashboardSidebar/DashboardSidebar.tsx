@@ -3,11 +3,16 @@ import { NavLink } from "react-router-dom";
 
 const DashboardSidebar = () => {
   return (
-    <div className="w-60 min-h-screen h-full shadow-md bg-white px-1">
+    <div className="w-60 min-h-screen h-full shadow-md bg-white px-1 ">
       <ul className="relative">
         <li className="relative">
+          {/* Helo */}
           <NavLink
-            className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-green-500 flex items-center  py-4 px-6 h-12 overflow-hidden  text-ellipsis whitespace-nowrap rounded"
+                : "flex items-center  py-4 px-6 h-12 overflow-hidden  text-ellipsis whitespace-nowrap rounded"
+            }
             to="/dashboard/admin"
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
@@ -17,7 +22,11 @@ const DashboardSidebar = () => {
         </li>
         <li className="relative">
           <NavLink
-            className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-green-500 flex items-center  py-4 px-6 h-12 overflow-hidden  text-ellipsis whitespace-nowrap rounded"
+                : "flex items-center  py-4 px-6 h-12 overflow-hidden  text-ellipsis whitespace-nowrap rounded"
+            }
             to="/dashboard/admin/sellerList"
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"
@@ -27,7 +36,11 @@ const DashboardSidebar = () => {
         </li>
         <li className="relative">
           <NavLink
-            className="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-green-500 flex items-center  py-4 px-6 h-12 overflow-hidden  text-ellipsis whitespace-nowrap rounded"
+                : "flex items-center  py-4 px-6 h-12 overflow-hidden  text-ellipsis whitespace-nowrap rounded"
+            }
             to="/dashboard/admin/buyerList "
             data-mdb-ripple="true"
             data-mdb-ripple-color="dark"

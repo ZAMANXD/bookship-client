@@ -25,28 +25,29 @@ const SellerDashboard = () => {
 
   return (
     <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 px-4 ">
-      <div>
       <div className="md:flex flex-row items-baseline gap-5">
         <div className="">
           <BookPostForm refetch={refetch} />
         </div>
-        <div className="flex-1 flex flex-wrap justify-center mt-10 md:mt-0">
-          <div className="shadow-lg px-5 py-10 text-center w-52">
-            <h1 className="text-2xl font-semibold">{sellerBooks?.length}</h1>
-            <p>Total Book</p>
+        <div>
+          <div className="flex-1 flex flex-wrap justify-center mt-10 md:mt-0">
+            <div className="shadow-lg px-5 py-10 text-center w-52">
+              <h1 className="text-2xl font-semibold">{sellerBooks?.length}</h1>
+              <p>Total Book</p>
+            </div>
+            <div className="shadow-lg px-5 py-10 text-center w-52">
+              <h1 className="text-2xl font-semibold">00</h1>
+              <p>Total Sell</p>
+            </div>
+            <div className="shadow-lg px-5 py-10 text-center w-52">
+              <h1 className="text-2xl font-semibold">00</h1>
+              <p>Today Sell</p>
+            </div>
           </div>
-          <div className="shadow-lg px-5 py-10 text-center w-52">
-            <h1 className="text-2xl font-semibold">00</h1>
-            <p>Total Sell</p>
-          </div>
-          <div className="shadow-lg px-5 py-10 text-center w-52">
-            <h1 className="text-2xl font-semibold">00</h1>
-            <p>Today Sell</p>
-          </div>
+          <SellerAnalytics/>
         </div>
       </div>
-      <SellerAnalytics/>
-      </div>
+
       <SellerDashboardTable books={sellerBooks} refetch={refetch} />
       <SellerDashbordCard books={sellerBooks} refetch={refetch} />
     </div>
