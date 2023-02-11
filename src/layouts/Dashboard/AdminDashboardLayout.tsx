@@ -9,10 +9,10 @@ const AdminDashboardLayout = () => {
     <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl w-full md:px-24 lg:px-8 px-4 ">
       <NavBar />
       <div className="flex justify-between space-x-6">
-        <div className="">
+        <div className="sticky top-0 w-60">
         <DashboardSidebar />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 ">
         <Outlet />
         </div>
       </div>
