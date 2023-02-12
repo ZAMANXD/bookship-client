@@ -3,7 +3,7 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   return (
-    <div className=" py-10 custom_Testimonials">
+    <div className=" py-10 gradient-bg-2">
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <h1 className="title-font  text-4xl font-bold text-[#34315D] mb-12 text-center">
@@ -11,7 +11,7 @@ const Testimonials = () => {
           </h1>
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/2 w-full">
-              <div className="h-full bg-white p-8 rounded-lg border">
+              <div className="h-full bs-box-shadow bg-slate-50 p-8 rounded-lg border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -39,7 +39,7 @@ const Testimonials = () => {
               </div>
             </div>
             <div className="p-4 md:w-1/2 w-full">
-              <div className="h-full bg-white p-8 rounded-lg border">
+              <div className="h-full bs-box-shadow bg-slate-50 p-8 rounded-lg border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"

@@ -5,3 +5,7 @@
 .bookCont:hover .tagCont {
     height: 3.5rem
 }
+
+.hello-there{
+    color: var(--text-primary);
+}
