@@ -44,7 +44,8 @@ const Book = ({ ...book }) => {
                             <p className='text-md lg:text-lg font-bold text-[#342D65]'>$ {discountedPrice}</p>
                         </div>
 
-                        <button className='h-5 lg:h-7 w-14 lg:w-24 flex items-center justify-center  bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500  hover:text-white duration-[400ms] rounded-full text-gray-50 font-bold text-[9px] lg:text-sm px-[8px] py-4' onClick={() => increaseCartQuantity(_id)} >Add to cart</button>
+                        <button className='bs-button' onClick={() => increaseCartQuantity(_id)} >Add to cart</button>
+                        {/* <button className='h-5 lg:h-7 w-14 lg:w-24 flex items-center justify-center  bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500  hover:text-white duration-[400ms] rounded-full text-gray-50 font-bold text-[9px] lg:text-sm px-[8px] py-4' onClick={() => increaseCartQuantity(_id)} >Add to cart</button> */}
                     </div>
                 </div>
 

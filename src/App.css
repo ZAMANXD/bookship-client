@@ -1,3 +1,8 @@
+:root {
+  --text-primary: #34315D;
+  --text-secondary: #374151;
+}
+
 .App {
   text-align: center;
 }
@@ -28,11 +33,67 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Gradient background 1 */
+.gradient-bg-1 {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 1)
+    ),
+    url("./assets/bg-gradient.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+
+/* Gradient background 2 */
+.gradient-bg-2 {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 1)
+    ),
+    url("./assets/gradient-bg-2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Gradient background 3 */
+.gradient-bg-3 {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 1)
+    ),
+    url("./assets/gradient-bg-3.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Box shadow  for bigger cards*/
+.bs-box-shadow {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  overflow: hidden;
+}
+
+/* Button styling */
+.bs-button{
+  border-radius: 0.5rem;
+  border: 0.3vmin solid #05060f;
+  box-shadow: 0.3rem 0.3rem #05060f;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 7px;
+  font-weight: 500;
+  }
