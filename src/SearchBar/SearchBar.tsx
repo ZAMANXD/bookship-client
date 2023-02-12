@@ -25,7 +25,7 @@ const SearchBar = ({ inputValue, modalIsOpen, setIsOpen }: any) => {
       .then((data) => setBooks(data));
   }, []);
 
-  const book = books?.find((e) => {
+  const filteredBooks = books?.filter((e: book) => {
     return e.bookTitle.toLowerCase().includes(inputValue);
   });
 
@@ -34,7 +34,7 @@ const SearchBar = ({ inputValue, modalIsOpen, setIsOpen }: any) => {
       <ReactModal
         modalIsOpen={modalIsOpen}
         setIsOpen={setIsOpen}
-        book={book}
+        books={filteredBooks}
       ></ReactModal>
     </>
   );
