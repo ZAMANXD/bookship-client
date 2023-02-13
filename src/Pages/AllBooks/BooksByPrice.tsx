@@ -33,7 +33,7 @@ const BooksByPrice = () => {
             {/* <span className='lg:text-2xl font-semibold text-center block'>Books: <span>{books?.length}</span></span> */}
             <div>
                 <select defaultValue={value} name="price" id="" onChange={handleChange} className='select select-bordered m-[10px] ml-[20px] mt-3'>
-                    <option value="0">Filter by Price</option>
+                    <option value={1}>Filter by Price</option>
                     <option value="1">Low to High</option>
                     <option value="-1">High to Low</option>
                 </select>
