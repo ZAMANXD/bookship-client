@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
+import Skeletons from '../../Shared/Skeletons/Skeletons';
 import Spinner from '../../Shared/Spinner/Spinner';
 
 const CategoryBook = ({ ...category }) => {
@@ -18,12 +19,12 @@ const CategoryBook = ({ ...category }) => {
     }, [])
 
     if (loading) {
-        return <Spinner />
+        return <Skeletons />
     }
 
     return (
         <div className='p-5'>
-            <Link to={`/category/${category?.name || category?.category}`} className='flex justify-between items-center mb-3'>
+            <Link to={`/books/category/${category?.name || category?.category}`} className='flex justify-between items-center mb-3'>
                 <div className='flex items-center gap-x-3'>
                     <h2 className='font-bold text-xl'>{category?.name || category?.category}</h2>
                 </div>

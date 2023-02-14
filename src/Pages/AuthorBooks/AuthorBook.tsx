@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
+import Skeletons from '../../Shared/Skeletons/Skeletons';
 import Spinner from '../../Shared/Spinner/Spinner';
 
 const AuthorBook = ({ ...author }) => {
@@ -18,12 +19,12 @@ const AuthorBook = ({ ...author }) => {
     }, [author?.email])
 
     if (loading) {
-        return <Spinner />
+        return <Skeletons />
     }
     return (
         <>
             <div className='p-5'>
-                <Link to={`/author/${author?.name}`} className='flex justify-between items-center mb-3'>
+                <Link to={`/books/author/${author?.name}`} className='flex justify-between items-center mb-3'>
                     <div className='flex items-center gap-x-3'>
                         <img className='w-10 h-10 rounded-full' src={author?.img ? author?.img : 'https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png'} alt="" />
                         <h2 className='font-bold text-md lg:text-xl uppercase'>{author?.name}</h2>
