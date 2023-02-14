@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { BsFillEyeSlashFill } from 'react-icons/bs';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
@@ -28,6 +30,8 @@ const Login = () => {
 	} = useForm<FormValues>();
 
 	const { login, googlLogin, forgatePassword } = useContext(AuthContext)
+	const [email,setEmail]=useState<String>('')
+	const [showPassword,setShowPassword]=useState<Boolean>(false)
 	
 	const LoginHandle: SubmitHandler<FormValues> = (data) => {
 		
@@ -62,6 +66,25 @@ const Login = () => {
 
 	}
 
+	//email set in state
+	const emailHandle =(e:any)=>{
+		const email = e.target.value;
+		setEmail(email)
+	}
+
+	// Forgate passworde function
+	const passwordeResat =()=>{
+		forgatePassword(email)
+		.then(() => {
+			toast.success("Please chake your email and set password");
+		  })
+		  .catch((e:any) => {
+			toast.error(e.message);
+		  });
+		console.log(email);
+		
+	}
+
 	// Save user data in database
 	const saveUser = (email: string, name: string, role: string = 'buyer', isVerified: Boolean = false) => {
 		
@@ -92,6 +115,7 @@ const Login = () => {
 					<label htmlFor="email" className="block text-gray-500">User Email</label>
 					<input
 						{...register("email", { required: "Email is required" })}
+						onBlur={emailHandle}
 						type="email"
 						id="email"
 						placeholder="Email" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
@@ -99,7 +123,7 @@ const Login = () => {
 						<p className="text-sm text-red-500">{errors.email?.message}</p>
 					)}
 				</div>
-				<div className="space-y-1 text-sm">
+				<div className="space-y-1 text-sm relative">
 					<label htmlFor="password" className="block text-gray-500">Password</label>
 					<input
 						{...register("password", {
@@ -109,14 +133,27 @@ const Login = () => {
 								message: "Password must be 6 characters or longer",
 							},
 						})}
-						type="password"
+						type={
+							showPassword?"text":"password"
+						}
 						id="password"
 						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
+						<span className='absolute right-4 top-[1.9em] text-lg text-gray-400'>
+						{
+							showPassword?
+							<span onClick={()=>setShowPassword(!showPassword)}>
+								<FaEyeSlash/>
+								</span>
+							:
+							<span onClick={()=>setShowPassword(!showPassword)}>
+								<FaEye/>
+								</span>
+						}</span>
 					{errors.password && (
 						<p className="text-sm text-red-500">{errors.password?.message}</p>
 					)}
 					<div className="flex justify-end text-xs text-red-400">
-						<a rel="noopener noreferrer" href="#">Forgot Password?</a>
+						<a onClick={passwordeResat} rel="noopener noreferrer" href="#">Forgot Password?</a>
 					</div>
 				</div>
 				<button className="block w-full p-3 text-center bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500 rounded-full text-white">Log in</button>
