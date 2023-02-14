@@ -23,7 +23,7 @@ const CategoryBook = ({ ...category }) => {
 
     return (
         <div className='p-5'>
-            <Link to={`/category/${category?.name || category?.category}`} className='flex justify-between items-center mb-3'>
+            <Link to={`/books/category/${category?.name || category?.category}`} className='flex justify-between items-center mb-3'>
                 <div className='flex items-center gap-x-3'>
                     <h2 className='font-bold text-xl'>{category?.name || category?.category}</h2>
                 </div>
