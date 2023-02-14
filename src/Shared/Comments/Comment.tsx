@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AiFillDelete } from 'react-icons/ai';
-import { AiOutlineStar } from 'react-icons/ai';
+import { GrStar } from 'react-icons/gr';
 import { FiEdit2 } from 'react-icons/fi';
 import { AuthContext } from '../../context/AuthProvider';
 
@@ -47,7 +47,7 @@ const Comment = (props: any) => {
                 }
                 <div className='flex gap-x-2 items-center'>
                     <span className='font-semibold hidden lg:block'>Ratings:</span> {
-                        [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <AiOutlineStar key={i} className='text-lg text-yellow-500' />)
+                        [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <GrStar key={i} className='text-lg text-yellow-500' />)
                     }
                 </div>
             </div>
