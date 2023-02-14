@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
+import Skeletons from '../../Shared/Skeletons/Skeletons';
 import Spinner from '../../Shared/Spinner/Spinner';
 import AuthorBook from './AuthorBook';
 
@@ -17,10 +18,11 @@ const AuthorBooks = () => {
             })
             .catch(err => setLoading(false))
     }, [])
-    console.log(authors);
+
     if (loading) {
         return <Spinner />
     }
+
     return (
         <div className='bg-gray-200 rounded-lg'>
             {
