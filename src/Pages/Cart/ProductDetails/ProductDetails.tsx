@@ -33,7 +33,7 @@ const ProductDetails = ({ ...item }) => {
                     <input className='md:h-7 h-5 w-10 border hover:border-gray-500 md:text-lg font-semibold text-center' type="text" value={quantityOfBook} defaultValue={0} readOnly />
                     <button className='border rounded-r-full  hover:border-green-600 hover:text-green-600 md:text-2xl font-bold' onClick={() => increaseCartQuantity(id)} ><HiPlusSm /></button>
                 </div>
-                <h4 className='text-gray-700 md:font-semibold'>${book?.discountedPrice * quantityOfBook}</h4>
+                <h4 className='text-gray-700 md:font-semibold'>${book?.discountedPrice}</h4>
 
             </div>
             <button className='col-span-1 ml-auto text-2xl md:mr-5 hover:text-red-600 rounded-full ' onClick={() => removeFromCart(id)} ><HiOutlineXCircle /></button>

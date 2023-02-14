@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Cart from "../layouts/Cart/Cart";
 import AdminDashboardLayout from "../layouts/Dashboard/AdminDashboardLayout";
 import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
@@ -115,10 +116,6 @@ export const router = createBrowserRouter([
                 element: <BooksByPublication />
             },
             {
-                path: '/addtocart',
-                element: <AddToCart />
-            },
-            {
                 path: '/myaccount',
                 element: <PrivateRoute><MyAccount /></PrivateRoute>
             },
@@ -154,6 +151,11 @@ export const router = createBrowserRouter([
                 element:<AdminBuyerList/>
             }
         ]
+    },
+    {
+        path: '/addtocart',
+        element: <Cart />,
+        errorElement: <ErrorPage></ErrorPage>,
     }
 ])
 

@@ -17,6 +17,8 @@ const BlogPost: React.FC<BlogPostProps> = ({ _id,title, author, content, picture
     const [likeCount, setLikeCount] = useState(likes);
     const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState<{ author: string; text: string }[]>([]);
+
+  
   const [showFull, setShowFull] = useState(false);
   const [truncatedText, setTruncatedText] = useState(content.slice(0, 300));
 

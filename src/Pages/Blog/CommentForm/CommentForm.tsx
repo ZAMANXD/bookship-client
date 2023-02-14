@@ -18,12 +18,12 @@ interface CommentFormProps {
   
     const handleTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       setText(event.target.value);
+      setAuthor(user?.displayName);
     };
   
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       onSubmit(author, text);
-      setAuthor(user?.displayName);
       setText('');
     };
   

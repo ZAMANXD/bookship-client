@@ -30,7 +30,7 @@ const Summary = () => {
 
 
     return (
-        <aside className='col-span-2 lg:w-full w-5/6 lg:mx-0 mx-auto mt-4 bg-gray-50 shadow-md hover:shadow-2xl'>
+        <aside className='col-span-2 lg:w-full w-5/6 lg:mx-0 mx-auto mt-4 bg-gray-50 shadow-md hover:shadow-2xl h-fit sticky top-20'>
             <div className='bg-gray-100 py-5'>
                 <h1 className='text-xl font-semibold text-gray-700 text-center'>Summary</h1>
             </div>
@@ -46,7 +46,13 @@ const Summary = () => {
                 {/* to push */}
                 <div className='flex justify-between'>
                     <h4 className='text-lg font-semibold text-gray-700'>Shipping cost:</h4>
-                    <p className='font-semibold text-gray-700'>$ {shipping.toFixed(2)}</p>
+                    <p className='font-semibold text-gray-700'>$ {
+                       cartQuantity === 0 ? 
+                    
+                    0
+                    :
+                    shipping.toFixed(2)
+                    }</p>
                 </div>
                 <div className='flex justify-between'>
                     <h4 className='text-lg font-semibold text-gray-700'>Tax:</h4>
@@ -55,7 +61,12 @@ const Summary = () => {
                 <hr />
                 <div className='flex justify-between pb-10'>
                     <h4 className='text-lg font-semibold text-gray-700'>Grand total:</h4>
-                    <p className='font-semibold text-gray-700'>$ {grandTotal.toFixed(2)}</p>
+                    <p className='font-semibold text-gray-700'>$ {
+                        cartQuantity === 0 ? 
+                        0
+                        :
+                    grandTotal.toFixed(2)
+                    }</p>
                 </div>
                 <Link className='hover:bg-white text-center hover:border-[#3DB188] border-2 hover:text-[#3DB188]  px-3 py-2 bg-[#3DB188] font-semibold rounded-full text-white w-3/4 mx-auto' to='/addtocart/checkout'>
                     <button>
