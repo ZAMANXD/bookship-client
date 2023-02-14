@@ -33,15 +33,19 @@ const AdminDashboard = () => {
   );
 
   return (
+    <ResponsiveContainer width="100%" height="100%"> 
     <>
-      <div className="flex justify-between gap-10">
-        <BookPostForm />
-        <div className="w-full space-y-4 text-center">
+      <div className="">
+        <div className="text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
           <div className="shadow-lg py-10">
             <h3 className="text-lg">Total Order</h3>
             <p className="text-2xl">
               {totalOrderBooks ? totalOrderBooks : "00"}
             </p>
+          </div>
+          <div className="shadow-lg py-10">
+            <h3 className="text-lg">Total Books</h3>
+            <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
           </div>
           <div className="shadow-lg py-10">
             <h3 className="text-lg">Total Books</h3>
@@ -54,6 +58,7 @@ const AdminDashboard = () => {
         className="text-2xl font-bold mt-10">
         Monthlay Order
       </h3>
+      {/* <ResponsiveContainer width="100%" height="100%"> */}
       <BarChart
         width={700}
         height={500}
@@ -73,7 +78,9 @@ const AdminDashboard = () => {
         <Bar dataKey="quantity" fill="#8884d8" />
         {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
       </BarChart>
+      {/* </ResponsiveContainer> */}
     </>
+    </ResponsiveContainer> 
   );
 };
 

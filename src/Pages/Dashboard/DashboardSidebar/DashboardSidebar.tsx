@@ -3,10 +3,9 @@ import { NavLink } from "react-router-dom";
 
 const DashboardSidebar = () => {
   return (
-    <div className="w-60 min-h-screen h-full shadow-md bg-white px-1 ">
+    <div className="lg:w-60 w-full  h-auto lg:min-h-screen shadow-md bg-white px-1 lg:fixed">
       <ul className="relative">
         <li className="relative">
-          {/* Helo */}
           <NavLink
             className={({ isActive }) =>
               isActive

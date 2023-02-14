@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { AuthContext } from "../../../context/AuthProvider";
@@ -9,6 +9,7 @@ import SearchBar from "../../../SearchBar/SearchBar";
 import avatar from "../../../imgFile/avatar.png";
 import useSeller from "../../../hooks/useSeller";
 import useAdmin from "../../../hooks/useAdmin";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,33 +20,37 @@ const NavBar = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [isSeller, sellerLoading] = useSeller(user?.email);
   const [isAdmin, adminLoading] = useAdmin(user?.email);
+  const navigate = useNavigate();
 
-  const handleGetSeachInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // ------------------------------- Nav show-hide ------------------
+
+  // ------------------------------- Nav show-hide ------------------
+
+  const handleGetSeachInput = (e: any) => {
     SetSearhInput(e.target.value.toLowerCase());
+    if (e.key === "Enter") {
+      navigate("/searchResult", { state: { searchInput } });
+    }
+  };
+  const handleSearchBtnSubmitClick = () => {
+    navigate("/searchResult", { state: { searchInput } });
   };
 
-  // ------------------------------- Nav show-hide ------------------
- 
-
-  // ------------------------------- Nav show-hide ------------------
-
-  const handleInputSubmit = () => {
-    setInputValue(searchInput);
-    setIsOpen(true);
-  };
   const navItem = (
     <>
       <li>
         <div className="flex border rounded-full">
           <input
             type="text"
+            name="search"
             className="px-6 py-2 rounded-l-full"
             placeholder="Search a book..."
-            onChange={handleGetSeachInput}
+            onKeyUp={handleGetSeachInput}
           />
           <button
+            type="submit"
             className="flex items-center justify-center px-4 border-l"
-            onClick={handleInputSubmit}
+            onClick={handleSearchBtnSubmitClick}
           >
             <svg
               className="h-4 w-4 text-grey-dark"
@@ -68,31 +73,30 @@ const NavBar = () => {
           Books
         </Link>
       </li>
-      {
-      isSeller&&
-      <li>
-        <Link
-          to="/dashboard/seller"
-          aria-label="Our Books"
-          title="Our Books"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-        >
-          Add Book
-        </Link>
-      </li>}
-      {
-      isAdmin&&
-      <li>
-        <Link
-          to="/dashboard/admin"
-          aria-label="Our Books"
-          title="Our Books"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-        >
-          Dashboard
-        </Link>
-      </li>
-      }
+      {isSeller && (
+        <li>
+          <Link
+            to="/dashboard/seller"
+            aria-label="Our Books"
+            title="Our Books"
+            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+          >
+            Add Book
+          </Link>
+        </li>
+      )}
+      {isAdmin && (
+        <li>
+          <Link
+            to="/dashboard/admin"
+            aria-label="Our Books"
+            title="Our Books"
+            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+          >
+            Dashboard
+          </Link>
+        </li>
+      )}
       <li>
         <Link to="/addtocart">
           <div className="flex justify-start md:justify-center text-lg items-center relative ">
@@ -109,74 +113,98 @@ const NavBar = () => {
         </Link>
       </li>
 
-      {user ? (<>
-        <div className="dropdown dropdown-end hidden lg:block">
-          <label tabIndex={0}>
-            <img src={
-              user?.photoURL? user.photoURL:avatar
-              } alt="" className="w-6 h-6 rounded-full" />
-          </label>
-          <ul tabIndex={0} className="dropdown-content p-2 shadow bg-[#a9a9a9df] rounded-md w-52 ease-in-out duration-200">
-            <Link
-          to="/myaccount"
-          aria-label="About us"
-          title="My Profile"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-        ><li className="p-3 hover:bg-green-400 rounded-md"><a>
-          My Account
-        </a></li></Link>
-            <li
-            onClick={() => {
-            logOut()
-            toast.error('Success fully logOut')
-          }} className="p-3 hover:bg-green-400 rounded-md "><a>
-            <button
-          
-          className="duration-200 text-gray-700 flex justify-center hover:text-red-600"
-          title="Log out"
-        > Log out {" "}
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-6 h-6 pl-1">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-          </svg>
+      {user ? (
+        <>
+          <div className="dropdown dropdown-end hidden lg:block">
+            <label tabIndex={0}>
+              <img
+                src={user?.photoURL ? user.photoURL : avatar}
+                alt=""
+                className="w-6 h-6 rounded-full"
+              />
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content p-2 shadow bg-[#a9a9a9df] rounded-md w-52 ease-in-out duration-200"
+            >
+              <Link
+                to="/myaccount"
+                aria-label="About us"
+                title="My Profile"
+                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              >
+                <li className="p-3 hover:bg-green-400 rounded-md">
+                  <a>My Account</a>
+                </li>
+              </Link>
+              <li
+                onClick={() => {
+                  logOut();
+                  toast.error("Success fully logOut");
+                }}
+                className="p-3 hover:bg-green-400 rounded-md "
+              >
+                <a>
+                  <button
+                    className="duration-200 text-gray-700 flex justify-center hover:text-red-600"
+                    title="Log out"
+                  >
+                    {" "}
+                    Log out{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="w-6 h-6 pl-1"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                      />
+                    </svg>
+                  </button>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        </button>
-              </a></li>
-          </ul>
-        </div>
-        
-        <button
-          onClick={() => {
-            logOut();
-            toast.error("Success fully logOut");
-          }}
-          className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700 block lg:hidden"
-          title="Log out"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-7 h-7"
+          <button
+            onClick={() => {
+              logOut();
+              toast.error("Success fully logOut");
+            }}
+            className="rounded-full hover:bg-[#5df66031] duration-200 p-1 text-gray-700 block lg:hidden"
+            title="Log out"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-            />
-          </svg>
-        </button>
-        <li>
-        <Link
-          to="/myaccount"
-          aria-label="About us"
-          title="About us"
-          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 block lg:hidden"
-        >
-          My Account
-        </Link>
-      </li></>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="w-7 h-7"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+              />
+            </svg>
+          </button>
+          <li>
+            <Link
+              to="/myaccount"
+              aria-label="About us"
+              title="About us"
+              className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 block lg:hidden"
+            >
+              My Account
+            </Link>
+          </li>
+        </>
       ) : (
         <Link
           to="/login"
@@ -200,11 +228,11 @@ const NavBar = () => {
           </svg>
         </Link>
       )}
-      <SearchBar
+      {/* <SearchBar
         inputValue={inputValue}
         modalIsOpen={modalIsOpen}
         setIsOpen={setIsOpen}
-      ></SearchBar>
+      ></SearchBar> */}
     </>
   );
 
