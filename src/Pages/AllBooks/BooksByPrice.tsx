@@ -3,13 +3,14 @@ import useTitle from '../../hooks/useTitle';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
 import Spinner from '../../Shared/Spinner/Spinner';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
+import Skeletons from '../../Shared/Skeletons/Skeletons';
 
 const BooksByPrice = () => {
     const [value, setValue] = useState(1)
     const [books, setBooks] = useState([])
     const [loading, setLoading] = useState(false)
 
-    useTitle(`- Price`)
+    useTitle(`- Books`)
     useEffect(() => {
         setLoading(true)
         fetch(`https://bookship-server-zamanxd.vercel.app/booksprice?value=${value}`)
@@ -25,7 +26,7 @@ const BooksByPrice = () => {
     }
 
     if (loading) {
-        return <Spinner />
+        return <Skeletons />
     }
 
     return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
+import Skeletons from '../../Shared/Skeletons/Skeletons';
 import Spinner from '../../Shared/Spinner/Spinner';
 
 const CategoryBook = ({ ...category }) => {
@@ -18,7 +19,7 @@ const CategoryBook = ({ ...category }) => {
     }, [])
 
     if (loading) {
-        return <Spinner />
+        return <Skeletons />
     }
 
     return (
