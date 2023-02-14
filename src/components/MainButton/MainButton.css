@@ -1,17 +1,17 @@
 .cssbuttons-io-button {
-    background: #474747;
-    color: white;
+    /* background: #ffffff; */
+    color: rgb(0, 0, 0);
     font-family: inherit;
     padding: 0.35em;
     padding-left: 1.2em;
     font-size: 17px;
     font-weight: 500;
-    border-radius: 25px;
+    border-radius: 10px;
     border: none;
     letter-spacing: 0.05em;
     display: flex;
     align-items: center;
-    box-shadow: inset 0 0 1.6em -0.6em #714da6;
+    /* box-shadow: inset 0 0 1.6em -0.6em #714da6; */
     overflow: hidden;
     position: relative;
     height: 2.8em;
@@ -28,7 +28,7 @@
     height: 2.2em;
     width: 2.2em;
     border-radius: 25px;
-    box-shadow: 0.1em 0.1em 0.6em 0.2em #7b52b9;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #cccccc;
     right: 0.3em;
     transition: all 0.3s;
    }
@@ -40,7 +40,7 @@
    .cssbuttons-io-button .icon svg {
     width: 1.1em;
     transition: transform 0.3s;
-    color: #7b52b9;
+    color: #110c18;
    }
    
    .cssbuttons-io-button:hover .icon svg {
@@ -50,4 +50,9 @@
    .cssbuttons-io-button:active .icon {
     transform: scale(0.95);
    }
-   
+   .bs-button{
+    border-radius: 0.5rem;
+    border: 0.3vmin solid #05060f;
+    box-shadow: 0.3rem 0.3rem #05060f;
+    background-color: #f1f1f1;
+    }

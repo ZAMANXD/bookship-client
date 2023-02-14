@@ -6,7 +6,7 @@ const MainButton = () => {
   return (
     <div>
       <Link to='/books'>
-      <button className="cssbuttons-io-button">
+      <button className="cssbuttons-io-button bs-button">
         {" "}
         Get started
         <div className="icon">

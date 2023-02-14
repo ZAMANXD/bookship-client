@@ -6,6 +6,7 @@ import Spinner from '../../../Shared/Spinner/Spinner';
 import Book from './Book';
 
 
+
 const TopBooks = () => {
     const [loading, setLoading] = useState(false)
 
@@ -46,7 +47,7 @@ const TopBooks = () => {
     };
 
     return (
-        <div className='max-w-7xl mx-auto px-5 py-5 mt-20'>
+        <div className='max-w-7xl mx-auto px-5 py-5'>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">Our Top Books</h2>
             <div>
                 <Carousel responsive={responsive} className={'py-10'}>
