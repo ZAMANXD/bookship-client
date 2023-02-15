@@ -97,3 +97,11 @@
   padding: 7px;
   font-weight: 500;
   }
+
+.bs-text-primary{
+  color: var(--text-primary);
+}
+
+.bs-text-secondary{
+  color: var(--text-primary);
+}

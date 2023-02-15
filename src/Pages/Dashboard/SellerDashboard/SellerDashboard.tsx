@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import SellerDashbordCard from "./SellerDashbordCard";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthProvider";
-import BookPostForm from "../../../Shared/Comments/BookPostForm";
 import SellerAnalytics from "./SellerAnalytics";
 
 const SellerDashboard = () => {
@@ -27,7 +26,7 @@ const SellerDashboard = () => {
     <div className="mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 px-4 ">
       <div className="md:flex flex-row items-baseline gap-5">
         <div className="">
-          <BookPostForm refetch={refetch} />
+          <SellerDashboardForm refetch={refetch} />
         </div>
         <div>
           <div className="flex-1 flex flex-wrap justify-center mt-10 md:mt-0">

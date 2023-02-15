@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+
 import {
   BarChart,
   Bar,
@@ -10,10 +11,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
-import BookPostForm from "../../../Shared/Comments/BookPostForm";
+import UserProfile from "../../../Shared/UserProfile/UserProfile";
 
 const AdminDashboard = () => {
+
   const { data: books, refetch } = useQuery({
     queryKey: ["books"],
     queryFn: async () => {
@@ -33,47 +34,57 @@ const AdminDashboard = () => {
   );
 
   return (
-    <>
-      <div className="flex justify-between gap-10">
-        <BookPostForm />
-        <div className="w-full space-y-4 text-center">
-          <div className="shadow-lg py-10">
-            <h3 className="text-lg">Total Order</h3>
-            <p className="text-2xl">
-              {totalOrderBooks ? totalOrderBooks : "00"}
-            </p>
+    <ResponsiveContainer width="100%" height="100%">
+      <>
+        <div className="">
+          <div className="flex justify-between my-4">
+            <h3 className="text-2xl">Dashboard</h3>
+            <div className="lg:block hidden">
+            <UserProfile/>
+            </div>
           </div>
-          <div className="shadow-lg py-10">
-            <h3 className="text-lg">Total Books</h3>
-            <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
+          <div className="text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
+            <div className="shadow-lg py-10">
+              <h3 className="text-lg">Total Order</h3>
+              <p className="text-2xl">
+                {totalOrderBooks ? totalOrderBooks : "00"}
+              </p>
+            </div>
+            <div className="shadow-lg py-10">
+              <h3 className="text-lg">Total Books</h3>
+              <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
+            </div>
+            <div className="shadow-lg py-10">
+              <h3 className="text-lg">Total Books</h3>
+              <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <h3
-        className="text-2xl font-bold mt-10">
-        Monthlay Order
-      </h3>
-      <BarChart
-        width={700}
-        height={500}
-        data={ordersBooks}
-        margin={{
-          top: 5,
-          // right: 30,
-          // left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="1 1" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="quantity" fill="#8884d8" />
-        {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
-      </BarChart>
-    </>
+        <h3 className="text-2xl font-bold mt-10">Monthlay Order</h3>
+        {/* <ResponsiveContainer width="100%" height="100%"> */}
+        <BarChart
+          width={700}
+          height={500}
+          data={ordersBooks}
+          margin={{
+            top: 5,
+            // right: 30,
+            // left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="1 1" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="quantity" fill="#8884d8" />
+          {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
+        </BarChart>
+        {/* </ResponsiveContainer> */}
+      </>
+    </ResponsiveContainer>
   );
 };
 

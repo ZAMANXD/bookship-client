@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext,useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { Resolver, SubmitHandler, useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 type FormValues = {
 	name: string;
@@ -14,6 +15,7 @@ type FormValues = {
 const SignUp = () => {
 	const navigate = useNavigate();
 	const { user, signUp, nameUpdate, googlLogin } = useContext(AuthContext)
+	const [showPassword,setShowPassword]=useState<Boolean>(false)
 
 	const {
 		register,
@@ -93,7 +95,7 @@ const SignUp = () => {
 						<p className="text-sm text-red-500">{errors.email?.message}</p>
 					)}
 				</div>
-				<div className="space-y-1 text-sm">
+				<div className="space-y-1 text-sm relative">
 					<label htmlFor="password" className="block text-gray-500">Create Password</label>
 					<input
 						{...register("password", {
@@ -108,9 +110,22 @@ const SignUp = () => {
 									"Password must use one small letter and one number",
 							},
 						})}
-						type="password"
+						type={
+							showPassword?"text":"password"
+						}
 						id="password"
 						placeholder="Password" className="w-full px-4 py-3 rounded-md border-gray-700 bg-gray-100 text-gray-500" />
+						<span className='absolute right-4 top-[1.9em] text-lg text-gray-400'>
+						{
+							showPassword?
+							<span onClick={()=>setShowPassword(!showPassword)}>
+								<FaEyeSlash/>
+								</span>
+							:
+							<span onClick={()=>setShowPassword(!showPassword)}>
+								<FaEye/>
+								</span>
+						}</span>
 					{errors.password && (
 						<p className="text-sm text-red-500">{errors.password?.message}</p>
 					)}
