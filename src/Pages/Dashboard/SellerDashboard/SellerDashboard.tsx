@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import SellerDashbordCard from "./SellerDashbordCard";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthProvider";
-import BookPostForm from "../../../Shared/Comments/BookPostForm";
 import SellerAnalytics from "./SellerAnalytics";
 
 const SellerDashboard = () => {
