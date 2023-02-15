@@ -1,4 +1,5 @@
 import { createContext, useContext, ReactNode } from "react";
+import { toast } from "react-hot-toast";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type CartProviderProps = {
@@ -44,6 +45,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       } else {
         return currentItems.map((item) => {
           if (item.id === id) {
+            toast.success('Successfully added')
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
