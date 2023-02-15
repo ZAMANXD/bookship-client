@@ -20,7 +20,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
     const detailes = e.target.detailes.value;
     const publication = e.target.publication.value;
     const inputImage = e.target.inputImage.files[0];
-
+    console.log(inputImage);
     // Image uplode imgbb server
     const formData = new FormData();
     formData.append("image", inputImage);
@@ -130,7 +130,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
             placeholder="Details"
             className="border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2 outline-none"
           ></textarea>
-          <div className="grid grid-cols-1 mt-5">
+          {/* <div className="grid grid-cols-1 mt-5">
             <label className="text-sm font-bold text-black tracking-wide">
               Image
             </label>
@@ -171,7 +171,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
                     </div>
                     <input
                       type="file"
-                      name="image"
+                      name="inputImage"
                       accept="image/*"
                       className="hidden"
                       multiple
@@ -181,6 +181,52 @@ const SellerDashboardForm = ({ refetch }: any) => {
                 )}
               </label>
             </div>
+          </div> */}
+
+          <div className="relative">
+            <div className="flex items-center justify-center w-full h-full relative">
+              <div
+                onClick={handleClearImageInputPreview}
+                className="absolute top-2 left-2 bg-slate-400 rounded-full w-10 h-10 flex justify-center items-center"
+              >
+                <FaTimes />
+              </div>
+            </div>
+            <label htmlFor="inputImg">
+              <div className="w-full min-h-[250px] max-h-[250px] flex justify-center items-center rounded-lg border-4 border-dashed cursor-pointer">
+                {previewImage ? (
+                  <img src={previewImage} alt="" className="h-[250px] w-full" />
+                ) : (
+                  <div className="flex flex-col justify-center items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-10 h-10 text-blue-400 group-hover:text-blue-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                      />
+                    </svg>
+                    <p className="pointer-none text-gray-500 ">
+                      select a file from your computer
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              <input
+                type="file"
+                name="inputImage"
+                id="inputImg"
+                onChange={handleSellerBookImage}
+                hidden
+              />
+            </label>
           </div>
           <button type="submit" className="btn bg-green-500 mt-5">
             Add Book
