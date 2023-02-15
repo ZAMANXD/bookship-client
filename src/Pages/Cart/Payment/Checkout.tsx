@@ -1,5 +1,6 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import './Payment.css'
 
 const Checkout = (props: {orders: { _id: string; id: string; quantity: number; price: number}[]}) => {
     const [cardError, setCardError] = useState<string | undefined>('');
@@ -138,30 +139,33 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
         setProcessing(false);
     }
     return (
-        <>
+        <div className='mx-auto'>
+        <div className="bs-box-shadow p-6 bg-white">
         <form onSubmit={handleSubmit}>
        
-        <CardElement options={options} />
+       <CardElement className='bs-payment-inputs pt-6 px-6' options={options} />
 
-        <button className='btn btn-sm btn-primary mt-6' type="submit" disabled={!stripe || !clientSecret || processing}>
-          Pay
-        </button>
-      </form>
+       <button className='btn btn-sm bs-button bs-payment-button bs-text-primary pt-6 mb-6 mt-16' type="submit" disabled={!stripe || !clientSecret || processing}>
+         Pay
+       </button>
+     </form>
+        </div>
+      <div className='mt-20'>
       <p className="text-red-500 mt-10">
         {cardError}
       </p>
       {
         success && <div>
-            <p className="text-green-500">
-                {success}
-            </p>
-            <h3 className="text-3xl">Payment successfully completed. Your order is on the way</h3>
-            <p>
-                Your transection Id: <span className='font-bold'>{transactionId}</span>
+            <h3 className=" text-start text-xl font-semibold">
+                {success}. Your order will be shipped soon.
+            </h3>
+            <p className='mt-6 text-start font-semibold'>
+                Your transection Id: <span className='font font-normal'>{transactionId}</span>
             </p>
         </div>
       }
-        </>
+      </div>
+        </div>
     );
 };
 
