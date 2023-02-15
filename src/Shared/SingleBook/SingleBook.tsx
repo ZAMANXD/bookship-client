@@ -29,9 +29,9 @@ const SingleBook = ({ ...book }) => {
                         [...Array(parseInt(bookRating || 4))].map(star => <AiOutlineStar className='text-lg text-yellow-500' />)
                     }
                 </div>
-                <p className='text-sm text-justify'>{description}...</p>
+                <p className='text-sm text-justify'>{description.slice(0, 30)}...</p>
                 <div className=''>
-                    <div className='flex justify-between items-end '>
+                    <div className='flex justify-between items-end'>
                         <div>
                             <p className='text-sm font-semibold text-gray-500 '>$ <span className='line-through'>{originalPrice}</span></p>
                             <p className='text-2xl font-bold text-[#342D65]'>$ {discountedPrice}</p>

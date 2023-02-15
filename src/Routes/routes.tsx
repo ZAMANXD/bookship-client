@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AdminDashboardLayout from "../layouts/Dashboard/AdminDashboardLayout";
+import BooksLayout from "../layouts/Root/BooksLayout";
 import Root from "../layouts/Root/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AllBooks from "../Pages/AllBooks/AllBooks";
@@ -48,8 +49,8 @@ export const router = createBrowserRouter([
                 element: <AboutUs></AboutUs>
             },
             {
-                path:'/blog',
-                element:<Blog/>
+                path: '/blog',
+                element: <Blog />
             },
             {
                 path: '/contactus',
@@ -69,51 +70,6 @@ export const router = createBrowserRouter([
                     return fetch(`https://bookship-server-zamanxd.vercel.app/book/${params.id}`)
                 },
                 element: <BookDetails />
-            },
-            {
-                path: '/books',
-                element: <AllBooks />,
-                children: [
-                    {
-                        path: '/books',
-                        element: <BooksByPrice />
-                    },
-                    {
-                        path: '/books/bookprice',
-                        element: <BooksByPrice />
-                    },
-                    {
-                        path: '/books/authorbooks',
-                        element: <AuthorBooks />
-                    },
-                    {
-                        path: '/books/publicationbooks',
-                        element: <PublicationBooks />
-                    },
-                    {
-                        path: '/books/categoriesbooks',
-                        element: <CategoriesBooks />
-                    },
-                ]
-            },
-            {
-                path: '/books/authorbooks',
-                element: <AuthorBooks />
-            },
-            {
-                path: '/author/:name',
-                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/author/${params.name}`),
-                element: <BooksByAuthor />
-            },
-            {
-                path: '/category/:name',
-                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/categories/${params.name}`),
-                element: <BooksByCategory />
-            },
-            {
-                path: '/publication/:name',
-                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/publications/${params.name}`),
-                element: <BooksByPublication />
             },
             {
                 path: '/addtocart',
@@ -145,22 +101,64 @@ export const router = createBrowserRouter([
     // admin dashbord routes 
     {
         path: '/dashboard/admin',
-        element: <AdminRoute><AdminDashboardLayout/></AdminRoute>,
-        children:[
+        element: <AdminRoute><AdminDashboardLayout /></AdminRoute>,
+        children: [
             {
-                path:'/dashboard/admin',
-                element:<AdminDashboard/>
+                path: '/dashboard/admin',
+                element: <AdminDashboard />
             },
             {
-                path:'/dashboard/admin/sellerList',
-                element:<AdminSellerList/>
+                path: '/dashboard/admin/sellerList',
+                element: <AdminSellerList />
             },
             {
-                path:'/dashboard/admin/buyerList',
-                element:<AdminBuyerList/>
+                path: '/dashboard/admin/buyerList',
+                element: <AdminBuyerList />
             }
         ]
-    }
+    },
+    {
+        path: '/books',
+        element: <BooksLayout />,
+        errorElement: <ErrorPage />,
+        children: [
+            {
+                path: '/books',
+                element: <BooksByPrice />
+            },
+            {
+                path: '/books/bookprice',
+                element: <BooksByPrice />
+            },
+            {
+                path: '/books/authorbooks',
+                element: <AuthorBooks />
+            },
+            {
+                path: '/books/publicationbooks',
+                element: <PublicationBooks />
+            },
+            {
+                path: '/books/categoriesbooks',
+                element: <CategoriesBooks />
+            },
+            {
+                path: '/books/author/:name',
+                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/author/${params.name}`),
+                element: <BooksByAuthor />
+            },
+            {
+                path: '/books/category/:name',
+                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/categories/${params.name}`),
+                element: <BooksByCategory />
+            },
+            {
+                path: '/books/publication/:name',
+                loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/publications/${params.name}`),
+                element: <BooksByPublication />
+            },
+        ]
+    },
 ])
 
 
