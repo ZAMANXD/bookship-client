@@ -1,0 +1,26 @@
+.bs-payment-card {
+    width: 50% !important;
+    text-align: center !important;
+}
+
+
+.bs-payment-button {
+    width: 200px;  
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.bs-payment-button:hover {
+    color: white;
+}
+
+.InputElement::placeholder{
+    color: black !important;
+}
+
+@media screen and (max-device-width: 989px) { 
+    .bs-payment-card {
+        width: 100% !important;
+    }
+}
