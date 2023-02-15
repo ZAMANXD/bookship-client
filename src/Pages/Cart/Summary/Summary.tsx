@@ -30,7 +30,7 @@ const Summary = () => {
 
 
     return (
-        <aside className='col-span-2 lg:w-full w-5/6 lg:mx-0 mx-auto mt-4 bg-gray-50 shadow-md hover:shadow-2xl h-fit sticky top-20'>
+        <aside className='col-span-2 lg:w-full w-5/6 lg:mx-0 mx-auto mt-4 bg-gray-50 shadow-md hover:shadow-2xl h-fit lg:sticky lg:top-20'>
             <div className='bg-gray-100 py-5'>
                 <h1 className='text-xl font-semibold text-gray-700 text-center'>Summary</h1>
             </div>
