@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+
 import {
   BarChart,
   Bar,
@@ -10,10 +11,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
-import BookPostForm from "../../../Shared/Comments/BookPostForm";
+import UserProfile from "../../../Shared/UserProfile/UserProfile";
 
 const AdminDashboard = () => {
+
   const { data: books, refetch } = useQuery({
     queryKey: ["books"],
     queryFn: async () => {
@@ -38,6 +39,9 @@ const AdminDashboard = () => {
         <div className="">
           <div className="flex justify-between my-4">
             <h3 className="text-2xl">Dashboard</h3>
+            <div className="lg:block hidden">
+            <UserProfile/>
+            </div>
           </div>
           <div className="text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
             <div className="shadow-lg py-10">
