@@ -31,6 +31,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 // import SellerRoute from "../PrivateRoute/SellerRoute";
 import SellerRoute from "../PrivateRoute/SellerRoute";
 import ErrorPage from "../Shared/ErrorPage/ErrorPage";
+import SearchResult from "../Shared/SearchResult/SearchResult";
 
 
 export const router = createBrowserRouter([
@@ -89,10 +90,15 @@ export const router = createBrowserRouter([
                 element: <Payment></Payment>,
                 loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             },
-
-
+            {
+                path:'/searchResult',
+                element:<SearchResult/>
+            }
+            
+            
         ]
     },
+    // admin dashbord routes 
     {
         path: '/dashboard/admin',
         element: <AdminRoute><AdminDashboardLayout /></AdminRoute>,
