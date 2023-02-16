@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import "./Card.css";
 const Card = ({ data, stickyTopSpace }) => {
   const { title, body, img, blue } = data;
-  console.log(stickyTopSpace);
+  // console.log(stickyTopSpace);
 
   return (
     <div

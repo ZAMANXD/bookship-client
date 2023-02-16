@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Cart from "../layouts/Cart/Cart";
 import AdminDashboardLayout from "../layouts/Dashboard/AdminDashboardLayout";
 import BooksLayout from "../layouts/Root/BooksLayout";
 import Root from "../layouts/Root/Root";
@@ -72,10 +73,6 @@ export const router = createBrowserRouter([
                 element: <BookDetails />
             },
             {
-                path: '/addtocart',
-                element: <AddToCart />
-            },
-            {
                 path: '/myaccount',
                 element: <PrivateRoute><MyAccount /></PrivateRoute>
             },
@@ -83,12 +80,6 @@ export const router = createBrowserRouter([
                 path: '/dashboard/seller',
                 element: <SellerRoute><SellerDashboard /></SellerRoute>
 
-            },
-            {
-
-                path: '/addtocart/checkout',
-                element: <Payment></Payment>,
-                loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             },
             {
                 path:'/searchResult',
@@ -156,9 +147,39 @@ export const router = createBrowserRouter([
                 path: '/books/publication/:name',
                 loader: ({ params }) => fetch(`https://bookship-server-zamanxd.vercel.app/publications/${params.name}`),
                 element: <BooksByPublication />
-            },
+            }
         ]
     },
+    {
+        path: '/dashboard/admin',
+        element: <AdminRoute><AdminDashboardLayout/></AdminRoute>,
+        children:[
+            {
+                path:'/dashboard/admin',
+                element:<AdminDashboard/>
+            },
+            {
+                path:'/dashboard/admin/sellerList',
+                element:<AdminSellerList/>
+            },
+            {
+                path:'/dashboard/admin/buyerList',
+                element:<AdminBuyerList/>
+            }
+        ]
+    },
+    {
+        path: '/addtocart',
+        element: <Cart />,
+        errorElement: <ErrorPage></ErrorPage>,
+        children:[
+            {
+                path: '/addtocart/checkout',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
+            }
+        ]
+    }
 ])
 
 
