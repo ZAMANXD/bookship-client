@@ -118,14 +118,14 @@ const MyAccount = () => {
 
                     </div>
                     
-                        <h1 className='mt-5 text-lg text-center font-semibold font-mono'>{user?.displayName}</h1>
-                        <h1 className='text-lg text-center font-normal font-serif'>{user?.email}
+                        <h1 className='mt-5 text-lg text-center font-mono'>{user?.displayName}</h1>
+                        <h1 className='text-lg text-center'>{user?.email}
                         </h1>
-                        <h1 className='text-lg text-center font-normal font-serif'>Phone number : {dbuser?.phone}
+                        <h1 className='text-lg text-center'>Phone number : {dbuser?.phone}
                         </h1>
-                        {dbuser.address&&<h1 className='text-lg text-center font-normal font-serif'>Address : {dbuser?.address}
+                        {dbuser.address&&<h1 className='text-lg text-center'>Address : {dbuser?.address}
                         </h1>}
-                        <h1 className='text-lg text-center font-normal font-serif'>Role : {userRole}
+                        <h1 className='text-lg text-center'>Role : {userRole}
                         </h1>
                     
                 </div>
