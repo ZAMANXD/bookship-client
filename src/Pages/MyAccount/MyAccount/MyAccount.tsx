@@ -8,6 +8,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
 import useSeller from '../../../hooks/useSeller';
 import avatar from "../../../imgFile/avatar.png"
+import MyFavourite from './MyFavourite';
 
 const MyAccount = () => {
     const {user,nameUpdate}=useContext(AuthContext)
@@ -102,6 +103,7 @@ const MyAccount = () => {
     }
 
     return (
+    <div className='block lg:flex justify-between'>
         <div className='md:w-1/2 mx-auto bg-gray-50 rounded-lg md:p-20 p-10 md:my-8 shadow-md hover:shadow-2xl'>
             <h1 className='text-xl text-center font-semibold mb-4'>{editNow? "Edit Profile":"My Profile"}</h1>
             
@@ -224,6 +226,10 @@ const MyAccount = () => {
                 </div>
             </div>
         </div>
+        <div className='w-full lg:w-[50%] lg:mt-2'>
+            <MyFavourite/>
+        </div>
+    </div>
     );
 };
 

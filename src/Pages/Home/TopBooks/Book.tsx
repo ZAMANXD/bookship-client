@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { AiFillStar } from 'react-icons/ai'
 import { BsSuitHeart } from 'react-icons/bs';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider';
 import { useCart } from '../../../context/CartContext';
 import "./Book.css"
 
@@ -10,8 +12,33 @@ import "./Book.css"
 
 
 const Book = ({ ...book }) => {
+    const {user}=useContext(AuthContext)
     const { _id, bookTitle, authorName, authorEmail, authorImg, authorRating, bookRating, originalPrice, discountedPrice, bookCover, description, category, publication } = book
     const { increaseCartQuantity } = useCart()
+
+    // Add to favourite
+    const favouritehandler = (fvitem:object,userEmail:string)=>{
+        const favouriteItem={...fvitem,userEmail}
+        console.log(favouriteItem);
+        fetch("http://localhost:5000/favorurite",{
+                method:"PUT",
+                headers:{
+                    "content-type": "application/json"
+                },
+                body:JSON.stringify(favouriteItem)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.message){
+                    toast.error(data.message)
+                    console.log(data)
+                }else{
+                    toast.success('Added Favourite Section')
+                }
+            }
+            )
+            .catch(e=>console.log(e.message))
+    }
     return (
     <div className="card">
         <div className="card-img">
@@ -32,7 +59,8 @@ const Book = ({ ...book }) => {
                 <div className="card-button" onClick={() => increaseCartQuantity(_id)}>
                     <HiOutlineShoppingCart/>
                 </div>
-                <div className="card-button2 ml-3">
+                <div className="card-button2 ml-3" 
+                    onClick={()=>favouritehandler(book,user.email)}>
                     <BsSuitHeart/>
                 </div>
             </div>
