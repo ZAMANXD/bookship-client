@@ -20,7 +20,7 @@ const Book = ({ ...book }) => {
     const favouritehandler = (fvitem:object,userEmail:string)=>{
         const favouriteItem={...fvitem,userEmail}
         console.log(favouriteItem);
-        fetch("http://localhost:5000/favorurite",{
+        fetch("https://bookship-server-zamanxd.vercel.app/favorurite",{
                 method:"PUT",
                 headers:{
                     "content-type": "application/json"
