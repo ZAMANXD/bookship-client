@@ -23,7 +23,7 @@ const AuthorBook = ({ ...author }) => {
     }
     return (
         <>
-            <div className='p-5'>
+            <div className='p-3 lg:p-5'>
                 <Link to={`/books/author/${author?.name}`} className='flex justify-between items-center mb-3'>
                     <div className='flex items-center gap-x-3'>
                         <img className='w-10 h-10 rounded-full' src={author?.img ? author?.img : 'https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_1280.png'} alt="" />

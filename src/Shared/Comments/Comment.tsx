@@ -7,22 +7,25 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const Comment = (props: any) => {
     const { user } = useContext(AuthContext)
-    const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch } = props;
+    const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch, decision } = props;
+    console.log(decision);
 
     const handleDelete = (id: any) => {
-        fetch(`https://bookship-server-zamanxd.vercel.app/delete/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                toast.success('Review Deleted.')
-                refetch()
+        if (decision) {
+            fetch(`https://bookship-server-zamanxd.vercel.app/delete/${id}`, {
+                method: 'DELETE'
             })
-            .catch((err) => {
-                console.log(err.code || err.message);
-                refetch()
-            })
+                .then(res => res.json())
+                .then(data => {
+                    toast.success('Review Deleted.')
+                    refetch()
+                })
+                .catch((err) => {
+                    console.log(err.code || err.message);
+                    refetch()
+                })
+        }
+
     }
 
     return (
@@ -42,7 +45,10 @@ const Comment = (props: any) => {
                             <label htmlFor="comment-modal" className="font-semibold cursor-pointer text-xl"><FiEdit2 /></label>
                         </button>
                         <span className='text-xl'>|</span>
-                        <button className='font-semibold text-2xl' onClick={() => handleDelete(_id)}><AiFillDelete /></button>
+                        <button className='font-semibold text-2xl' onClick={() => handleDelete(_id)}><label htmlFor="my-modal-6" className="cursor-pointer">
+                            <AiFillDelete />
+                        </label>
+                        </button>
                     </div>
                 }
                 <div className='flex gap-x-2 items-center'>

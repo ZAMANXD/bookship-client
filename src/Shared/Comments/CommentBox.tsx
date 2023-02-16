@@ -38,7 +38,6 @@ const CommentBox = (props: any) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.acknowledged && data.insertedId) {
                         setProcessing(false)
                         refetch()
