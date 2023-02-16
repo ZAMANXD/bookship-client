@@ -8,7 +8,7 @@ const BooksByAuthor = () => {
     console.log(books)
     useTitle(`- ${books[0]?.authorName || 'Author Not Found'}`)
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto bg-gray-200 p-5 rounded-lg'>
             {/* <h2 className='text-center text-3xl my-5'> From <span className='uppercase'>{books[0]?.authorName || 'Author Not Found'}</span> :
                 {books?.length}</h2> */}
             <h2 className='text-center text-3xl my-5'> <span className='uppercase'>{books[0]?.authorName || 'Author Not Found'}</span>{}</h2>

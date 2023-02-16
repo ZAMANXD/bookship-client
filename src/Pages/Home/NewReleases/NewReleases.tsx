@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Skeletons from '../../../Shared/Skeletons/Skeletons';
 import Spinner from '../../../Shared/Spinner/Spinner';
 import Book from '../TopBooks/Book';
 
@@ -19,7 +20,7 @@ const NewReleases = () => {
     }, [])
 
     if (loading) {
-        return <Spinner />
+        return <Skeletons />
     }
 
     const responsive = {
