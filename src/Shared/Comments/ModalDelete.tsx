@@ -6,7 +6,7 @@ const ModalDelete = (props: any) => {
         <div>
             {/* Put this part before </body> tag */}
             <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-            <div className="modal modal-bottom sm:modal-middle">
+            <div className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Are you Sure want to delete the Rating?</h3>
                     <div className='flex justify-around'>

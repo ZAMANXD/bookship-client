@@ -56,15 +56,12 @@ const CommentBox = (props: any) => {
     }
 
     return (
-        <div className='mt-40'>
-            {
-                !user && <><p className='text-2xl mb-5 text-yellow-500'>Login to add a Comment.</p></>
-            }
-            <h5 className='tex-2xl font-semibold my-3'>Please, Share your opinion for this Book.</h5>
+        <div>
+            <h5 className='text-xl lg:text-2xl font-semibold my-4'>Please, Share your opinion.</h5>
             <form onSubmit={handleSubmit}>
-                <textarea name="comment" id="" className='w-full lg:w-1/2 h-24 py-3 px-5 rounded-md block mb-3 border' placeholder='Write Your Comment' disabled={!user}></textarea>
+                <textarea name="comment" id="" className='w-full h-24 py-3 px-5 rounded-md block mb-3 border' placeholder='Write Your Review Here...' disabled={!user}></textarea>
 
-                <div className='flex justify-between items-center w-full lg:w-1/2'>
+                <div className='flex justify-between items-center w-full'>
                     <div className="rating rating-md">
                         <input type="radio" defaultValue={1} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
                         <input type="radio" defaultValue={2} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
@@ -73,10 +70,14 @@ const CommentBox = (props: any) => {
                         <input type="radio" defaultValue={5} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
                     </div>
 
-                    <button type='submit' className={`bg-[#3DB188] p-2 text-white rounded-sm lg:mt-0 block ${processing && 'bg-[#709286]'}`} disabled={processing && !comment && !rating}>Comment</button>
+                    <button type='submit' className={`bg-[#3DB188] px-3 py-2 text-white rounded-full lg:mt-0 block ${processing && 'bg-[#709286]'}`} disabled={processing && !comment && !rating}>Comment</button>
                 </div>
             </form>
-
+            <span>
+                {
+                    !user && <><p className='lg:text-2xl my-5 text-yellow-900'>Please, Login to add your Valuable Review.</p></>
+                }
+            </span>
         </div>
     );
 };

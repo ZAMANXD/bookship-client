@@ -7,7 +7,7 @@ import { BsStar, BsStarFill } from 'react-icons/bs';
 
 const Comment = (props: any) => {
     const { user } = useContext(AuthContext)
-    const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch, decision } = props;
+    const { _id, comment, userName, userImg, commentDate, rating, setCommentId, refetch, decision, setDecision } = props;
     console.log(decision);
 
     const handleDelete = (id: any) => {
@@ -18,6 +18,7 @@ const Comment = (props: any) => {
                 .then(res => res.json())
                 .then(data => {
                     toast.success('Review Deleted.')
+                    setDecision(true)
                     refetch()
                 })
                 .catch((err) => {
@@ -25,14 +26,13 @@ const Comment = (props: any) => {
                     refetch()
                 })
         }
-
     }
 
     return (
         <div className='border rounded-lg p-5 my-2'>
             <div className='flex justify-between flex-wrap my-2'>
-                <div className='flex gap-x-3 items-center'>
-                    <img className='w-8 h-8' src={userImg} alt="" />
+                <div className='flex gap-x-2 items-center'>
+                    <img className='w-6 h-6 lg:w-8 lg:h-8 rounded-full' src={userImg} alt="" />
                     <div>
                         <h3 className='font-semibold'>{userName}</h3>
                         <p className='text-xs'>{commentDate || "23th, Jan 2023"}</p>
@@ -51,7 +51,7 @@ const Comment = (props: any) => {
                         </button>
                     </div>
                 }
-                <div className='flex gap-x-2 items-center'>
+                <div className='flex gap-x-2 items-center mt-3 lg:mt-0'>
                     <span className='font-semibold hidden lg:block'>Ratings:</span>
                     <div className='flex items-center gap-x-1'>
                         <span className='flex gap-x-1'>
