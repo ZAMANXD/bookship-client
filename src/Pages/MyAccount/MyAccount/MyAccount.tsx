@@ -8,6 +8,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
 import useSeller from '../../../hooks/useSeller';
 import avatar from "../../../imgFile/avatar.png"
+import MyFavourite from './MyFavourite';
 
 const MyAccount = () => {
     const {user,nameUpdate}=useContext(AuthContext)
@@ -34,7 +35,7 @@ const MyAccount = () => {
             setDbuser(data)
         })
     },[user.email,reloade])
-console.log(dbuser);
+// console.log(dbuser);
 
     const imghandle =(e:any)=>{
         e.preventDefault()
@@ -50,7 +51,7 @@ console.log(dbuser);
         const address= form.address.value
         const role= form.role.value
         const photo=form.uplodeImg.files[0]
-        console.log(name,email,phone,role,photo,address)
+        // console.log(name,email,phone,role,photo,address)
 
     // uploade image in imgbb
     
@@ -98,10 +99,11 @@ console.log(dbuser);
             })    
         }
       })
-      .catch(e=>console.log(e.message)) 
+      .catch(e=>toast.error(e.message)) 
     }
 
     return (
+    <div className='block lg:flex justify-between'>
         <div className='md:w-1/2 mx-auto bg-gray-50 rounded-lg md:p-20 p-10 md:my-8 shadow-md hover:shadow-2xl'>
             <h1 className='text-xl text-center font-semibold mb-4'>{editNow? "Edit Profile":"My Profile"}</h1>
             
@@ -118,14 +120,14 @@ console.log(dbuser);
 
                     </div>
                     
-                        <h1 className='mt-5 text-lg text-center font-semibold font-mono'>{user?.displayName}</h1>
-                        <h1 className='text-lg text-center font-normal font-serif'>{user?.email}
+                        <h1 className='mt-5 text-lg text-center font-mono'>{user?.displayName}</h1>
+                        <h1 className='text-lg text-center'>{user?.email}
                         </h1>
-                        <h1 className='text-lg text-center font-normal font-serif'>Phone number : {dbuser?.phone}
+                        <h1 className='text-lg text-center'>Phone number : {dbuser?.phone}
                         </h1>
-                        {dbuser.address&&<h1 className='text-lg text-center font-normal font-serif'>Address : {dbuser?.address}
+                        {dbuser.address&&<h1 className='text-lg text-center'>Address : {dbuser?.address}
                         </h1>}
-                        <h1 className='text-lg text-center font-normal font-serif'>Role : {userRole}
+                        <h1 className='text-lg text-center'>Role : {userRole}
                         </h1>
                     
                 </div>
@@ -224,6 +226,10 @@ console.log(dbuser);
                 </div>
             </div>
         </div>
+        <div className='w-full lg:w-[50%] lg:mt-2'>
+            <MyFavourite/>
+        </div>
+    </div>
     );
 };
 
