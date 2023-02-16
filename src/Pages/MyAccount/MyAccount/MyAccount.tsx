@@ -34,7 +34,7 @@ const MyAccount = () => {
             setDbuser(data)
         })
     },[user.email,reloade])
-console.log(dbuser);
+// console.log(dbuser);
 
     const imghandle =(e:any)=>{
         e.preventDefault()
@@ -50,7 +50,7 @@ console.log(dbuser);
         const address= form.address.value
         const role= form.role.value
         const photo=form.uplodeImg.files[0]
-        console.log(name,email,phone,role,photo,address)
+        // console.log(name,email,phone,role,photo,address)
 
     // uploade image in imgbb
     
@@ -98,7 +98,7 @@ console.log(dbuser);
             })    
         }
       })
-      .catch(e=>console.log(e.message)) 
+      .catch(e=>toast.error(e.message)) 
     }
 
     return (
