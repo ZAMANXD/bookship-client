@@ -19,7 +19,8 @@ const ProductDetails = ({ ...item }) => {
     const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useCart();
     const quantityOfBook = getItemQuantity(id);
 
-    const book = bookData.find(i => i._id === id)
+    const book = bookData.find(i => i._id === id);
+    
     // console.log(book.bookTitle);
 
 
@@ -36,7 +37,7 @@ const ProductDetails = ({ ...item }) => {
                 <h4 className='text-gray-700 md:text-lg text-center text-xs md:font-semibold md:col-auto col-span-3'>${book?.discountedPrice}</h4>
 
             </div>
-            <button className='col-span-1 ml-auto md:text-2xl text-base md:mr-5 hover:text-red-600 rounded-full ' onClick={() => removeFromCart(id)} ><HiOutlineXCircle /></button>
+            <button className='col-span-1 md:text-2xl lg:pl-24 md:pl-10 text-base md:mr-5 hover:text-red-600 rounded-full' onClick={() => removeFromCart(id)} ><HiOutlineXCircle /></button>
         </section>
     );
 };

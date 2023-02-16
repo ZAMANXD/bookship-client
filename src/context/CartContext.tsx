@@ -1,6 +1,8 @@
-import { createContext, useContext, ReactNode } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { createContext, useContext, ReactNode, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { AuthContext } from "./AuthProvider";
 
 type CartProviderProps = {
   children: ReactNode;
@@ -27,7 +29,33 @@ export const useCart = () => {
 };
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("cart", []);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  const{user}=useContext(AuthContext);
+  // console.log(user);
+  
+
+  async function sendCartItemsToServer(cartItems: CartItem[]) {
+    const userEmail = user?.email;
+    const response = await fetch("http://localhost:5000/cart", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(
+        {userEmail,
+        cartItems}
+        ),
+    });
+  
+    if (!response.ok) {
+      throw new Error("Failed to send cart items to server");
+    }
+  }
+  
+  // const {data:cartItemsData =[]}= useQuery({
+
+  // })
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -46,6 +74,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         return currentItems.map((item) => {
           if (item.id === id) {
             toast.success('Successfully added')
+            
             return { ...item, quantity: item.quantity + 1 };
           } else {
             return item;
@@ -53,6 +82,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         });
       }
     });
+    sendCartItemsToServer(cartItems);
   };
 
   const decreaseCartQuantity = (id: number) => {
@@ -69,6 +99,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
         });
       }
     });
+    sendCartItemsToServer(cartItems);
   };
 
   const removeFromCart = (id: number) => {
