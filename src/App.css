@@ -1,5 +1,5 @@
 :root {
-  --text-primary: #34315D;
+  --text-primary: #34315d;
   --text-secondary: #374151;
 }
 
@@ -48,7 +48,6 @@
   background-size: cover;
 }
 
-
 /* Gradient background 2 */
 .gradient-bg-2 {
   background: linear-gradient(
@@ -88,12 +87,18 @@
 }
 
 /* Button styling */
-.bs-button{
-  border-radius: 0.5rem;
+.bs-button {
   border: 0.3vmin solid #05060f;
   box-shadow: 0.3rem 0.3rem #05060f;
-  background-color: #f1f1f1;
-  border-radius: 10px;
+  background-color: #0000;
+  border-radius: 50px;
   padding: 7px;
   font-weight: 500;
-  }
+}
+
+.bs-text-primary {
+  color: var(--text-primary);
+}
+.bs-text-secondary {
+  color: var(--text-secondary);
+}

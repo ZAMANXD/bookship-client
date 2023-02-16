@@ -10,11 +10,27 @@ const Footer = () => {
         className="rounded-xl sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto custom_Footer"
       >
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 ">
-          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-gray-900">About Us</p>
+          <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
+            <div className="text-center sm:text-left flex items-center flex-col">
+              <p className="text-lg font-medium text-gray-900">
+                Our Description
+              </p>
 
               <nav aria-label="Footer About Nav" className="mt-8">
+                <div className="w-[300px] mx-auto">
+                  <p>
+                    An online book selling website is a platform that allows
+                    users to buy and sell books over the internet. These
+                    websites typically offer a wide range of books.
+                  </p>
+                </div>
+              </nav>
+            </div>
+
+            <div className="text-center sm:text-left flex  items-center flex-col">
+              <p className="text-lg font-medium text-gray-900">See More</p>
+
+              <nav aria-label="Footer Services Nav" className="mt-8">
                 <ul className="space-y-4 text-sm">
                   <li>
                     <Link
@@ -24,132 +40,37 @@ const Footer = () => {
                       Our Blog
                     </Link>
                   </li>
-
                   <li>
                     <Link
                       className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
+                      to="/aboutus"
                     >
-                      Meet the Team
+                      About Us
                     </Link>
                   </li>
-
                   <li>
                     <Link
                       className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
+                      to="/contactus"
                     >
-                      Employee Handbook
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Careers
+                      Contact Us
                     </Link>
                   </li>
                 </ul>
               </nav>
             </div>
 
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-gray-900">Our Services</p>
-
-              <nav aria-label="Footer Services Nav" className="mt-8">
-                <ul className="space-y-4 text-sm">
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Web Development
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Web Design
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Marketing
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Google Ads
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium text-gray-900">Resources</p>
+            <div>
+              <p className="text-lg font-bold text-gray-900  ml-8 -mb-5">We Accept</p>
+            <div className="text-center sm:text-left flex items-center flex-col">
 
               <nav aria-label="Footer Resources Nav" className="mt-8">
-                <ul className="space-y-4 text-sm">
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Online Guides
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Conference Notes
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Forum
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Downloads
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link
-                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
-                      to="/"
-                    >
-                      Upcoming Events
-                    </Link>
-                  </li>
-                </ul>
+                <img
+                  src="https://www.pngitem.com/pimgs/m/291-2918799_stripe-payment-icon-png-transparent-png.png"
+                  alt=""
+                />
               </nav>
+            </div>
             </div>
           </div>
 
