@@ -66,11 +66,11 @@ const CommentBox = (props: any) => {
 
                 <div className='flex justify-between items-center w-full lg:w-1/2'>
                     <div className="rating rating-md">
-                        <input type="radio" defaultValue={1} name="rating" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" defaultValue={2} name="rating" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" defaultValue={3} name="rating" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" defaultValue={4} name="rating" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" defaultValue={5} name="rating" className="mask mask-star-2 bg-orange-400" />
+                        <input type="radio" defaultValue={1} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
+                        <input type="radio" defaultValue={2} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
+                        <input type="radio" defaultValue={3} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
+                        <input type="radio" defaultValue={4} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
+                        <input type="radio" defaultValue={5} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
                     </div>
 
                     <button type='submit' className={`bg-[#3DB188] p-2 text-white rounded-sm lg:mt-0 block ${processing && 'bg-[#709286]'}`} disabled={processing && !comment && !rating}>Comment</button>

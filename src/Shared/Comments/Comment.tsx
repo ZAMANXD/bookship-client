@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { AiFillDelete } from 'react-icons/ai';
-import { GrStar } from 'react-icons/gr';
 import { FiEdit2 } from 'react-icons/fi';
 import { AuthContext } from '../../context/AuthProvider';
+import { BsStar, BsStarFill } from 'react-icons/bs';
 
 const Comment = (props: any) => {
     const { user } = useContext(AuthContext)
@@ -52,9 +52,19 @@ const Comment = (props: any) => {
                     </div>
                 }
                 <div className='flex gap-x-2 items-center'>
-                    <span className='font-semibold hidden lg:block'>Ratings:</span> {
-                        [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <GrStar key={i} className='text-lg text-yellow-500' />)
-                    }
+                    <span className='font-semibold hidden lg:block'>Ratings:</span>
+                    <div className='flex items-center gap-x-1'>
+                        <span className='flex gap-x-1'>
+                            {
+                                [...Array(parseInt(rating || 'No ratings'))].map((star, i) => <BsStarFill key={i} className='text-xl text-yellow-500' />)
+                            }
+                        </span>
+                        <span className='flex gap-x-1'>
+                            {
+                                [...Array(5 - rating)].map((star, i) => <BsStar key={i} className='text-lg text-yellow-500' />)
+                            }
+                        </span>
+                    </div>
                 </div>
             </div>
             <p className='lg:ml-11 text-justify'>{comment}</p>

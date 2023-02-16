@@ -28,7 +28,7 @@ const CategoryBook = ({ ...category }) => {
                 <div className='flex items-center gap-x-3'>
                     <h2 className='font-bold text-xl'>{category?.name || category?.category}</h2>
                 </div>
-                <Link to={`/category/${category?.name || category?.category}`} className='text-blue-400'>View All</Link>
+                <Link to={`/books/category/${category?.name || category?.category}`} className='text-blue-400'>View All</Link>
             </Link>
             {
                 !books.length ? <p className='text-center lg:text-xl'>No Books Available in this Category. Coming Soon...</p> :

@@ -28,7 +28,7 @@ const PublicationBook = ({ ...publication }) => {
                 <div className='flex items-center gap-x-3'>
                     <h2 className='font-bold text-xl'>{publication?.name}</h2>
                 </div>
-                <Link to={`/publication/${publication?.name}`} className='text-blue-400'>View All</Link>
+                <Link to={`/books/publication/${publication?.name}`} className='text-blue-400'>View All</Link>
             </Link>
             {
                 !books.length ? <p className='text-center text-xl'>No Books Available in this Publication. Coming Soon...</p> : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>

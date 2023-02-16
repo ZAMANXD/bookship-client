@@ -11,7 +11,7 @@ const Comments = (props: any) => {
 
     return (
         <div>
-            <h2 className='text-2xl font-semibold my-5'>Comments: {comments?.length}</h2>
+            <h2 className='text-2xl font-semibold my-5'>Reviews: {comments?.length}</h2>
             {!comments?.length ? <p className='text-2xl'>No reviews</p> :
                 comments?.map((comment: any, i: number) => <Comment key={i} {...comment} commentId={commentId} setCommentId={setCommentId} decision={decision} refetch={refetch} />)
             }
