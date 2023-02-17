@@ -37,7 +37,7 @@ const GetInTouch = () => {
           className="text-3xl md:text-4xl lg:text-4xl font-bold text-white text-center pt-6 mb-10 "
 
         >
-          Get in Touch
+          Subscribe To Our Newsletter
         </h1>
         {/* Comment by arghya  */}
         <div

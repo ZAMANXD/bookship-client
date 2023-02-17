@@ -70,7 +70,8 @@ const CommentBox = (props: any) => {
                         <input type="radio" defaultValue={5} name="rating" className="mask mask-star-2 bg-orange-400 mx-1" />
                     </div>
 
-                    <button type='submit' className={`bg-[#3DB188] px-3 py-2 text-white rounded-full lg:mt-0 block ${processing && 'bg-[#709286]'}`} disabled={processing && !comment && !rating}>Comment</button>
+                    <button type='submit' className={ `bs-button-2 py-2 px-3 ${processing && 'bg-[#709286]'}`} disabled={processing && !comment && !rating}>Comment</button>
+                    {/* <button type='submit' className={`bg-[#3DB188] px-3 py-2 text-white rounded-full lg:mt-0 block ${processing && 'bg-[#709286]'}`} disabled={processing && !comment && !rating}>Comment</button> */}
                 </div>
             </form>
             <span>
