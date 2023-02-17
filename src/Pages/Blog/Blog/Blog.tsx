@@ -27,7 +27,7 @@ const Blog = () => {
     return (
         <div>
             
-            <BlogPostUpdate/>
+            {/* <BlogPostUpdate/> */}
             <BlogList posts={posts} />
         </div>
     );

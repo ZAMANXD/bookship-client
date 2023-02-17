@@ -1,0 +1,9 @@
+.book_Background {
+  background-image: url("https://static01.nyt.com/images/2019/12/17/books/review/17fatbooks/17fatbooks-superJumbo.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* this is comment  */
