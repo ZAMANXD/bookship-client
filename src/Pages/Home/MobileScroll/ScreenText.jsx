@@ -48,7 +48,7 @@ const ScreenText = ({ screen, setCurrentImg, i }) => {
             </div>
           </div>
         </div> */}
-        <div className="screen-description">{screen.description}</div>
+        <div className="screen-description text-justify">{screen.description}</div>
       </div>
     </div>
   );
