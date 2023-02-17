@@ -34,7 +34,7 @@ const MobileScroll = () => {
   return (
     <div className="bg-gray-50 ">
       <div className="sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-30 flex justify-center items-center">
-        <div className="mobile-scroll flex max-width">
+        <div className="mobile-scroll flex max-width ">
           <div className="scroll-full-screen-wrapper">
             {scrollData.map((screen, i) => (
               <div className="scroll-full-screen flex justify-center p-10">
