@@ -16,7 +16,6 @@
 }
 
 .scroll-full-screen {
-
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -36,8 +35,7 @@
   box-shadow: var(--mobile-box-shadow);
   border-radius: 46px;
   padding: 16px 14px;
-  max-height: 80vh;
-  background: red;
+  max-height: 100vh;
 }
 
 .mobile-mockup-screen {
@@ -48,8 +46,6 @@
 }
 
 .mobile-screen-img {
-
-
   object-fit: contain;
 }
 
