@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './BlogPost.css';
 import CommentForm from '../CommentForm/CommentForm';
+import { FaRegThumbsDown, FaRegThumbsUp } from 'react-icons/fa';
 
 interface BlogPostProps {
     _id: string;
@@ -68,7 +69,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ _id,title, author, content, picture
       <div className="BlogPost-footer">
         <div className="BlogPost-like-container">
           <button className="BlogPost-like-button" onClick={handleLikeClick}>
-          {isLiked ? 'Unlike' : 'Like'}
+          {isLiked ? <><FaRegThumbsDown className='text-xl font-semibold'/></> : <FaRegThumbsUp className='text-xl font-semibold'/>}
           </button>
           <p className="BlogPost-likes">{likeCount} likes</p>
         </div>
