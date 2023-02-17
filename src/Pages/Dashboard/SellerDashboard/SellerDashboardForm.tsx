@@ -61,6 +61,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
             .then((data) => {
               refetch();
               e.target.reset();
+              setPreviewImage0("");
             })
             .catch((err) => {});
 
