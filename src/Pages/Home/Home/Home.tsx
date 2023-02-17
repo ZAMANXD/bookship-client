@@ -23,11 +23,11 @@ const Home = () => {
       <Testimonials></Testimonials>
       {/* <BookBackground></BookBackground> */}
       <Cards></Cards>
-      <div className="custom_Css">
+      {/* <div className="custom_Css">
         <div className="hidden lg:block sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto">
           <MobileScroll></MobileScroll>
         </div>
-      </div>
+      </div> */}
       <div className="hidden md:block">
         <GetInTouch></GetInTouch>
       </div>

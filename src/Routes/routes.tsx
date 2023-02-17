@@ -21,6 +21,7 @@ import AdminDashboard from "../Pages/Dashboard/AdminDashboard/AdminDashboard";
 import AdminSellerList from "../Pages/Dashboard/AdminDashboard/AdminSellerList";
 import SellerDashboard from "../Pages/Dashboard/SellerDashboard/SellerDashboard";
 import Home from "../Pages/Home/Home/Home";
+import MobileScroll from "../Pages/Home/MobileScroll/MobileScroll";
 import Login from "../Pages/Login/Login";
 import MyAccount from "../Pages/MyAccount/MyAccount/MyAccount";
 import BooksByPublication from "../Pages/PublicationBooks/BooksByPublication";
@@ -94,6 +95,10 @@ export const router = createBrowserRouter([
                 path: '/addtocart/checkout',
                 element: <PrivateRoute><Payment></Payment></PrivateRoute>,
                 loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
+            },
+            {
+                path:"/whybookship",
+                element:<MobileScroll/>
             }
             
             

@@ -56,6 +56,14 @@ const Footer = () => {
                       Contact Us
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      className="text-[#46760A] transition text-base hover:text-[#46760A]/75"
+                      to="/whybookship"
+                    >
+                      Why BookShip
+                    </Link>
+                  </li>
                 </ul>
               </nav>
             </div>
