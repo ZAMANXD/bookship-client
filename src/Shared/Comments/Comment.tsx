@@ -29,7 +29,7 @@ const Comment = (props: any) => {
     }
 
     return (
-        <div className='border rounded-lg p-5 my-2'>
+        <div className='border rounded-lg p-5 my-2 bg-sky-50'>
             <div className='flex justify-between flex-wrap my-2'>
                 <div className='flex gap-x-2 items-center'>
                     <img className='w-6 h-6 lg:w-8 lg:h-8 rounded-full' src={userImg} alt="" />

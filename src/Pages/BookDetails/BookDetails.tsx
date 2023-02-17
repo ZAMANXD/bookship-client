@@ -42,7 +42,7 @@ const BookDetails = () => {
       <h2 className="text-3xl lg:text-4xl font-semibold text-[#34315D] mb-10">
         Book Details
       </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 py-5 bg-gray-50 px-10 rounded-lg shadow">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-10 py-5 bg-gray-50 px-10 rounded-lg shadow border">
         <div className="w-10/12 rounded-lg  mx-auto">
           <img className="rounded shadow-lg" src={bookCover} alt="" />
         </div>
