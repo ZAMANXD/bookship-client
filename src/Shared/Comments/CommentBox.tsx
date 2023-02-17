@@ -75,7 +75,7 @@ const CommentBox = (props: any) => {
             </form>
             <span>
                 {
-                    !user && <><p className='lg:text-2xl my-5 text-yellow-900'>Please, Login to add your Valuable Review.</p></>
+                    !user && <><p className='font-bold my-5 text-red-600 bg-red-50  border text-center p-1 rounded-full'>* Please, Login to add your Valuable Review.</p></>
                 }
             </span>
         </div>
