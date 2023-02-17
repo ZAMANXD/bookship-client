@@ -29,14 +29,14 @@
 
 .mobile-mockup {
   position: sticky;
-  top: 150px;
+  top: 95px;
   transform: translateX(30%);
-  width: 350px;
-  height: 600px;
+  width: 275px;
+  height: 500px;
   box-shadow: var(--mobile-box-shadow);
-  border-radius: 46px;
-  padding: 16px 14px;
-  max-height: 100vh;
+  border-radius: 25px;
+  /* padding: 16px 14px; */
+  /* max-height: 78vh; */
 }
 
 .mobile-mockup-screen {
