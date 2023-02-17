@@ -4,6 +4,7 @@ import SingleBook from '../../Shared/SingleBook/SingleBook';
 import Spinner from '../../Shared/Spinner/Spinner';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 import Skeletons from '../../Shared/Skeletons/Skeletons';
+import Book from '../Home/TopBooks/Book';
 
 const BooksByPrice = () => {
     const [value, setValue] = useState(1)
@@ -41,7 +42,7 @@ const BooksByPrice = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 px-5 lg:grid-cols-3 gap-5 pb-10'>
                 {
-                    books.map((book: any, i: number) => <SingleBook key={i} {...book} />)
+                    books.map((book: any, i: number) => <Book key={i} {...book} />)
                 }
             </div>
 

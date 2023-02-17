@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+
 import {
   BarChart,
   Bar,
@@ -10,10 +11,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-
-import BookPostForm from "../../../Shared/Comments/BookPostForm";
+import UserProfile from "../../../Shared/UserProfile/UserProfile";
 
 const AdminDashboard = () => {
+
   const { data: books, refetch } = useQuery({
     queryKey: ["books"],
     queryFn: async () => {
@@ -34,30 +35,33 @@ const AdminDashboard = () => {
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <>
+      <div className="pt-6 px-10 pb-10">
         <div className="">
           <div className="flex justify-between my-4">
-            <h3 className="text-2xl">Dashboard</h3>
+            <h3 className="text-2xl font-bold">Dashboard</h3>
+            {/* <div className="lg:block hidden">
+            <UserProfile/>
+            </div> */}
           </div>
           <div className="text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
             <div className="shadow-lg py-10">
-              <h3 className="text-lg">Total Order</h3>
+              <h3 className="text-2xl font-medium">Total Order</h3>
               <p className="text-2xl">
                 {totalOrderBooks ? totalOrderBooks : "00"}
               </p>
             </div>
             <div className="shadow-lg py-10">
-              <h3 className="text-lg">Total Books</h3>
+              <h3 className="text-2xl font-medium">Total Books</h3>
               <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
             </div>
             <div className="shadow-lg py-10">
-              <h3 className="text-lg">Total Books</h3>
+              <h3 className="text-2xl font-medium">Total Books</h3>
               <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
             </div>
           </div>
         </div>
 
-        <h3 className="text-2xl font-bold mt-10">Monthlay Order</h3>
+        <h3 className="text-2xl font-semibold mt-12 pb-6">Monthlay Order</h3>
         {/* <ResponsiveContainer width="100%" height="100%"> */}
         <BarChart
           width={700}
@@ -79,7 +83,7 @@ const AdminDashboard = () => {
           {/* <Bar dataKey="uv" fill="#82ca9d" /> */}
         </BarChart>
         {/* </ResponsiveContainer> */}
-      </>
+      </div>
     </ResponsiveContainer>
   );
 };

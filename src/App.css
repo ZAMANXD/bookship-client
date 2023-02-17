@@ -77,6 +77,20 @@
   background-size: cover;
 }
 
+/* Gradient background 4 */
+.gradient-bg-4 {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 1)
+    ),
+    url("./assets/gradient-bg-2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 /* Box shadow  for bigger cards*/
 .bs-box-shadow {
   padding: 1rem;
