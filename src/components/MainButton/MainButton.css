@@ -53,6 +53,6 @@
    .bs-button{
     border-radius: 30px;
     border: 0.3vmin solid #05060f;
-    box-shadow: 0.3rem 0.3rem #05060f;
+    box-shadow: 0.3rem 0.3rem #9b9b9b;
     background-color: #ffffff;
     }

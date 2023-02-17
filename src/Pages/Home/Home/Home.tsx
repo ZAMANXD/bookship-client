@@ -20,9 +20,9 @@ const Home = () => {
       <NewReleases></NewReleases>
       {/* <WhyBookShip></WhyBookShip> */}
       <Testimonials></Testimonials>
-      <BookBackground></BookBackground>
+      {/* <BookBackground></BookBackground> */}
       <Cards></Cards>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block ">
         <MobileScroll></MobileScroll>
       </div>
       <GetInTouch></GetInTouch>
