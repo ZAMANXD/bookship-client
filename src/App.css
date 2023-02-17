@@ -100,6 +100,14 @@
   overflow: hidden;
 }
 
+.bs-box-shadow-2 {
+  /* padding: 1rem; */
+  border-radius: 1rem;
+  border: 0.5vmin solid rgb(0, 0, 0);
+  box-shadow: 0.4rem 0.4rem #070707;
+  overflow: hidden;
+}
+
 /* Button styling */
 .bs-button {
   border: 0.3vmin solid #05060f;
