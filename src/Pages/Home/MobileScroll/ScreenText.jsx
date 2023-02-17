@@ -31,7 +31,7 @@ const ScreenText = ({ screen, setCurrentImg, i }) => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <div
         className={`screen-text ${isVisible ? "text-visible" : ""}`}
         ref={ref}

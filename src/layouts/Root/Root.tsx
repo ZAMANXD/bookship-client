@@ -7,7 +7,7 @@ const Root = () => {
     return (
         <div>
             <NavBar/>
-            <Outlet></Outlet>
+            <div className="gradient-bg-1"><Outlet></Outlet></div>
             <Footer/>
         </div>
     );
