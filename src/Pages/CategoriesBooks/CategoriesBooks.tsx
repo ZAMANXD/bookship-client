@@ -23,7 +23,7 @@ const CategoriesBooks = () => {
     }
 
     return (
-        <div className='bg-gray-200 rounded-lg'>
+        <div className='bg-sky-50 rounded-lg'>
             {
                 categories?.map((category, i) => <CategoryBook key={i} {...category} />)
             }

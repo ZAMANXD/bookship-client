@@ -73,6 +73,11 @@ export const router = createBrowserRouter([
                 element: <BookDetails />
             },
             {
+                path: '/addtocart/checkout',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
+            },
+            {
                 path: '/myaccount',
                 element: <PrivateRoute><MyAccount /></PrivateRoute>
             },
@@ -84,6 +89,11 @@ export const router = createBrowserRouter([
             {
                 path:'/searchResult',
                 element:<SearchResult/>
+            },
+            {
+                path: '/addtocart/checkout',
+                element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+                loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             }
             
             
@@ -172,13 +182,6 @@ export const router = createBrowserRouter([
         path: '/addtocart',
         element: <Cart />,
         errorElement: <ErrorPage></ErrorPage>,
-        children:[
-            {
-                path: '/addtocart/checkout',
-                element: <Payment></Payment>,
-                loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
-            }
-        ]
     }
 ])
 

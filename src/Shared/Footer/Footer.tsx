@@ -11,8 +11,8 @@ const Footer = () => {
       >
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 ">
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
-            <div className="text-center sm:text-left flex items-center flex-col">
-              <p className="text-lg font-medium text-gray-900">
+            <div className="text-center sm:text-left flex items-center lg:items-start flex-col">
+              <p className=" text-lg font-semibold text-gray-900">
                 Our Description
               </p>
 
@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
 
             <div className="text-center sm:text-left flex  items-center flex-col">
-              <p className="text-lg font-medium text-gray-900">See More</p>
+              <p className="text-lg font-semibold text-gray-900">See More</p>
 
               <nav aria-label="Footer Services Nav" className="mt-8">
                 <ul className="space-y-4 text-sm">
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
 
             <div>
-              <p className="text-lg font-bold text-gray-900  ml-8 -mb-5">We Accept</p>
+              <p className="text-lg font-semibold text-gray-900  ml-1 -mb-5 text-center mt-5">We Accept</p>
             <div className="text-center sm:text-left flex items-center flex-col">
 
               <nav aria-label="Footer Resources Nav" className="mt-8">

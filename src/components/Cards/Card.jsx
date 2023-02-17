@@ -7,7 +7,7 @@ const Card = ({ data, stickyTopSpace }) => {
 
   return (
     <div
-      className={`sticky grid grid-cols-1 overflow-hidden rounded-xl card ${blue} shadow-[0px_0px_30px_-10px_rgba(0,0,0,0.1)] md:grid-cols-2`}
+      className={`sticky grid grid-cols-1 overflow-hidden rounded-xl card ${blue} shadow-[0px_0px_30px_-10px_rgba(0,0,0,0.1)] md:grid-cols-2 `}
       style={{ top: stickyTopSpace }}
     >
       <div className="flex flex-col justify-center p-5">

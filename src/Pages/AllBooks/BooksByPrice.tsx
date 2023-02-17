@@ -31,7 +31,7 @@ const BooksByPrice = () => {
     }
 
     return (
-        <div className='bg-gray-200 rounded-lg'>
+        <div className='bg-sky-50 rounded-lg'>
             {/* <span className='lg:text-2xl font-semibold text-center block'>Books: <span>{books?.length}</span></span> */}
             <div>
                 <select defaultValue={value} name="price" id="" onChange={handleChange} className='select select-bordered m-[10px] ml-[20px] mt-3'>

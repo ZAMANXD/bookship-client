@@ -100,6 +100,21 @@
   overflow: hidden;
 }
 
+.bs-box-shadow-2 {
+  /* padding: 1rem; */
+  border-radius: 1rem;
+  border: 0.5vmin solid rgb(0, 0, 0);
+  box-shadow: 0.4rem 0.4rem #070707;
+  overflow: hidden;
+}
+.bs-box-shadow-3 {
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid rgb(163 163 163);
+  box-shadow: 0.4rem 0.4rem #a6a6a6;
+  overflow: hidden;
+}
+
 /* Button styling */
 .bs-button {
   border: 0.3vmin solid #05060f;
@@ -115,4 +130,18 @@
 }
 .bs-text-secondary {
   color: var(--text-secondary);
+}
+
+.custom_Css {
+  background: linear-gradient(
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 1)
+    ),
+    url("../src/assets/bg-gradient.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

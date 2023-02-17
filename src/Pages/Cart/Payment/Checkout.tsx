@@ -1,5 +1,6 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
 import './Payment.css'
 
 const Checkout = (props: {orders: { _id: string; id: string; quantity: number; price: number}[]}) => {
@@ -88,6 +89,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
         };
 
         setSuccess('');
+        toast.success("The payment has been successfully completed");
         setProcessing(true);
 
         const {paymentIntent, error: confirmError} = await stripe.confirmCardPayment(
@@ -133,6 +135,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 if(data.insertId){
                     setSuccess('The payment has been successfully completed');
                     setTransactionId(paymentIntent.id);
+                    
                 }
             })
         }
@@ -162,6 +165,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
             <p className='mt-6 text-start font-semibold'>
                 Your transection Id: <span className='font font-normal'>{transactionId}</span>
             </p>
+
         </div>
       }
       </div>
