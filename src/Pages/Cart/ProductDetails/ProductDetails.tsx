@@ -4,7 +4,10 @@ import { useCart } from '../../../context/CartContext';
 
 
 
-const ProductDetails = ({ ...item }) => {
+const ProductDetails = ({ ...i }) => {
+
+    // console.log(i.items);
+    
 
     const [bookData, setBookData] = useState<any[]>([])
 
@@ -14,9 +17,9 @@ const ProductDetails = ({ ...item }) => {
             .then((data) => setBookData(data));
     }, [])
 
-    const { id, quantity } = item
+    const { id,quantity } = i
 
-    const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useCart();
+    const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart , cartQuantity} = useCart();
     const quantityOfBook = getItemQuantity(id);
 
     const book = bookData.find(i => i._id === id);
@@ -31,7 +34,7 @@ const ProductDetails = ({ ...item }) => {
                 <h4 className='md:text-lg text-xs md:col-auto col-span-3 text-center font-semibold text-gray-700'>{book?.bookTitle}</h4>
                 <div className='flex items-center md:col-auto col-span-3'>
                     <button className='border rounded-l-full hover:border-red-600  hover:text-red-600 md:text-2xl text-sm font-bold' onClick={() => decreaseCartQuantity(id)}><HiMinusSm /></button>
-                    <input className='md:h-7 h-5 w-10 border hover:border-gray-500 md:text-lg text-xs  font-semibold text-center' type="text" value={quantityOfBook} defaultValue={0} readOnly />
+                    <input className='md:h-7 h-5 w-10 border hover:border-gray-500 md:text-lg text-xs  font-semibold text-center' type="text" value={quantity} defaultValue={0} readOnly />
                     <button className='border rounded-r-full  hover:border-green-600 hover:text-green-600 md:text-2xl text-sm font-bold' onClick={() => increaseCartQuantity(id)} ><HiPlusSm /></button>
                 </div>
                 <h4 className='text-gray-700 md:text-lg text-center text-xs md:font-semibold md:col-auto col-span-3'>${book?.discountedPrice}</h4>
