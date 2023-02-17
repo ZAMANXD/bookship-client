@@ -36,8 +36,8 @@
   box-shadow: var(--mobile-box-shadow);
   border-radius: 46px;
   padding: 16px 14px;
-  max-height: 90vh;
-
+  max-height: 80vh;
+  background: red;
 }
 
 .mobile-mockup-screen {
