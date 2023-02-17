@@ -51,7 +51,7 @@ const Blog = () => {
           comments: [],
         },
         {
-            _id: '06',
+            _id: '07',
           title: 'Blog on The Stolen Heir: A Novel of Elfhame',
           author: 'Achintya Kumar Talukdar',
           picture: 'https://m.media-amazon.com/images/I/51m1CHFKUxL.jpg' ,
