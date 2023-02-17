@@ -153,7 +153,7 @@ const Login = () => {
 						<p className="text-sm text-red-500">{errors.password?.message}</p>
 					)}
 					<div className="flex justify-end text-xs text-red-400">
-						<a onClick={passwordeResat} rel="noopener noreferrer" href="#">Forgot Password?</a>
+						<a onClick={passwordeResat} rel="noopener noreferrer">Forgot Password?</a>
 					</div>
 				</div>
 				<button className="block w-full p-3 text-center bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500 rounded-full text-white">Log in</button>

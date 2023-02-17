@@ -2,8 +2,8 @@ import { HiOutlineTrash } from "react-icons/hi";
 
 const AdminDashboardTable = ({ title, newUsers, handleSellerDelete }: any) => {
   return (
-    <div className="">
-      <h1 className="text-3xl font-bold">{title}</h1>
+    <div className="px-12 mt-10 w-full">
+      <h1 className="text-2xl font-bold">{title}</h1>
       <div className=" mt-3">
         <div className="text-base text-left ">
           <div className="bg-gray-300 flex items-center h-10 pl-5">

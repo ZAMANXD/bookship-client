@@ -14,7 +14,6 @@ const Card = ({ data, stickyTopSpace }) => {
         <div className="space-y-4">
           <h2 className="font-serif text-2xl -mb-2 font-bold">{title}</h2>
           <p className="lg:w-3/4 text-lg">{body}</p>
-        
         </div>
       </div>
       <div className="relative min-h-[200px] md:min-h-[400px]">

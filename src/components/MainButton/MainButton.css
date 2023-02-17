@@ -51,8 +51,8 @@
     transform: scale(0.95);
    }
    .bs-button{
-    border-radius: 0.5rem;
+    border-radius: 30px;
     border: 0.3vmin solid #05060f;
-    box-shadow: 0.3rem 0.3rem #05060f;
-    background-color: #f1f1f1;
+    box-shadow: 0.3rem 0.3rem #9b9b9b;
+    background-color: #ffffff;
     }

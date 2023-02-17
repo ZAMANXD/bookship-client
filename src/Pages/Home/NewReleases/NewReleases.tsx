@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Skeletons from '../../../Shared/Skeletons/Skeletons';
 import Spinner from '../../../Shared/Spinner/Spinner';
 import Book from '../TopBooks/Book';
 
@@ -19,26 +20,26 @@ const NewReleases = () => {
     }, [])
 
     if (loading) {
-        return <Spinner />
+        return <Skeletons />
     }
 
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
-            items: 5
+            items: 4
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 5
+            items: 4
         },
         tablet: {
             breakpoint: { max: 1024, min: 768 },
-            items: 3
+            items: 2
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 2
+            items: 1
         }
     };
 

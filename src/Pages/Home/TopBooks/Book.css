@@ -1,11 +1,104 @@
 .tagCont {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
 }
 
 .bookCont:hover .tagCont {
-    height: 3.5rem
+  height: 3.5rem;
 }
 
-.hello-there{
-    color: var(--text-primary);
+.hello-there {
+  color: var(--text-primary);
+}
+
+/* new section */
+
+.book-card {
+  margin: 0 auto;
+  width: 250px;
+  height: 386px;
+  padding: 0.8em;
+  /* background: #25f3a40f; */
+  position: relative;
+  overflow: visible;
+  /* border-radius: 5px; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+}
+
+.card-img {
+  background-color: #5c5c5c;
+  height: 65%;
+  width: 80%;
+  margin: auto;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+}
+
+.card-info {
+  padding-top: 5%;
+}
+
+.card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/*Text*/
+.text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.text-body {
+  font-size: 0.9em;
+  padding-bottom: 10px;
+}
+
+/*Button*/
+.card-button,
+.card-button2 {
+  border: 1px solid #252525;
+  display: flex;
+  padding: 0.3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: 0.3s ease-in-out;
+}
+
+/*Hover*/
+.card:hover .card-img {
+  transform: translateY(-10%);
+  box-shadow: rgba(3, 3, 3, 0.25) 0px 13px 47px -5px,
+    rgba(2, 2, 2, 0.3) 0px 8px 16px -8px;
+}
+
+.card-button:hover {
+  border: 1px solid #53e671;
+  color: #53e671;
+}
+.card-button2:hover {
+  border: 1px solid #fa5044;
+  color: #fa5044;
+}
+
+.react-multiple-carousel__arrow--right {
+  bottom: 1px !important;
+  right: calc(43% + 1px) !important;
+}
+.react-multiple-carousel__arrow--left {
+  bottom: 1px !important;
+  left: calc(43% + 1px) !important;
+}
+
+.react-multiple-carousel__arrow {
+  min-width: 24px !important;
+  min-height: 24px !important;
+}
+
+.react-multiple-carousel__arrow::before {
+  font-size: 10px !important;
 }
