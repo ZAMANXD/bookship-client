@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 const AddToCart = () => {
     const { cartQuantity, cartItems } = useCart()
+    
 
     return (
         <>
@@ -30,7 +31,7 @@ const AddToCart = () => {
                             <h1 className='text-2xl text-gray-700 font-semibold text-center md:py-4 py-10'>Your Items <span>{cartQuantity}</span></h1>
                             <div>
                             {
-                                cartItems.map((item) => <ProductDetails key={item.id} {...item}></ProductDetails>)
+                                cartItems?.map((item:any) => <ProductDetails key={item.id} {...item}></ProductDetails>)
                             }
                             </div>
                         </div>
