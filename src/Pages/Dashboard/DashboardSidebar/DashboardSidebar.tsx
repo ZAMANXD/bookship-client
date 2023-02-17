@@ -28,7 +28,7 @@ const DashboardSidebar = () => {
           </div>
           <hr />
           <ul className="relative bs-admin-list pl-0 hidden lg:block">
-            <li className=" text-center">
+            <li className="bs-button mb-3 mt-6 text-center">
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -42,7 +42,7 @@ const DashboardSidebar = () => {
                 Admin
               </NavLink>
             </li>
-            <li className="">
+            <li className="bs-button mb-3">
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -56,7 +56,7 @@ const DashboardSidebar = () => {
                 Seller List
               </NavLink>
             </li>
-            <li className="">
+            <li className="bs-button mb-3">
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -77,7 +77,7 @@ const DashboardSidebar = () => {
               dashboardToggle ? "block" : "hidden"
             }`}
           >
-            <li className="">
+            <li className="bs-button mb-3">
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -91,7 +91,7 @@ const DashboardSidebar = () => {
                 Admin
               </NavLink>
             </li>
-            <li className="">
+            <li className="bs-button mb-3">
               <NavLink
                 className={({ isActive }) =>
                   isActive
@@ -105,7 +105,7 @@ const DashboardSidebar = () => {
                 Seller List
               </NavLink>
             </li>
-            <li className="">
+            <li className="bs-button mb-3">
               <NavLink
                 className={({ isActive }) =>
                   isActive

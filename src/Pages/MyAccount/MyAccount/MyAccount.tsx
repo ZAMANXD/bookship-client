@@ -102,7 +102,7 @@ console.log(dbuser);
     }
 
     return (
-        <div className='md:w-1/2 mx-auto bg-gray-50 rounded-lg md:p-20 p-10 md:my-8 shadow-md hover:shadow-2xl'>
+        <div className='gradient-bg-4 md:w-1/2 mx-auto bg-gray-50 rounded-lg md:p-20 p-10 md:my-8 shadow-md hover:shadow-2xl'>
             <h1 className='text-xl text-center font-semibold mb-4'>{editNow? "Edit Profile":"My Profile"}</h1>
             
             <div className='flex flex-col justify-center space-y-6 p-3'>
