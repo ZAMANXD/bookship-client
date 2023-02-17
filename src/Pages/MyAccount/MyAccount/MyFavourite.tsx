@@ -49,8 +49,8 @@ const MyFavourite = () => {
     return (
             <div className='px-5 py-5'>
                 {
-                    bookData.length?<h2 className="text-2xl text-center md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">My Favourite Books</h2>
-                    :<h2 className="text-2xl text-center md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">You Have No Favourite Books</h2>
+                    bookData.length?<h2 className="text-2xl text-center md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">My Favorite Books</h2>
+                    :<h2 className="text-2xl text-center md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">You Have No Favorite Books</h2>
                 }
                 
                 <div>

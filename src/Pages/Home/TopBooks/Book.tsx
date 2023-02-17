@@ -44,7 +44,7 @@ const Book = ({ ...book }) => {
           toast.error(data.message);
           console.log(data);
         } else {
-          toast.success("Added Favourite Section");
+          toast.success("Added Favorite Section");
         }
       })
       .catch((e) => console.log(e.message));
