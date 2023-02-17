@@ -2,12 +2,14 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 import { useCart } from '../../context/CartContext';
 import useTitle from '../../hooks/useTitle';
 import CommentBox from '../../Shared/Comments/CommentBox';
 import Comments from '../../Shared/Comments/Comments';
 
 const BookDetails = () => {
+    const { user } = React.useContext(AuthContext)
     const { increaseCartQuantity } = useCart();
 
     let book: any = useLoaderData()
@@ -56,9 +58,11 @@ const BookDetails = () => {
 
                         <button onClick={() => increaseCartQuantity(_id)} className='px-3 h-10 bg-[#3DB188] rounded-md text-white'>Add to Cart</button>
                     </div>
-                    <CommentBox {...book} refetch={refetch} />
-                    <Comments {...book} comments={comments} refetch={refetch} />
                 </div>
+            </div>
+            <div className='grid lg:grid-cols-[1fr_2fr] lg:gap-x-5'>
+                <CommentBox {...book} refetch={refetch} />
+                <Comments {...book} comments={comments} refetch={refetch} />
             </div>
         </div>
     );

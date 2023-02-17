@@ -42,7 +42,7 @@ const Book = ({ ...book }) => {
     return (
     <div className="card">
         <div className="card-img">
-            <Link to={`book/${_id}`}>
+            <Link to={`/book/${_id}`}>
                 <img className=' w-full h-full rounded-lg' src={bookCover} alt="" />
             </Link>
         </div>
