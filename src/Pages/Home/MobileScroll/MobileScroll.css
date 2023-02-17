@@ -63,14 +63,14 @@
 }
 
 .screen-heading {
-  font-size: 105px;
+  font-size: 44px;
   font-weight: 700;
   line-height: 105px;
 }
 
 .screen-description {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 400;
   margin-top: 52px;
 }
 

@@ -22,7 +22,9 @@ const Home = () => {
       <Testimonials></Testimonials>
       <BookBackground></BookBackground>
       <Cards></Cards>
-      <MobileScroll></MobileScroll>
+      <div className="hidden lg:block">
+        <MobileScroll></MobileScroll>
+      </div>
       <GetInTouch></GetInTouch>
     </div>
   );
