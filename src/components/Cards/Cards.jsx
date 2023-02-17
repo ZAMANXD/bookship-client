@@ -6,7 +6,8 @@ const Cards = () => {
   const stickyTopSpace = 50;
   return (
     <div className="py-10 bg-[#E7FDFD]">
-      <div className="space-y-20 w-[400px] lg:w-[900px] mx-auto ">
+      <h2 className="text-4xl font-bold text-center mb-20 mt-10">FAQ</h2>
+      <div className="space-y-20 w-[80%] lg:w-[900px] mx-auto ">
         {cardsData.map((card, index) => (
           <Card
 		  

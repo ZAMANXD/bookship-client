@@ -10,6 +10,7 @@ import TopBanner from "../TopBanner/TopBanner";
 import TopBooks from "../TopBooks/TopBooks";
 import WhyBookShip from "../WhyBookShip/WhyBookShip";
 
+
 const Home = () => {
   useTitle("");
 
@@ -22,10 +23,14 @@ const Home = () => {
       <Testimonials></Testimonials>
       {/* <BookBackground></BookBackground> */}
       <Cards></Cards>
-      <div className="hidden lg:block ">
-        <MobileScroll></MobileScroll>
+      <div className="custom_Css">
+        <div className="hidden lg:block sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto">
+          <MobileScroll></MobileScroll>
+        </div>
       </div>
-      <GetInTouch></GetInTouch>
+      <div className="hidden md:block">
+        <GetInTouch></GetInTouch>
+      </div>
     </div>
   );
 };

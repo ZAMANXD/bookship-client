@@ -35,7 +35,7 @@ const SearchResult = () => {
   return (
     <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  ">
       <h1>Search By: {getSearchInput}</h1>
-      <div className="grid grid-cols-5 gap-5 mt-5">
+      <div className="grid lg:grid-cols-4 gap-x-24 gap-y-10 mt-5">
         {filteredBooks?.map((book: any) => (
           <Book key={book.id} {...book} />
         ))}

@@ -3,7 +3,7 @@ import "./Testimonials.css";
 
 const Testimonials = () => {
   return (
-    <div className=" py-10 gradient-bg-2">
+    <div className="custom_Testimonials py-10 ">
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <h1 className="title-font  text-4xl font-bold text-[#34315D] mb-12 text-center">
@@ -68,14 +68,14 @@ const Testimonials = () => {
                 <a className="inline-flex items-center">
                   <img
                     alt="testimonial"
-                    src="https://images.theconversation.com/files/304864/original/file-20191203-67028-qfiw3k.jpeg?ixlib=rb-1.1.0&rect=638%2C2%2C795%2C745&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip"
+                    src="https://i.guim.co.uk/img/media/d60442aff6e93e46ee74a8e28b640d207e0dac6f/0_0_680_540/master/680.jpg?width=465&quality=85&dpr=1&s=none"
                     className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
                   />
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-900">
-                      Mr. Bean
+                    Andrew tate
                     </span>
-                    <span className="text-gray-500 text-sm">Mr.Bean</span>
+                    <span className="text-gray-500 text-sm">@andrew_tate</span>
                   </span>
                 </a>
               </div>
