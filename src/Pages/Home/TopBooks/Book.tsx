@@ -50,14 +50,14 @@ const Book = ({ ...book }) => {
       .catch((e) => console.log(e.message));
   };
   return (
-    <div className="book-card bs-box-shadow">
+    <div className="book-card bs-box-shadow-3 bg-gray-50">
       <div className="card-img">
         <Link to={`/book/${_id}`}>
           <img className=" w-full h-full rounded-lg" src={bookCover} alt="" />
         </Link>
       </div>
       <div className="card-info">
-        <p className="text-title text-gray-900">
+        <p className="text-title text-gray-800">
           {bookTitle.length > 15 ? bookTitle.slice(0, 15) : bookTitle}
         </p>
         <div className="flex justify-start gap-x-2 my-2">

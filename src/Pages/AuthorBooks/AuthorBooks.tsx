@@ -24,7 +24,7 @@ const AuthorBooks = () => {
     }
 
     return (
-        <div className='bg-gray-200 rounded-lg'>
+        <div className='bg-sky-50 rounded-lg'>
             {
                 authors.filter(author => author.role === 'seller').map((author, i) => <AuthorBook key={i} {...author} />)
             }
