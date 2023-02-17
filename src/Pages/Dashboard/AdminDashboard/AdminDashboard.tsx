@@ -44,17 +44,17 @@ const AdminDashboard = () => {
             </div> */}
           </div>
           <div className="text-center grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-5">
-            <div className="shadow-lg py-10">
+            <div className="bs-box-shadow py-10">
               <h3 className="text-2xl font-medium">Total Order</h3>
               <p className="text-2xl">
                 {totalOrderBooks ? totalOrderBooks : "00"}
               </p>
             </div>
-            <div className="shadow-lg py-10">
+            <div className="bs-box-shadow py-10">
               <h3 className="text-2xl font-medium">Total Books</h3>
               <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
             </div>
-            <div className="shadow-lg py-10">
+            <div className="bs-box-shadow py-10">
               <h3 className="text-2xl font-medium">Total Books</h3>
               <p className="text-2xl">{books?.length ? books?.length : "00"}</p>
             </div>
