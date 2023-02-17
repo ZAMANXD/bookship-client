@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
 import Skeletons from '../../Shared/Skeletons/Skeletons';
 import Spinner from '../../Shared/Spinner/Spinner';
+import Book from '../Home/TopBooks/Book';
 
 const AuthorBook = ({ ...author }) => {
     const [loading, setLoading] = useState(false)
@@ -35,7 +36,7 @@ const AuthorBook = ({ ...author }) => {
                     !books.length ? <p className='text-center lg:text-xl'>The Author No Books Published Yet. Coming Soon...</p> :
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                             {
-                                books.slice(0, 3).map((book, i) => <SingleBook key={i} {...book} />)
+                                books.slice(0, 3).map((book, i) => <Book key={i} {...book} />)
                             }
                         </div>
                 }

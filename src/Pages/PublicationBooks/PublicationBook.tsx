@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import SingleBook from '../../Shared/SingleBook/SingleBook';
 import Skeletons from '../../Shared/Skeletons/Skeletons';
 import Spinner from '../../Shared/Spinner/Spinner';
+import Book from '../Home/TopBooks/Book';
 
 const PublicationBook = ({ ...publication }) => {
     const [loading, setLoading] = useState(false)
@@ -33,7 +34,7 @@ const PublicationBook = ({ ...publication }) => {
             {
                 !books.length ? <p className='text-center text-xl'>No Books Available in this Publication. Coming Soon...</p> : <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                     {
-                        books.filter(book => book?.publication === publication?.name).slice(0, 3).map(book => <SingleBook key={book?._id} {...book} />)
+                        books.filter(book => book?.publication === publication?.name).slice(0, 3).map(book => <Book key={book?._id} {...book} />)
                     }
                 </div>
             }
