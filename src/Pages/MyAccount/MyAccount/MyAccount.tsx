@@ -216,11 +216,11 @@ const MyAccount = () => {
 					    </select>
 				</div>
 
-                    <div className='flex justify-center my-5'>
-                        <input className='bg-[#3DB188] border hover:border-[#3DB188] hover:bg-white hover:text-[#3DB188] py-2 w-[50%] text-white font-semibold rounded-full' type="submit" value="SAVE" />
+                    <div className='flex justify-between my-5'>
+                        <input className='bs-button-2 py-2 px-3 w-[45%] font-semibold ' type="submit" value="Update" />
                         <button
                         onClick={()=>setEditNow(false)}
-                        className='bg-[#d04343] border hover:border-[#d04343] hover:bg-white hover:text-[#d04343] py-2 w-[50%] text-white font-semibold rounded-full'>EXIT</button>
+                        className='bs-button-2 py-2 px-3 w-[45%] font-semibold '>Cancel</button>
                     </div>
                     </form>
                 </div>

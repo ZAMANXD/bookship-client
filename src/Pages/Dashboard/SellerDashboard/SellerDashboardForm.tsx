@@ -66,16 +66,16 @@ const SellerDashboardForm = ({ refetch }: any) => {
             .catch((err) => {});
 
           // Uplode categories
-          fetch(`https://bookship-server-zamanxd.vercel.app/categories`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({ category }),
-          })
-            .then((res) => res.json())
-            .then((data) => console.log(data))
-            .catch((err) => console.log(err));
+          // fetch(`https://bookship-server-zamanxd.vercel.app/categories`, {
+          //   method: "PUT",
+          //   headers: {
+          //     "content-type": "application/json",
+          //   },
+          //   body: JSON.stringify({ category }),
+          // })
+          //   .then((res) => res.json())
+          //   .then((data) => console.log(data))
+          //   .catch((err) => console.log(err));
         }
       });
   };
@@ -229,7 +229,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
               />
             </label>
           </div>
-          <button type="submit" className="btn bg-green-500 mt-5">
+          <button type="submit" className="bs-button-2 py-2 px-3 mt-5">
             Add Book
           </button>
         </form>

@@ -69,7 +69,7 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                     <div className="px-3 py-2 ">
                       <button
                         onClick={() => handleBookDelete(_id)}
-                        className="btn bg-green-600 px-5 py-2 text-white"
+                        className="bs-button-2 px-3 py-2"
                       >
                         Delete
                       </button>

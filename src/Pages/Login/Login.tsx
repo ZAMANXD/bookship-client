@@ -156,7 +156,7 @@ const Login = () => {
 						<a onClick={passwordeResat} rel="noopener noreferrer">Forgot Password?</a>
 					</div>
 				</div>
-				<button className="block w-full p-3 text-center bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500 rounded-full text-white">Log in</button>
+				<button className="block w-full p-3 text-center bs-button rounded-full ">Log in</button>
 			</form>
 			<div className="flex items-center pt-4 space-x-1">
 				<div className="flex-1 h-px sm:w-16 bg-gray-700"></div>

@@ -74,7 +74,7 @@ const SignUp = () => {
 			<h1 className="text-2xl font-bold text-center">Sign Up</h1>
 			<form onSubmit={handleSubmit(SignupHandle)} className="space-y-6 ng-untouched ng-pristine ng-valid">
 				<div className="space-y-1 text-sm">
-					<label htmlFor="userName" className="block text-gray-500">Usre Name</label>
+					<label htmlFor="userName" className="block text-gray-500">User Name</label>
 					<input
 						{...register("name", { required: "Name is required" })}
 						type="name"
@@ -85,7 +85,7 @@ const SignUp = () => {
 					)}
 				</div>
 				<div className="space-y-1 text-sm">
-					<label htmlFor="email" className="block text-gray-500">Usre Email</label>
+					<label htmlFor="email" className="block text-gray-500">Email</label>
 					<input
 						{...register("email", { required: "Email is required" })}
 						type="email"
@@ -138,7 +138,7 @@ const SignUp = () => {
 					<select
 						id="role"
 						{...register("role", { required: "Selact user role must" })}
-						className="w-full px-3 py-[11px] rounded-md border-gray-700 bg-gray-100 text-gray-500"
+					className="w-full px-3 py-[11px] rounded-md border-gray-700 bg-gray-100 text-black"
 						defaultValue="Select user role"
 					>
 						<option>buyer</option>
@@ -149,7 +149,7 @@ const SignUp = () => {
 					)}
 				</div>
 
-				<button type='submit' className="w-full p-3 text-center rounded-full bg-gradient-to-r from-green-500 to-green-400 hover:from-green-400 hover:to-green-500 text-white">Sign in</button>
+				<button type='submit' className="w-full p-3 text-center rounded-full bg-gradient-to-r bs-button">Sign Up</button>
 			</form>
 			<div className="flex items-center pt-4 space-x-1">
 				<div className="flex-1 h-px sm:w-16 bg-gray-700"></div>
@@ -164,7 +164,7 @@ const SignUp = () => {
 				</button>
 
 			</div>
-			<p className="text-xs text-center sm:px-6 text-gray-500">Don't have an account?{' '}
+			<p className="text-xs text-center sm:px-6 text-gray-500">Already have an account?{' '}
 				<Link rel="noopener noreferrer" to="/login" className="underline text-green-500">Log in</Link>
 			</p>
 		</div>

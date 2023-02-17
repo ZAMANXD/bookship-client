@@ -118,10 +118,31 @@
 /* Button styling */
 .bs-button {
   border: 0.3vmin solid #05060f;
+  color: #303640;
   box-shadow: 0.3rem 0.3rem #05060f;
   background-color: #0000;
   border-radius: 50px;
   padding: 7px;
+  font-weight: 500;
+}
+.bs-button-2:hover{
+  color:white;
+  background-color: #303640;
+}
+.bs-button:hover{
+  color:white;
+  background-color: #303640;
+}
+/* .bs-button, .bs-button-2:active{
+  color:white;
+  background-color: #303640;
+} */
+
+.bs-button-2 {
+  border: 0.3vmin solid #05060f;
+  box-shadow: 0.3rem 0.3rem #05060f;
+  background-color: #0000;
+  border-radius: 50px;
   font-weight: 500;
 }
 

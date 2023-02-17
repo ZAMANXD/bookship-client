@@ -68,7 +68,7 @@ const Summary = () => {
                     grandTotal.toFixed(2)
                     }</p>
                 </div>
-                <Link className='hover:bg-white text-center hover:border-[#3DB188] border-2 hover:text-[#3DB188]  px-3 py-2 bg-[#3DB188] font-semibold rounded-full text-white w-3/4 mx-auto' to='/addtocart/checkout'>
+                <Link className='bs-button text-center font-semibold rounded-full w-3/4 mx-auto' to='/addtocart/checkout'>
                     <button>
                     Checkout
                     </button>
