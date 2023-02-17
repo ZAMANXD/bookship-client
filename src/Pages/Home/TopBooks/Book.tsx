@@ -30,7 +30,7 @@ const Book = ({ ...book }) => {
   // Add to favourite
   const favouritehandler = (fvitem: object, userEmail: string) => {
     const favouriteItem = { ...fvitem, userEmail };
-    console.log(favouriteItem);
+    // console.log(favouriteItem);
     fetch("https://bookship-server-zamanxd.vercel.app/favorurite", {
       method: "PUT",
       headers: {
@@ -42,7 +42,7 @@ const Book = ({ ...book }) => {
       .then((data) => {
         if (data.message) {
           toast.error(data.message);
-          console.log(data);
+          // console.log(data);
         } else {
           toast.success("Added Favorite Section");
         }
