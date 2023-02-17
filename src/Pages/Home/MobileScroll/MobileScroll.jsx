@@ -47,7 +47,7 @@ const MobileScroll = () => {
             ))}
           </div>
           <div className="mobile-mockup-wrapper flex justify-center ">
-            <div className="mobile-mockup ">
+            <div className="mobile-mockup w-10/12 ">
               <div className="mobile-mockup-screen  ">
                 <img
                   alt=""
