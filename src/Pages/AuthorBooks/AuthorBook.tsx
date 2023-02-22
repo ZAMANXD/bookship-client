@@ -22,6 +22,7 @@ const AuthorBook = ({ ...author }) => {
     if (loading) {
         return <Skeletons />
     }
+    
     return (
         <>
             <div className='p-3 lg:p-5'>

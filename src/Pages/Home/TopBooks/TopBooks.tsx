@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Skeletons from '../../../Shared/Skeletons/Skeletons';
+import SkeletonsHome from '../../../Shared/Skeletons/SkeletonsHome';
 import Spinner from '../../../Shared/Spinner/Spinner';
 import Book from './Book';
 
@@ -24,7 +25,7 @@ const TopBooks = () => {
     }, [])
 
     if (loading) {
-        return <Skeletons />
+        return <SkeletonsHome />
     }
 
     const responsive = {
