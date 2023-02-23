@@ -10,6 +10,7 @@ import BooksByPrice from "../Pages/AllBooks/BooksByPrice";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
 import Blog from "../Pages/Blog/Blog/Blog";
+import BlogPost from "../Pages/Blog/BlogPost/BlogPost";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
 import Payment from "../Pages/Cart/Payment/Payment";
@@ -53,6 +54,11 @@ export const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />
+            },
+            {
+                path:'/blogs/:id',
+                loader:async ({params})=> fetch(`http://localhost:5000/blogs/${params.id}`),
+                element:<BlogPost/>
             },
             {
                 path: '/contactus',
