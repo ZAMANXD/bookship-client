@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const SellerDashboardTable = ({ books, refetch }: any) => {
+  console.log(books)
   const [id, setId] = useState("");
 
   const handleBookDelete = (_id: any) => {
@@ -30,12 +31,14 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
         <div className=" mt-7">
           <div className="w-full text-xs text-left ">
             <div>
-              <div className="bg-gray-300 hidden  lg:grid grid-cols-[15%_20%_15%_15%_25%_10%]">
+              <div className="bg-gray-300 hidden  lg:grid grid-cols-[10%_20%_10%_10%_20%_10%_10%_10%]">
                 <div className="p-3">Image</div>
                 <div className="p-3">Book Title</div>
                 <div className="p-3">Original Price</div>
                 <div className="p-3">Discount Price</div>
                 <div className="p-3">Details</div>
+                <div className="p-3">Quantity</div>
+                <div className="p-3">Sell</div>
                 <div className="p-3">Delete</div>
               </div>
             </div>
@@ -50,7 +53,7 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                   bookCover,
                 } = book;
                 return (
-                  <div key={_id} className="hidden lg:grid lg:grid-cols-[15%_20%_15%_15%_25%_10%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900">
+                  <div key={_id} className="hidden lg:grid lg:grid-cols-[10%_20%_10%_10%_20%_10%_10%_10%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900">
                     <div className="px-3 py-2">
                       <img src={bookCover} alt="" className="w-16" />
                     </div>
@@ -65,6 +68,12 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                     </div>
                     <div className="px-3 py-2">
                       <p>{description}</p>
+                    </div>
+                    <div className="px-3 py-2">
+                      <p>2</p>
+                    </div>
+                    <div className="px-3 py-2">
+                      <p>1</p>
                     </div>
                     <div className="px-3 py-2 ">
                       <button

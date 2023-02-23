@@ -20,7 +20,8 @@ const SellerDashboardForm = ({ refetch }: any) => {
     const detailes = e.target.detailes.value;
     const publication = e.target.publication.value;
     const inputImage = e.target.inputImage.files[0];
-    console.log(inputImage);
+    const quantity = e.traget.quantity.value;
+
     // Image uplode imgbb server
     const formData = new FormData();
     formData.append("image", inputImage);
@@ -48,6 +49,7 @@ const SellerDashboardForm = ({ refetch }: any) => {
             authorRating: 4,
             category,
             publication,
+            quantity
           };
           // bookDetailes upload mongodb server
           fetch(`https://bookship-server-zamanxd.vercel.app/book`, {
@@ -118,11 +120,17 @@ const SellerDashboardForm = ({ refetch }: any) => {
               className="border-b border-b-gray-700 h-10 px-2  w-full sm:mt-0 mt-5 outline-none"
             />
           </div>
-          <div className="mt-5">
+          <div className="mt-5 sm:flex justify-between gap-5">
             <input
               type="text"
               name="publication"
               placeholder="Publication"
+              className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
+            />
+            <input
+              type="number"
+              name="quantity"
+              placeholder="quantity"
               className="border-b border-b-gray-700 h-10 px-2  w-full outline-none"
             />
           </div>
@@ -131,58 +139,6 @@ const SellerDashboardForm = ({ refetch }: any) => {
             placeholder="Details"
             className="border-b border-b-gray-700  h-32 w-full py-2 mt-5 px-2 outline-none"
           ></textarea>
-          {/* <div className="grid grid-cols-1 mt-5">
-            <label className="text-sm font-bold text-black tracking-wide">
-              Image
-            </label>
-            <div className="flex items-center justify-center w-full h-full relative">
-              <div
-                onClick={handleClearImageInputPreview}
-                className="absolute top-2 left-2 bg-slate-400 rounded-full w-10 h-10 flex justify-center items-center"
-              >
-                <FaTimes/>
-              </div>
-              <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60  group text-center">
-                {previewImage ? (
-                  <img
-                    className=" h-full w-full object-contain"
-                    src={previewImage}
-                    alt=""
-                  />
-                ) : (
-                  <div className="flex justify-center items-center h-full w-full">
-                    <div className="h-full w-full text-center flex flex-col justify-center items-center  ">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-10 h-10 text-blue-400 group-hover:text-blue-600"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                        />
-                      </svg>
-                      <p className="pointer-none text-gray-500 ">
-                        select a file from your computer
-                      </p>
-                    </div>
-                    <input
-                      type="file"
-                      name="inputImage"
-                      accept="image/*"
-                      className="hidden"
-                      multiple
-                      onChange={handleSellerBookImage}
-                    />
-                  </div>
-                )}
-              </label>
-            </div>
-          </div> */}
 
           <div className="relative">
             <div className="flex items-center justify-center w-full h-full relative">
