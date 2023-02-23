@@ -1,13 +1,48 @@
-import React from 'react';
+import {useContext} from 'react';
 import { useCart } from '../../../context/CartContext';
 import ProductDetails from '../ProductDetails/ProductDetails';
 import Summary from '../Summary/Summary';
 import EmptyCartLotte from '../../../Lottie/EmptyCartLotte.json';
 import Lottie from "lottie-react";
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { AuthContext } from '../../../context/AuthProvider';
 
 const AddToCart = () => {
-    const { cartQuantity, cartItems } = useCart()
+    const { cartQuantity, cartItems } = useCart();
+    const {user}=useContext(AuthContext);
+
+    // const { } = useQuery({
+    //     queryKey:['cart'], 
+    // queryFn: async () => {
+    //     const response = await fetch('/cart');
+    //     if (!response.ok) {
+    //       throw new Error('Network response was not ok');
+    //     }
+        
+    //     const data = await response.json();
+    //     return data;
+    //   });
+
+      const { data, isLoading, isError } = useQuery({
+        queryKey: ['cart', user?.email],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/cart/achintyakumartalukdar@gmail.com`);
+            const data = await res.json();
+            return data;
+        }
+    })
+    
+      if (isLoading) {
+        return <div>Loading...</div>;
+      }
+    
+      if (isError) {
+        return <div>Error fetching cart data</div>;
+      }
+
+      console.log(data.items);
+      
     
 
     return (
@@ -31,7 +66,7 @@ const AddToCart = () => {
                             <h1 className='text-2xl text-gray-700 font-semibold text-center md:py-4 py-10'>Your Items <span>{cartQuantity}</span></h1>
                             <div>
                             {
-                                cartItems?.map((item:any) => <ProductDetails key={item.id} {...item}></ProductDetails>)
+                                data?.items?.map((item:any) => <ProductDetails key={item.id} {...item}></ProductDetails>)
                             }
                             </div>
                         </div>

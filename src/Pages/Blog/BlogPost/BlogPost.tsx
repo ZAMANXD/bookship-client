@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './BlogPost.css';
 import CommentForm from '../CommentForm/CommentForm';
 import { FaRegThumbsDown, FaRegThumbsUp } from 'react-icons/fa';
+import { useLoaderData } from 'react-router-dom';
 
 interface BlogPostProps {
     _id: string;
@@ -13,7 +14,9 @@ interface BlogPostProps {
     comments: { name: string, text: string }[];
   }
 
-const BlogPost: React.FC<BlogPostProps> = ({ _id,title, author, content, picture, likes }) => {
+const BlogPost = () => {
+  const blog:any =useLoaderData();
+  const { _id,title, author, content, picture, likes }=blog;
     const [isLiked, setIsLiked] = useState(false);
     const [likeCount, setLikeCount] = useState(likes);
     const [showComments, setShowComments] = useState(false);
@@ -48,15 +51,16 @@ const BlogPost: React.FC<BlogPostProps> = ({ _id,title, author, content, picture
   };
 
   return (
-    <div className="BlogPost">
+    <div className="BlogPost ">
       <div className="BlogPost-header">
       <img src={picture} alt={title} />
         <div className='flex flex-col'>
-        <h2 className="BlogPost-title">{title}</h2>
+        <span className='text-xs'>February 23,2023</span>
+        <h2 className="BlogPost-title py-2">{title}</h2>
         <p className="BlogPost-author">By {author}</p>
         </div>
       </div>
-      <p className="BlogPost-content">{truncatedText}</p>
+      <p className="BlogPost-content text-justify">{truncatedText}</p>
       {showFull ? (
         <button className="BlogPost-read-less" onClick={handleReadLessClick}>
           Read Less
