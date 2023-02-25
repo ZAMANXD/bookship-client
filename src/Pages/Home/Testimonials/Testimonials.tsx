@@ -5,7 +5,7 @@ const Testimonials = () => {
   return (
     <div className="custom_Testimonials py-10 ">
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
+        <div className="container px-5 py-6 mx-auto">
           <h1 className="title-font  text-4xl font-bold text-[#34315D] mb-12 text-center">
             Testimonials
           </h1>
