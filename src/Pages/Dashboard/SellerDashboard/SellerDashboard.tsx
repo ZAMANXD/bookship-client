@@ -2,7 +2,7 @@ import SellerDashboardForm from "./SellerDashboardForm";
 import SellerDashboardTable from "./SellerDashboardTable";
 import { useQuery } from "@tanstack/react-query";
 import SellerDashbordCard from "./SellerDashbordCard";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../../../context/AuthProvider";
 import SellerAnalytics from "./SellerAnalytics";
 
@@ -18,6 +18,13 @@ const SellerDashboard = () => {
       return data;
     },
   });
+
+  useEffect(()=>{
+    console.log(user?.email)
+    fetch(`https://bookship-server-zamanxd.vercel.app/orders?email=${user?.email}`)
+    .then((res)=> res.json())
+    .then((data)=> console.log(data))
+  }, [user?.email])
   const sellerBooks = books?.filter((book: any) => {
     return user.email === book.authorEmail;
   });
