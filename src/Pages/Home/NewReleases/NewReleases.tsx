@@ -10,7 +10,7 @@ const NewReleases = () => {
     const [bookData, setBookData] = useState<any[]>([])
     useEffect(() => {
         setLoading(true)
-        fetch("https://bookship-server-zamanxd.vercel.app/books")
+        fetch("https://bookship-server-zamanxd.vercel.app/recents")
             .then((res) => res.json())
             .then((data) => {
                 setBookData(data)
