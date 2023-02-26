@@ -83,7 +83,7 @@ const Footer = () => {
 
           <div className="mt-16 sm:flex sm:items-center sm:justify-between">
             <h1 className="flex justify-center text-black-600 sm:justify-start font-bold text-2xl">
-            <img src={bookShipLogo} className="w-[110px]" alt="" />
+            <img src={bookShipLogo} className="w-[110px]" alt="bookship-logo" />
             </h1>
 
             <p className="mt-4 text-center text-sm text-gray-500 sm:mt-0 sm:text-right">
