@@ -10,7 +10,7 @@ import avatar from "../../../imgFile/avatar.png";
 import useSeller from "../../../hooks/useSeller";
 import useAdmin from "../../../hooks/useAdmin";
 import { useNavigate } from "react-router-dom";
-import bookShipLogo from "../../../imgFile/BookShip-logo.png"
+import bookShipLogo from "../../../imgFile/BookShip-logo.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +39,8 @@ const NavBar = () => {
 
   const navItem = (
     <>
-      <li>
-        <div className="flex border rounded-full">
+      <li className="hidden lg:block">
+        <div className="flex border rounded-full ">
           <input
             type="text"
             name="search"
@@ -116,7 +116,7 @@ const NavBar = () => {
 
       {user ? (
         <>
-          <div className="dropdown dropdown-end hidden lg:block">
+          <div className="dropdown dropdown-end hidden lg:block ">
             <label tabIndex={0}>
               <img
                 src={user?.photoURL ? user.photoURL : avatar}
@@ -187,11 +187,11 @@ const NavBar = () => {
       ) : (
         <Link
           to="/login"
-          className="rounded-full bg-green-400 text-white duration-200 px-2 py-1 hover:text-green-500 border-green-400 border-[1px] hover:bg-white font-semibold"
+          className=" rounded-full bg-green-400 text-white duration-200 px-2 py-1 hover:text-green-500 border-green-400 border-[1px] hover:bg-white font-semibold"
           aria-label="Sign up"
           title="Log in"
         >
-          <p>Login</p>
+          <span>Login</span>
         </Link>
       )}
       {/* <SearchBar
@@ -207,12 +207,8 @@ const NavBar = () => {
     <div className=" sticky top-0  z-[9999] p-2 ">
       <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  rounded-full backdrop-filter backdrop-blur-lg bg-opacity-30 border shadow border-gray-200">
         <div className="relative flex items-center justify-between">
-          <Link
-            to="/"
-            aria-label="Company"
-            title="Company"
-          >
-              <img src={bookShipLogo} className="w-[80px] lg:w-[110px]" alt="" />
+          <Link to="/" aria-label="Company" title="Company">
+            <img src={bookShipLogo} className="w-[80px] lg:w-[110px]" alt="" />
           </Link>
           <ul className="items-center hidden space-x-8 lg:flex">{navItem}</ul>
           <div className="lg:hidden">
@@ -242,11 +238,7 @@ const NavBar = () => {
                 <div className="p-5 bg-gray-50 border rounded shadow-2xl">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <Link
-                        to="/"
-                        aria-label="Company"
-                        title="Company"
-                      >
+                      <Link to="/" aria-label="Company" title="Company">
                         <img src={bookShipLogo} className="w-[80px]" alt="" />
                       </Link>
                     </div>
