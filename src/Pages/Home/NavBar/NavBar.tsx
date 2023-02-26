@@ -10,6 +10,7 @@ import avatar from "../../../imgFile/avatar.png";
 import useSeller from "../../../hooks/useSeller";
 import useAdmin from "../../../hooks/useAdmin";
 import { useNavigate } from "react-router-dom";
+import bookShipLogo from "../../../imgFile/BookShip-logo.png";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,8 +39,8 @@ const NavBar = () => {
 
   const navItem = (
     <>
-      <li>
-        <div className="flex border rounded-full">
+      <li className="hidden lg:block">
+        <div className="flex border rounded-full ">
           <input
             type="text"
             name="search"
@@ -115,7 +116,7 @@ const NavBar = () => {
 
       {user ? (
         <>
-          <div className="dropdown dropdown-end hidden lg:block">
+          <div className="dropdown dropdown-end hidden lg:block ">
             <label tabIndex={0}>
               <img
                 src={user?.photoURL ? user.photoURL : avatar}
@@ -125,7 +126,7 @@ const NavBar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="dropdown-content p-2 shadow bg-[#a9a9a9df] rounded-md w-52 ease-in-out duration-200"
+              className="dropdown-content p-2 shadow bg-[#ebe9e9cf] rounded-md w-52 ease-in-out duration-200"
             >
               <Link
                 to="/myaccount"
@@ -133,7 +134,7 @@ const NavBar = () => {
                 title="My Profile"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
               >
-                <li className="p-3 hover:bg-green-400 rounded-md">
+                <li className="rounded-md bg-green-400 text-white duration-200 p-2 hover:text-green-500 border-green-400 border-[1px] hover:bg-white font-semibold">
                   <a>My Account</a>
                 </li>
               </Link>
@@ -142,31 +143,9 @@ const NavBar = () => {
                   logOut();
                   toast.error("Success fully logOut");
                 }}
-                className="p-3 hover:bg-green-400 rounded-md "
+                className="rounded-md bg-green-400 text-white border-green-400 duration-200 p-2 hover:text-yellow-500 hover:border-yellow-500 border-[1px] hover:bg-white font-semibold mt-2"
               >
-                <a>
-                  <button
-                    className="duration-200 text-gray-700 flex justify-center hover:text-red-600"
-                    title="Log out"
-                  >
-                    {" "}
-                    Log out{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                      className="w-6 h-6 pl-1"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
-                      />
-                    </svg>
-                  </button>
-                </a>
+                <button>Log out</button>
               </li>
             </ul>
           </div>
@@ -208,24 +187,11 @@ const NavBar = () => {
       ) : (
         <Link
           to="/login"
-          className="rounded-full hover:bg-green-400 hover:text-white duration-200 px-2 py-1 text-green-500 font-semibold"
+          className=" rounded-full bg-green-400 text-white duration-200 px-2 py-1 hover:text-green-500 border-green-400 border-[1px] hover:bg-white font-semibold"
           aria-label="Sign up"
           title="Log in"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="2"
-            stroke="currentColor"
-            className="w-7 h-7"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
-            />
-          </svg>
+          <span>Login</span>
         </Link>
       )}
       {/* <SearchBar
@@ -241,18 +207,8 @@ const NavBar = () => {
     <div className=" sticky top-0  z-[9999] p-2 ">
       <div className="px-4 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8  rounded-full backdrop-filter backdrop-blur-lg bg-opacity-30 border shadow border-gray-200">
         <div className="relative flex items-center justify-between">
-          <Link
-            to="/"
-            aria-label="Company"
-            title="Company"
-            className="inline-flex items-center"
-          >
-            <span className="w-6 lg:w-10">
-              <img src={icon} alt="" />
-            </span>
-            <span className="ml-2 text-xl lg:text-4xl font-bold tracking-wide text-gray-800 uppercase">
-              Book<span className="text-[#4ADE80]">Ship</span>
-            </span>
+          <Link to="/" aria-label="Company" title="Company">
+            <img src={bookShipLogo} className="w-[80px] lg:w-[110px]" alt="" />
           </Link>
           <ul className="items-center hidden space-x-8 lg:flex">{navItem}</ul>
           <div className="lg:hidden">
@@ -282,18 +238,8 @@ const NavBar = () => {
                 <div className="p-5 bg-gray-50 border rounded shadow-2xl">
                   <div className="flex items-center justify-between mb-4">
                     <div>
-                      <Link
-                        to="/"
-                        aria-label="Company"
-                        title="Company"
-                        className="inline-flex items-center"
-                      >
-                        <span className="w-6">
-                          <img src={icon} alt="" />
-                        </span>
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                          Book<span className="text-[#4ADE80]">Ship</span>
-                        </span>
+                      <Link to="/" aria-label="Company" title="Company">
+                        <img src={bookShipLogo} className="w-[80px]" alt="" />
                       </Link>
                     </div>
                     <div>
