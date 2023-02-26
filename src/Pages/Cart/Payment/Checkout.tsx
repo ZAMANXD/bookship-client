@@ -163,7 +163,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 {success}. Your order will be shipped soon.
             </h3>
             <p className='mt-6 text-start font-semibold'>
-                Your transection Id: <span className='font font-normal'>{transactionId}</span>
+                Your transaction Id: <span className='font font-normal'>{transactionId}</span>
             </p>
 
         </div>

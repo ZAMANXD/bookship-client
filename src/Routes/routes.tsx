@@ -13,6 +13,7 @@ import Blog from "../Pages/Blog/Blog/Blog";
 import BlogPost from "../Pages/Blog/BlogPost/BlogPost";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
+import Checkout from "../Pages/Cart/Payment/Checkout";
 import Payment from "../Pages/Cart/Payment/Payment";
 import BooksByCategory from "../Pages/CategoriesBooks/BooksByCategory";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
@@ -99,7 +100,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/addtocart/checkout',
-                element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+                element: <PrivateRoute>
+                    <Payment></Payment>
+                </PrivateRoute>,
                 loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             },
             {
