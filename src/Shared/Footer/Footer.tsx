@@ -25,7 +25,7 @@ const Footer = () => {
               </nav>
             </div>
 
-            <div className="text-center sm:text-left flex  items-start flex-col">
+            <div className="text-center sm:text-left flex  lg:items-start flex-col">
               <p className="text-lg font-semibold text-gray-900">Important Links</p>
 
               <nav aria-label="Footer Services Nav" className="mt-8">
