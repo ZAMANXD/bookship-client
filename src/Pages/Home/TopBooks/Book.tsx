@@ -25,6 +25,7 @@ const Book = ({ ...book }) => {
     category,
     publication,
   } = book;
+  console.log(book)
   const { increaseCartQuantity } = useCart();
 
   // Add to favourite
