@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/blogs/:id',
-                loader:async ({params})=> fetch(`http://localhost:5000/blogs/${params.id}`),
+                loader:async ({params})=> fetch(`https://bookship-server-zamanxd.vercel.app/blogs/${params.id}`),
                 element:<BlogPost/>
             },
             {
@@ -108,6 +108,10 @@ export const router = createBrowserRouter([
             {
                 path:"/whybookship",
                 element:<MobileScroll/>
+            },
+            {
+                path: '/addtocart',
+                element: <PrivateRoute><Cart /></PrivateRoute>
             }
             
             
@@ -192,11 +196,7 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    {
-        path: '/addtocart',
-        element: <PrivateRoute><Cart /></PrivateRoute>,
-        errorElement: <ErrorPage></ErrorPage>,
-    }
+    
 ])
 
 
