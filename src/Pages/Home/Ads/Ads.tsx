@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
 
 import AdsCard from "./AdsCard";
-import Slider from "react-slick";
 
 const Ads = () => {
   const [books, setProducts] = useState([]);
