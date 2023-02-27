@@ -2,12 +2,13 @@ import SellerDashboardForm from "./SellerDashboardForm";
 import SellerDashboardTable from "./SellerDashboardTable";
 import { useQuery } from "@tanstack/react-query";
 import SellerDashbordCard from "./SellerDashbordCard";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthProvider";
 import SellerAnalytics from "./SellerAnalytics";
 
 const SellerDashboard = () => {
   const { user } = useContext(AuthContext);
+  const [advertise, setAdvertise] = useState(true);
   const { data: books, refetch } = useQuery({
     queryKey: ["book"],
     queryFn: async () => {
@@ -20,12 +21,14 @@ const SellerDashboard = () => {
   });
 
   const handleAdvertise = (id: any) => {
+    setAdvertise(!advertise);
+    console.log(advertise)
     fetch(`https://bookship-server-zamanxd.vercel.app/advertise/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ advertice: true }),
+      body: JSON.stringify({ advertice: advertise }),
     })
       .then((res) => res.json())
       .then((data) => console.log(data));
