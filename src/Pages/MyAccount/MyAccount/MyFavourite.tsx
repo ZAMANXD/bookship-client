@@ -14,7 +14,7 @@ const MyFavourite = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch(`https://bookship-server-zamanxd.vercel.app/favorurite/${user.email}`)
+        fetch(`https://bookship-server-zamanxd.vercel.app/favorite/${user.email}`)
             .then((res) => res.json())
             .then((data) => {
                 setBookData(data)
