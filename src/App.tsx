@@ -5,6 +5,7 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './Routes/routes';
 import { Toaster } from 'react-hot-toast';
 import { CartProvider } from './context/CartContext';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <CartProvider>
         <RouterProvider router={router} />
         <Toaster />
+        <ToastContainer/>
       </CartProvider>
     </div>
   );

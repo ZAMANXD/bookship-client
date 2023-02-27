@@ -1,6 +1,7 @@
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { toast } from 'react-hot-toast';
+import { AuthContext } from '../../../context/AuthProvider';
 import './Payment.css'
 
 const Checkout = (props: {orders: { _id: string; id: string; quantity: number; price: number}[]}) => {
@@ -12,6 +13,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
     const stripe = useStripe();
     const elements = useElements(); 
     const { orders } = props;
+    const {user } = useContext(AuthContext)
 
     // const appearance = {
     //   theme: 'stripe'
@@ -98,10 +100,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
               payment_method: {
                 card: card,
                 billing_details: {
-                //   name: user,
-                //   email: email,
-                //   
-
+                  email: user.email,
                 },
               },
             },
@@ -118,10 +117,11 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
             const payment = {
                 price: orders.map(order => order.price),
                 transactionId: paymentIntent.id,
-                // email,
+                email: user.email,
                 // orderId: _id,
             }
-            fetch('https://bookship-server.vercel.app/payments', {
+            // fetch('https://bookship-server.vercel.app/payments', {
+            fetch('http://localhost:5000/payments', {
                 method: 'POST',
                 headers:{
                     'content-type':'application/json',
@@ -163,7 +163,7 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 {success}. Your order will be shipped soon.
             </h3>
             <p className='mt-6 text-start font-semibold'>
-                Your transection Id: <span className='font font-normal'>{transactionId}</span>
+                Your transaction Id: <span className='font font-normal'>{transactionId}</span>
             </p>
 
         </div>

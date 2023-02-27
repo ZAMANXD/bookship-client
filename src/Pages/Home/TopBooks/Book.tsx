@@ -29,8 +29,23 @@ const Book = ({ ...book }) => {
   const { increaseCartQuantity } = useCart();
 
   // Add to favourite
-  const favouritehandler = (fvitem: object, userEmail: string) => {
-    const favouriteItem = { ...fvitem, userEmail };
+  const favouritehandler = ( userEmail: string) => {
+
+    const favouriteItem = { 
+      productId:_id,
+      bookTitle,
+      authorName,
+      authorEmail,
+      authorImg,
+      authorRating,
+      bookRating,
+      originalPrice,
+      discountedPrice,
+      bookCover,
+      description,
+      category,
+      publication, 
+      userEmail };
     // console.log(favouriteItem);
     fetch("https://bookship-server-zamanxd.vercel.app/favorurite", {
       method: "PUT",
@@ -59,7 +74,7 @@ const Book = ({ ...book }) => {
       </div>
       <div className="card-info">
         <p className="text-title text-gray-800">
-          {bookTitle.length > 15 ? bookTitle.slice(0, 15) : bookTitle}
+          {bookTitle.length > 15 ? bookTitle.slice(0, 15) : bookTitle}...
         </p>
         <div className="flex justify-start gap-x-2 my-2">
           <img className="w-6 h-6 rounded-full border" src={authorImg} alt="" />
@@ -69,7 +84,10 @@ const Book = ({ ...book }) => {
         </div>
       </div>
       <div className="card-footer">
-        <span className="text-title text-gray-900">$ {discountedPrice}</span>
+        <div className="flex gap-x-2 items-center">
+          <span className="text-title text-gray-900">${discountedPrice}</span>
+          <span className="line-through text-sm text-gray-900">${originalPrice}</span>
+        </div>
         <div className="flex justify-end text-lg">
           <div
             className="card-button"
@@ -79,7 +97,7 @@ const Book = ({ ...book }) => {
           </div>
           <div
             className="card-button2 ml-3"
-            onClick={() => favouritehandler(book, user.email)}
+            onClick={() => favouritehandler(user.email)}
           >
             <BsSuitHeart />
           </div>

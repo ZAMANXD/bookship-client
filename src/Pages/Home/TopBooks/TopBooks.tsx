@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Skeletons from '../../../Shared/Skeletons/Skeletons';
+import SkeletonsHome from '../../../Shared/Skeletons/SkeletonsHome';
 import Spinner from '../../../Shared/Spinner/Spinner';
 import Book from './Book';
 
@@ -24,7 +25,7 @@ const TopBooks = () => {
     }, [])
 
     if (loading) {
-        return <Skeletons />
+        return <SkeletonsHome />
     }
 
     const responsive = {
@@ -48,7 +49,7 @@ const TopBooks = () => {
     };
 
     return (
-        <div className='max-w-7xl mx-auto px-5 py-5'>
+        <div className='max-w-7xl mx-auto px-5 py-12'>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#34315D] ml-5">Our Top Books</h2>
             <div>
                 <Carousel responsive={responsive} className={'py-10'}>

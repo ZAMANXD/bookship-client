@@ -12,7 +12,7 @@ const DashboardSidebar = () => {
   return (
     <>
       <div className="text-center">
-        <div className="lg:w-[20%] w-full h-full shadow-md px-1 lg:fixed">
+        <div className="lg:w-[20%] w-full h-full px-1 lg:fixed">
           <div className="flex justify-between items-center">
             {/* <h3 className="text-2xl font-bold py-5">
               <NavLink to="/">

@@ -4,7 +4,7 @@ import { useCart } from '../../../context/CartContext';
 
 
 
-const ProductDetails = ({ ...i }) => {
+const ProductDetails = ({ ...item }) => {
 
     // console.log(i.items);
     
@@ -17,7 +17,7 @@ const ProductDetails = ({ ...i }) => {
             .then((data) => setBookData(data));
     }, [])
 
-    const { id,quantity } = i
+    const { id,quantity } = item;
 
     const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart , cartQuantity} = useCart();
     const quantityOfBook = getItemQuantity(id);

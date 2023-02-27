@@ -10,8 +10,10 @@ import BooksByPrice from "../Pages/AllBooks/BooksByPrice";
 import AuthorBooks from "../Pages/AuthorBooks/AuthorBooks";
 import BooksByAuthor from "../Pages/AuthorBooks/BooksByAuthor";
 import Blog from "../Pages/Blog/Blog/Blog";
+import BlogPost from "../Pages/Blog/BlogPost/BlogPost";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import AddToCart from "../Pages/Cart/AddToCart/AddToCart";
+import Checkout from "../Pages/Cart/Payment/Checkout";
 import Payment from "../Pages/Cart/Payment/Payment";
 import BooksByCategory from "../Pages/CategoriesBooks/BooksByCategory";
 import CategoriesBooks from "../Pages/CategoriesBooks/CategoriesBooks";
@@ -55,6 +57,11 @@ export const router = createBrowserRouter([
                 element: <Blog />
             },
             {
+                path:'/blogs/:id',
+                loader:async ({params})=> fetch(`https://bookship-server-zamanxd.vercel.app/blogs/${params.id}`),
+                element:<BlogPost/>
+            },
+            {
                 path: '/contactus',
                 element: <ContactUs />
             },
@@ -93,12 +100,18 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/addtocart/checkout',
-                element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+                element: <PrivateRoute>
+                    <Payment></Payment>
+                </PrivateRoute>,
                 loader: ({ params }) => fetch('https://bookship-server-zamanxd.vercel.app/orders'),
             },
             {
                 path:"/whybookship",
                 element:<MobileScroll/>
+            },
+            {
+                path: '/addtocart',
+                element: <PrivateRoute><Cart /></PrivateRoute>
             }
             
             
@@ -183,11 +196,7 @@ export const router = createBrowserRouter([
             }
         ]
     },
-    {
-        path: '/addtocart',
-        element: <Cart />,
-        errorElement: <ErrorPage></ErrorPage>,
-    }
+    
 ])
 
 

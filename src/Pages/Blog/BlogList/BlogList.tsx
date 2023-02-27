@@ -1,4 +1,5 @@
 import React from 'react';
+import BlogCard from '../BlogCard/BlogCard';
 import BlogPost from '../BlogPost/BlogPost';
 
 
@@ -22,9 +23,9 @@ interface Comment {
 
 const BlogList: React.FC<Props> = ({ posts }) => {
   return (
-    <div>
+    <div className='w-3/4 mx-auto'>
       {posts.map((post) => (
-        <BlogPost key={post._id} {...post} />
+        <BlogCard key={post._id} {...post} />
       ))}
     </div>
   );
