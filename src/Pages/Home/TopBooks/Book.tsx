@@ -45,7 +45,7 @@ const Book = ({ ...book }) => {
       category,
       publication, 
       userEmail };
-    console.log(favouriteItem);
+    // console.log(favouriteItem);
     fetch("https://bookship-server-zamanxd.vercel.app/favorurite", {
       method: "PUT",
       headers: {
