@@ -28,9 +28,24 @@ const Book = ({ ...book }) => {
   const { increaseCartQuantity } = useCart();
 
   // Add to favourite
-  const favouritehandler = (fvitem: object, userEmail: string) => {
-    const favouriteItem = { ...fvitem, userEmail };
-    // console.log(favouriteItem);
+  const favouritehandler = ( userEmail: string) => {
+
+    const favouriteItem = { 
+      productId:_id,
+      bookTitle,
+      authorName,
+      authorEmail,
+      authorImg,
+      authorRating,
+      bookRating,
+      originalPrice,
+      discountedPrice,
+      bookCover,
+      description,
+      category,
+      publication, 
+      userEmail };
+    console.log(favouriteItem);
     fetch("https://bookship-server-zamanxd.vercel.app/favorurite", {
       method: "PUT",
       headers: {
@@ -81,7 +96,7 @@ const Book = ({ ...book }) => {
           </div>
           <div
             className="card-button2 ml-3"
-            onClick={() => favouritehandler(book, user.email)}
+            onClick={() => favouritehandler(user.email)}
           >
             <BsSuitHeart />
           </div>
