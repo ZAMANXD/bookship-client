@@ -7,10 +7,12 @@ import { HiPlusSm } from 'react-icons/hi';
 import { AuthContext } from '../../../context/AuthProvider';
 import useAdmin from '../../../hooks/useAdmin';
 import useSeller from '../../../hooks/useSeller';
+import useTitle from '../../../hooks/useTitle';
 import avatar from "../../../imgFile/avatar.png"
 import MyFavourite from './MyFavourite';
 
 const MyAccount = () => {
+    useTitle("- Account");
     const {user,nameUpdate}=useContext(AuthContext)
     const [isAdmin, adminLoading] = useAdmin(user?.email);
     const [isSeller, sellerLoading] = useSeller(user?.email);

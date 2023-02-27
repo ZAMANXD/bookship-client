@@ -194,7 +194,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/addtocart',
-        element: <Cart />,
+        element: <PrivateRoute><Cart /></PrivateRoute>,
         errorElement: <ErrorPage></ErrorPage>,
     }
 ])

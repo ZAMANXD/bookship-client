@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { Resolver, SubmitHandler, useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 type FormValues = {
 	name: string;
@@ -13,6 +14,7 @@ type FormValues = {
 };
 
 const SignUp = () => {
+	useTitle("- SignUp");
 	const navigate = useNavigate();
 	const { user, signUp, nameUpdate, googlLogin } = useContext(AuthContext)
 	const [showPassword,setShowPassword]=useState<Boolean>(false)

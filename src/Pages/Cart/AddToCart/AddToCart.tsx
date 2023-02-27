@@ -1,9 +1,11 @@
 import React from 'react';
 import { useCart } from '../../../context/CartContext';
+import useTitle from '../../../hooks/useTitle';
 import ProductDetails from '../ProductDetails/ProductDetails';
 import Summary from '../Summary/Summary';
 
 const AddToCart = () => {
+    useTitle("- Addto cart");
     const { cartQuantity, cartItems } = useCart()
 
     return (
