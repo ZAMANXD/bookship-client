@@ -19,12 +19,18 @@ const SellerDashboard = () => {
     },
   });
 
-  useEffect(()=>{
-    console.log(user?.email)
-    fetch(`https://bookship-server-zamanxd.vercel.app/orders?email=${user?.email}`)
-    .then((res)=> res.json())
-    .then((data)=> console.log(data))
-  }, [user?.email])
+  const handleAdvertise = (id: any) => {
+    fetch(`https://bookship-server-zamanxd.vercel.app/advertise/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ advertice: true }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   const sellerBooks = books?.filter((book: any) => {
     return user.email === book.authorEmail;
   });
@@ -50,12 +56,20 @@ const SellerDashboard = () => {
               <p>Today Sell</p>
             </div>
           </div>
-          <SellerAnalytics/>
+          <SellerAnalytics />
         </div>
       </div>
 
-      <SellerDashboardTable books={sellerBooks} refetch={refetch} />
-      <SellerDashbordCard books={sellerBooks} refetch={refetch} />
+      <SellerDashboardTable
+        handleAdvertise={handleAdvertise}
+        books={sellerBooks}
+        refetch={refetch}
+      />
+      <SellerDashbordCard
+        handleAdvertise={handleAdvertise}
+        books={sellerBooks}
+        refetch={refetch}
+      />
     </div>
   );
 };

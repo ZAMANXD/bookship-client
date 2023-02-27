@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SellerDashboardTable = ({ books, refetch }: any) => {
+const SellerDashboardTable = ({ books, refetch, handleAdvertise }: any) => {
   console.log(books)
   const [id, setId] = useState("");
 
@@ -22,6 +22,7 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
   const newBooks = books?.filter((book: { _id: string }) => {
     return book._id !== id;
   });
+
   return (
     <div className="mt-8">
       <div className="">
@@ -29,9 +30,9 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
         <h1 className="text-4xl font-bold">Book List</h1>
         {/* -----------div------------ */}
         <div className=" mt-7">
-          <div className="w-full text-xs text-left ">
+          <div className="w-full  text-left ">
             <div>
-              <div className="bg-gray-300 hidden  lg:grid grid-cols-[10%_20%_10%_10%_20%_10%_10%_10%]">
+              <div className="bg-gray-300 hidden text-bold  lg:grid grid-cols-[10%_20%_7%_7%_26%_7%_7%_8%_8%]">
                 <div className="p-3">Image</div>
                 <div className="p-3">Book Title</div>
                 <div className="p-3">Original Price</div>
@@ -39,6 +40,7 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                 <div className="p-3">Details</div>
                 <div className="p-3">Quantity</div>
                 <div className="p-3">Sell</div>
+                <div className="p-3">Advertise</div>
                 <div className="p-3">Delete</div>
               </div>
             </div>
@@ -51,11 +53,15 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                   discountedPrice,
                   description,
                   bookCover,
+                  advertice
                 } = book;
                 return (
-                  <div key={_id} className="hidden lg:grid lg:grid-cols-[10%_20%_10%_10%_20%_10%_10%_10%] md:grid-cols-[1fr_1fr_1fr_1fr] break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900">
+                  <div
+                    key={_id}
+                    className="hidden text-xs lg:grid lg:grid-cols-[10%_20%_7%_7%_26%_7%_7%_8%_8%]  break-words lg:border-0 border-b lg:border-b-0 border-b-gray-900"
+                  >
                     <div className="px-3 py-2">
-                      <img src={bookCover} alt="" className="w-16" />
+                      <img src={bookCover} alt="" className="w-full" />
                     </div>
                     <div className="px-3 py-2">
                       <p>{bookTitle}</p>
@@ -74,6 +80,15 @@ const SellerDashboardTable = ({ books, refetch }: any) => {
                     </div>
                     <div className="px-3 py-2">
                       <p>1</p>
+                    </div>
+                    <div className="px-3 py-2">
+                      <button
+                        onClick={() => handleAdvertise(_id)}
+                        className="bs-button-2 px-3 py-2"
+                      >
+                        {advertice? 'advertice':'add'}
+                        
+                      </button>
                     </div>
                     <div className="px-3 py-2 ">
                       <button
