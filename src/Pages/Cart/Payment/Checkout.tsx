@@ -120,7 +120,8 @@ const Checkout = (props: {orders: { _id: string; id: string; quantity: number; p
                 email: user.email,
                 // orderId: _id,
             }
-            fetch('https://bookship-server.vercel.app/payments', {
+            // fetch('https://bookship-server.vercel.app/payments', {
+            fetch('http://localhost:5000/payments', {
                 method: 'POST',
                 headers:{
                     'content-type':'application/json',
