@@ -113,7 +113,7 @@ const MyAccount = () => {
                 <div className={editNow?'hidden':''}>
                     <div className='relative'>
 
-                        <button className={editNow?'hidden':'absolute bg-gray-50 rounded  bottom-[-2px] right-[102px] lg:bottom-[-2px] lg:right-[158px] text-3xl text-green-500'}
+                        <button className={editNow?'hidden':'absolute bg-gray-50 rounded  bottom-[-2px] right-[105px] md:right-[220px] lg:bottom-[-2px] lg:right-[158px] text-3xl text-green-500'}
                         onClick={()=>setEditNow(true)}><FaRegEdit/>
                         </button>
 
