@@ -5,7 +5,7 @@ import bookShipLogo from "../../imgFile/BookShip-logo.png"
 
 const Footer = () => {
   return (
-    <div className="mx-2 my-5">
+    <div className="mx-2 my-5 mt-32">
       <footer
         aria-label="Site Footer"
         className="rounded-xl sm:max-w-xl md:max-w-full lg:max-w-screen-xl mx-auto custom_Footer"
