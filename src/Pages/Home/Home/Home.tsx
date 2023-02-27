@@ -1,6 +1,8 @@
 import React from "react";
 import Cards from "../../../components/Cards/Cards";
 import useTitle from "../../../hooks/useTitle";
+import Ads from "../Ads/Ads";
+import BookBackground from "../BookBackground/BookBackground";
 import DownloadApp from "../DownloadApp/DownloadApp";
 import GetInTouch from "../GetInTouch/GetInTouch";
 import NewReleases from "../NewReleases/NewReleases";
@@ -14,6 +16,7 @@ const Home = () => {
   return (
     <div>
       <TopBanner></TopBanner>
+      <Ads></Ads>
       <TopBooks></TopBooks>
       <NewReleases></NewReleases>
       <Testimonials></Testimonials>
