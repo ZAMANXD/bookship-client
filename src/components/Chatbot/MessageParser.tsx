@@ -15,14 +15,19 @@ class MessageParser {
 
     if (lowercaseMessage.includes('hi') || lowercaseMessage.includes('hello') || lowercaseMessage.includes('howdy')) {
       this.actionProvider.chatInitializationHandler();
-    
     }
 
-    if (lowercaseMessage.includes('book list') || lowercaseMessage.includes('list of books') || lowercaseMessage.includes('list of book') || lowercaseMessage.includes('top books')) {
+    else if (lowercaseMessage.includes('book list') || lowercaseMessage.includes('list of books') || lowercaseMessage.includes('list of book') || lowercaseMessage.includes('top 5 books') || lowercaseMessage.includes('top books') || lowercaseMessage.includes('top 5 book'))  {
       this.actionProvider.bookListHandler();
-    
-  }
-  
+    }
+
+    else if (lowercaseMessage.includes('pay') || lowercaseMessage.includes('payments') || lowercaseMessage.includes('buy') || lowercaseMessage.includes('purchase') || lowercaseMessage.includes('paid') || lowercaseMessage.includes('payment')) {
+      this.actionProvider.paymentsDisclaimerHandler();
+    }
+
+    else {
+      this.actionProvider.fallbackHandler();
+    }
   }
 }
 

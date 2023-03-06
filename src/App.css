@@ -166,3 +166,12 @@
   background-position: center;
   background-size: cover;
 }
+.react-chatbot-kit-chat-container {
+  position: relative;
+  width: 320px !important;
+}
+.react-chatbot-kit-chat-inner-container {
+  height: 475px !important;
+  background-color: #fff;
+  border-radius: 5px;
+}
